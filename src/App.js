@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Website from './pages/Website';
+import Register from './pages/Register';
 import Products from './pages/Products';
 import './App.css';
 function ScrollToTop() {
@@ -17,6 +18,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Website />} />
+          <Route path="/register" element={<Register />} />
           {/* <Route path="/products" element={<Products />} /> */}
         </Routes>
       </div>

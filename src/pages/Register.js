@@ -179,11 +179,11 @@ const CreationLoader = () => {
 };
 export default function App() {
     const [formData, setFormData] = useState({
-        subdomain: "mysite",
+        subdomain: "sitename",
         institution_name: "My Learning Platform",
         admin_email: "admin@example.com",
         admin_user: "admin",
-        admin_password: "Password123!",
+        admin_password: "Ankit@1234",
     });
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState({ type: "idle", message: "" });
@@ -199,14 +199,13 @@ export default function App() {
         setIsLoading(true);
         setStatus({ type: "idle", message: "" });
         try {
+            const form = new FormData();
+            Object.entries(formData).forEach(([k, v]) => form.append(k, v));
             const response = await fetch(
-                "https://admin.mdl.instructohub.com/new_tenant_form.php",
+                "https://admin.mdl.instructohub.com/instructohub/new_tenant_form.php",
                 {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(formData),
+                    body: form,
                 }
             );
             if (response.ok) {

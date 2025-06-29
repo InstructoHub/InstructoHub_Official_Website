@@ -124,7 +124,7 @@ const Header = () => {
                             <div className="flex items-center gap-6">
                                 <button
                                     className="hidden md:block px-6 py-2.5 bg-brand text-white rounded-md hover:bg-brand-600 transition-colors shadow-md hover:shadow-lg"
-                                    onClick={()=>window.location.href = "/register"}
+                                    onClick={() => window.location.href = "/register"}
                                 >
                                     Get Your LMS Now
                                 </button>

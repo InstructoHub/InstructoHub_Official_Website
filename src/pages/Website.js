@@ -450,7 +450,7 @@ const TestimonialsSection = () => {
 };
 const Website = () => {
     return (
-        <div className="font-serif min-h-screen flex flex-col text-secondary">
+        <div className="min-h-screen flex flex-col text-secondary">
             <Header />
             <main className="flex-grow">
                 <HeroSection />

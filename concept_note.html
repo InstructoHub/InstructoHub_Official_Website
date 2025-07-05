@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstructoHub - Elevating Digital Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.7;
+        }
+        .container-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .section-header {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1b3942;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e16b3b;
+            display: inline-block;
+        }
+        .feature-item {
+            background-color: #fdfdfd;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid #ebf0f5;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            transition: all 0.2s ease-in-out;
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .icon-container {
+            font-size: 2.5rem;
+            color: #e16b3b;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+        .call-to-action-btn {
+            display: inline-block;
+            background-color: #e16b3b;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(240, 127, 74, 0.4);
+        }
+        .call-to-action-btn:hover {
+            background-color: #eb743c;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="p-6 sm:p-10 md:p-12 lg:p-16">
+    <div class="container-wrapper">
+        <header class="bg-[#1b3942] text-white p-8 sm:p-10 text-center rounded-t-xl">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-3 leading-tight">
+                <i class="fas fa-cubes mr-4" style="color: #e16b3b;"></i> InstructoHub
+            </h1>
+            <p class="text-xl sm:text-2xl font-light opacity-90">
+                A Strategic Partner for Modern Digital Education
+            </p>
+        </header>
+        <section class="p-8 sm:p-10 md:p-12">
+            <h2 class="section-header text-3xl mb-6">
+                Transforming Learning & Teaching Experiences
+            </h2>
+            <p class="text-lg mb-6 text-gray-700">
+                InstructoHub represents the next evolution in Learning Management Systems (LMS), offering educational
+                institutions and training providers unparalleled control and adaptability to deliver exceptional online
+                learning. We recognize that each organization possesses distinct pedagogical objectives and operational
+                requirements.
+            </p>
+            <p class="text-lg text-gray-700">
+                From specialized coaching centers and innovative EdTech enterprises to comprehensive university systems,
+                InstructoHub provides a robust, scalable, and intuitive platform designed to streamline course creation,
+                management, and delivery. Our commitment is to empower your institution to define and optimize its
+                unique digital learning ecosystem.
+            </p>
+        </section>
+        <section class="p-8 sm:p-10 md:p-12 bg-gray-50 border-t border-b border-gray-200">
+            <h2 class="section-header text-3xl mb-8">
+                Key Differentiators
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="feature-item">
+                    <div class="icon-container"><i class="fas fa-cogs"></i></div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #1b3942;">Unparalleled Customization</h3>
+                        <p class="text-gray-700">
+                            Tailor every aspect of your learning platform to precisely match your brand identity and
+                            educational methodology. InstructoHub offers extensive personalization options, ensuring
+                            your digital presence is a true extension of your institution's vision, moving beyond
+                            generic, rigid systems.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-container"><i class="fas fa-brain"></i></div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #1b3942;">Integrated AI & Automation</h3>
+                        <p class="text-gray-700">
+                            Leverage advanced artificial intelligence to enhance operational efficiency and enrich the
+                            learning experience. Our AI capabilities include automated content generation, intelligent
+                            assessment tools, 24/7 student support, and sophisticated grading assistance, freeing
+                            educators to focus on core teaching.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-container"><i class="fas fa-desktop"></i></div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #1b3942;">Seamless Cross-Device
+                            Compatibility</h3>
+                        <p class="text-gray-700">
+                            Deliver a consistently high-quality learning experience across all devices. InstructoHub
+                            ensures content is optimized for desktops, tablets, and smartphones, facilitating ubiquitous
+                            access and uninterrupted learning journeys for your diverse student body.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-container"><i class="fas fa-chart-pie"></i></div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #1b3942;">Data-Driven Performance Insights
+                        </h3>
+                        <p class="text-gray-700">
+                            Access comprehensive, real-time analytics dashboards that provide deep insights into learner
+                            engagement, progress tracking, and early dropout identification. These actionable insights
+                            empower informed decision-making to continually refine and optimize your educational
+                            programs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="p-8 sm:p-10 md:p-12">
+            <h2 class="section-header text-3xl mb-8">
+                For whom it is for
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 flex flex-col items-center">
+                    <i class="fas fa-university text-4xl mb-3" style="color: #e16b3b;"></i>
+                    <h4 class="font-bold text-lg mb-1" style="color: #1b3942;">Higher Education</h4>
+                    <p class="text-sm text-gray-700">Universities, colleges, and academic departments.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 flex flex-col items-center">
+                    <i class="fas fa-child text-4xl mb-3" style="color: #e16b3b;"></i>
+                    <h4 class="font-bold text-lg mb-1" style="color: #1b3942;">K12 Institutions</h4>
+                    <p class="text-sm text-gray-700">Primary and secondary education institutions.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 flex flex-col items-center">
+                    <i class="fas fa-school text-4xl mb-3" style="color: #e16b3b;"></i>
+                    <h4 class="font-bold text-lg mb-1" style="color: #1b3942;">Vocational & Coaching</h4>
+                    <p class="text-sm text-gray-700">Specialized training centers and coaching institutes.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 flex flex-col items-center">
+                    <i class="fas fa-rocket text-4xl mb-3" style="color: #e16b3b;"></i>
+                    <h4 class="font-bold text-lg mb-1" style="color: #1b3942;">EdTech Innovators</h4>
+                    <p class="text-sm text-gray-700">Startups and companies building new educational products.</p>
+                </div>
+            </div>
+        </section>
+        <section class="p-8 sm:p-10 md:p-12 bg-gray-50 border-t border-gray-200">
+            <h2 class="section-header text-3xl mb-8">
+                Strategic Advantages
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm flex items-start space-x-4 border border-gray-100">
+                    <div class="text-3xl flex-shrink-0 mt-1" style="color: #e16b3b;">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #1b3942;">Rapid Deployment</h3>
+                        <p class="text-gray-700">
+                            Launch your fully operational LMS infrastructure in a fraction of the time traditionally
+                            required. Our streamlined setup process minimizes downtime and accelerates your entry into
+                            the digital learning landscape.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm flex items-start space-x-4 border border-gray-100">
+                    <div class="text-3xl flex-shrink-0 mt-1" style="color: #e16b3b;">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #1b3942;">Unified Brand Integrity</h3>
+                        <p class="text-gray-700">
+                            Ensure seamless brand continuity across your entire learning environment. InstructoHub
+                            supports full white-labeling, including custom domains, logos, and intricate design elements
+                            to reinforce your institutional identity.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm flex items-start space-x-4 border border-gray-100">
+                    <div class="text-3xl flex-shrink-0 mt-1" style="color: #e16b3b;">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #1b3942;">Scalable Investment Model</h3>
+                        <p class="text-gray-700">
+                            Benefit from a flexible pricing structure that aligns with your growth trajectory. Begin
+                            with a foundational plan and seamlessly expand your InstructoHub capabilities as your user
+                            base and requirements evolve.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm flex items-start space-x-4 border border-gray-100">
+                    <div class="text-3xl flex-shrink-0 mt-1" style="color: #e16b3b;">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #1b3942;">Continuous Innovation</h3>
+                        <p class="text-gray-700">
+                            Remain at the vanguard of educational technology. InstructoHub is engineered with built-in
+                            future-proofing, integrating the latest advancements in AI and platform functionalities
+                            through consistent updates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="p-8 sm:p-10 md:p-12 text-center bg-[#1b3942] text-white rounded-b-xl">
+            <h2 class="section-header text-3xl sm:text-4xl font-bold mb-5 text-white">
+                Partner with us for Your Digital Learning Vision
+            </h2>
+            <p class="text-lg mb-8 opacity-90">
+                We invite you to discover how InstructoHub can serve as a pivotal enabler for your institution's digital
+                learning ambitions, delivering a modern, interactive, and intelligent educational ecosystem.
+            </p>
+        </section>
+        <footer class="p-5 text-center text-sm text-gray-600 bg-gray-100 rounded-b-xl border-t border-gray-200">
+            <p>&copy; 2025 InstructoHub. All rights reserved. | Contact: info@instructohub.com</p>
+            <p class="mt-2"> </p>
+        </footer>
+    </div>
+</body>
+</html>

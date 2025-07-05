@@ -15,6 +15,7 @@ const InputField = ({
     label,
     value,
     onChange,
+    onKeyUp,
     type = "text",
     placeholder,
     required = false,
@@ -34,6 +35,7 @@ const InputField = ({
                 name={id}
                 value={value}
                 onChange={onChange}
+                onKeyUp={onKeyUp}
                 placeholder={placeholder}
                 required={required}
                 className="w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm focus:ring-2 focus:ring-brand-400 focus:border-brand-500 transition-all duration-200 hover:border-neutral-400"
@@ -187,11 +189,44 @@ export default function App() {
     });
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState({ type: "idle", message: "" });
+
+    // ── NEW: subdomain‐availability state ────────────────────────────────
+    const [subdomainStatus, setSubdomainStatus] = useState({
+        type: "idle",    // "idle" | "checking" | "available" | "unavailable" | "error"
+        message: ""
+    });
+
+    // ── NEW: function to call the tenant_find_api endpoint ───────────────
+    const checkSubdomainAvailability = async () => {
+        const name = formData.subdomain.trim();
+        if (!name) return;
+        setSubdomainStatus({ type: "checking", message: "" });
+        try {
+            const resp = await fetch(
+                `https://admin.mdl.instructohub.com/local/multitenant/tenant_find_api.php?name=${encodeURIComponent(name)}`,
+                { method: "GET", mode: "cors" }
+            );
+            const result = await resp.json();
+            // adapt this to the actual JSON structure your PHP returns:
+            if (!result) {
+                setSubdomainStatus({ type: "unavailable", message: "That subdomain is already taken." });
+            } else {
+                setSubdomainStatus({ type: "available", message: "Good news! It's available." });
+            }
+        } catch (err) {
+            console.error("Error checking tenant:", err);
+            setSubdomainStatus({ type: "error", message: "Couldn't verify availability. Try again." });
+        }
+    };
     const handleInputChange = (e) => {
         const { id, value } = e.target;
         setFormData((prev) => ({ ...prev, [id]: value }));
         if (status.type !== "idle") {
             setStatus({ type: "idle", message: "" });
+        }
+        // reset availability state whenever they type
+        if (id === "subdomain" && subdomainStatus.type !== "idle") {
+            setSubdomainStatus({ type: "idle", message: "" });
         }
     };
     const handleSubmit = async (e) => {
@@ -202,10 +237,11 @@ export default function App() {
             const form = new FormData();
             Object.entries(formData).forEach(([k, v]) => form.append(k, v));
             const response = await fetch(
-                "https://admin.mdl.instructohub.com/instructohub/new_tenant_form.php",
+                "https://admin.mdl.instructohub.com/local/multitenant/process_tenant.php",
                 {
                     method: "POST",
                     body: form,
+                    mode: "cors"
                 }
             );
             if (response.ok) {
@@ -282,18 +318,33 @@ export default function App() {
                                 subtitle="Configure your LMS's basic settings and domain"
                             />
                             <div className="grid grid-cols-1 gap-4">
-                                <InputField
-                                    id="subdomain"
-                                    label="LMS Subdomain"
-                                    value={formData.subdomain}
-                                    onChange={handleInputChange}
-                                    placeholder="e.g., my-learning-site"
-                                    required
-                                >
-                                    <span className="inline-flex items-center bg-gradient-to-r from-neutral-100 to-brand-50 px-3 py-2 rounded-r-lg border border-l-0 border-neutral-300 text-text-secondary text-sm font-medium">
-                                        .instructohub.com
-                                    </span>
-                                </InputField>
+                                <div>
+                                    <InputField
+                                        id="subdomain"
+                                        label="LMS Subdomain"
+                                        value={formData.subdomain}
+                                        onChange={handleInputChange}
+                                        onKeyUp={checkSubdomainAvailability}
+                                        placeholder="e.g., my-learning-site"
+                                        required
+                                    >
+                                        <span className="inline-flex items-center bg-gradient-to-r from-neutral-100 to-brand-50 px-3 py-2 rounded-r-lg border border-l-0 border-neutral-300 text-text-secondary text-sm font-medium">
+                                            .instructohub.com
+                                        </span>
+                                    </InputField>
+                                    <p className="mt-1 text-sm">
+                                        {subdomainStatus.type === "checking" && "Checking…"}
+                                        {subdomainStatus.type === "available" && (
+                                            <span className="text-success">{subdomainStatus.message}</span>
+                                        )}
+                                        {subdomainStatus.type === "unavailable" && (
+                                            <span className="text-danger">{subdomainStatus.message}</span>
+                                        )}
+                                        {subdomainStatus.type === "error" && (
+                                            <span className="text-warning">{subdomainStatus.message}</span>
+                                        )}
+                                    </p>
+                                </div>
                             </div>
                         </section>
                         <section>

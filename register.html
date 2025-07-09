@@ -311,6 +311,7 @@
     <link rel="shortcut icon" href="https://static.instructohub.com/staticfiles/assets/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <script>
@@ -471,26 +472,6 @@
                                 alt="Logo" class="h-8">
                         </a>
                     </div>
-                    <nav class="hidden md:flex items-center gap-8">
-                        <a href="#home" onclick="smoothScroll(event, '#home')"
-                            class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">Home</a>
-                        <a href="#about" onclick="smoothScroll(event, '#about')"
-                            class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">About
-                            Us</a>
-                        <a href="#mission" onclick="smoothScroll(event, '#mission')"
-                            class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">Mission</a>
-                        <a href="#products" onclick="smoothScroll(event, '#products')"
-                            class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">Products</a>
-                        <a href="#values" onclick="smoothScroll(event, '#values')"
-                            class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">Features</a>
-                    </nav>
-                    <div class="flex items-center gap-6">
-                        <button
-                            class="hidden md:block px-6 py-2.5 bg-brand text-white rounded-md hover:bg-brand-600 transition-colors shadow-md hover:shadow-lg"
-                            onclick="window.location.href = '/register'">
-                            Get Your LMS Now
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -616,8 +597,8 @@
             </div>
             <div class="text-center mb-8">
                 <p class="text-text-secondary text-xl font-bold max-w-2xl mx-auto">
-                    Create your personalized learning environment in minutes. Fill in
-                    the details below to launch your professional-grade LMS instance.
+                    Get your own LMS in minutes. Fill in
+                    the details below to launch your professional-grade LMS now.
                 </p>
             </div>
             <div class="p-4 mb-6 rounded-xl flex items-start shadow-lg border-l-4 animate-fadeIn hidden"
@@ -712,7 +693,10 @@
                         </div>
                     </div>
                 </section>
-                <div class="pt-6 border-t border-brand-100 flex justify-center">
+                
+        <div class="g-recaptcha my-6" data-sitekey="6LcZpXkrAAAAAKFhLjBZR8x1-1YDqg23PArCezQb"></div>
+        <div class="pt-6 border-t border-brand-100 flex justify-center">
+        
                     <button type="submit" id="submit-btn"
                         class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-xl text-text-light bg-gradient-to-r from-brand-500 via-brand-600 to-brand-500 hover:from-brand-600 hover:via-brand-700 hover:to-brand-600 focus:outline-none focus:ring-4 focus:ring-brand-300 transition-all duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                         <i data-lucide="zap" class="w-5 h-5 mr-2"></i>
@@ -916,6 +900,12 @@
         async function handleSubmit(event) {
             event.preventDefault();
             const formData = new FormData();
+        const captchaToken = grecaptcha.getResponse();
+        if (!captchaToken) {
+            showStatus('error', 'Please complete the CAPTCHA.');
+            return;
+        }
+        formData.append('g-recaptcha-response', captchaToken);
             const form = event.target;
             formData.append('subdomain', form.subdomain.value);
             formData.append('institution_name', form.institution_name.value);

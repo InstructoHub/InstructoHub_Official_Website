@@ -1,432 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Primary Meta Tags -->
     <title>InstructoHub - AI-Powered LMS Solutions</title>
-    <meta name="title" content="InstructoHub - AI-Powered LMS Solutions">
-    <meta name="description"
-        content="Revolutionary AI-powered education suite integrating with any LMS. Automate course creation with InstructoGen, enhance student engagement with InstructoEcho, enable adaptive learning with InstructoPulse, streamline grading with InstructoGrade. Transform weeks of work into hours.">
-    <!-- Extended Meta Tags -->
-    <meta name="keywords"
-        content="AI LMS integration, automated course creation, AI education tools, LMS enhancement, Canvas AI integration, Moodle AI tools, Blackboard AI, AI course builder, automated grading, student chatbot, adaptive learning, personalized education, AI teaching assistant, educational technology, EdTech AI, learning management system AI, course authoring AI, AI curriculum mapping, Bloom's taxonomy AI, educational automation, smart learning, AI for teachers, AI for students, InstructoGen, InstructoBoost, InstructoEcho, InstructoPulse, InstructoGrade, InstructoNex">
-    <meta name="author" content="Ankit Garg">
-    <meta name="publisher" content="InstructoHub">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
-    <meta name="bingbot" content="index, follow">
-    <!-- Geo Tags -->
-    <meta name="geo.region" content="IN-UP">
-    <meta name="geo.placename" content="Noida">
-    <meta name="geo.position" content="28.5355;77.3910">
-    <meta name="ICBM" content="28.5355, 77.3910">
-    <!-- Language and Locale -->
-    <meta name="language" content="English">
-    <meta name="distribution" content="global">
-    <meta name="rating" content="general">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="InstructoHub">
-    <meta property="og:url" content="https://www.instructohub.com/">
-    <meta property="og:title" content="InstructoHub - AI-Powered LMS Solutions">
-    <meta property="og:description"
-        content="Revolutionary AI suite that integrates with any LMS. Automate course creation, enhance student engagement, enable adaptive learning, and streamline grading. Transform education with InstructoGen, InstructoEcho, InstructoPulse & more.">
-    <meta property="og:image"
-        content="https://static.instructohub.com/staticfiles/assets/images/website/og-image-instructohub.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="InstructoHub AI-Powered Education Suite Dashboard">
-    <meta property="og:locale" content="en_US">
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@InstructoH75197">
-    <meta name="twitter:creator" content="@InstructoH75197">
-    <meta name="twitter:url" content="https://www.instructohub.com/">
-    <meta name="twitter:title" content="InstructoHub - AI-Powered LMS Solutions">
-    <meta name="twitter:description"
-        content="Revolutionary AI suite integrating with any LMS. Automate course creation, enhance engagement, enable adaptive learning. Transform weeks of work into hours with our AI education tools.">
-    <meta name="twitter:image"
-        content="https://static.instructohub.com/staticfiles/assets/images/website/twitter-image-instructohub.png">
-    <meta name="twitter:image:alt" content="InstructoHub AI Education Platform Interface">
-    <!-- LinkedIn -->
-    <meta property="og:image:secure_url"
-        content="https://static.instructohub.com/staticfiles/assets/images/website/linkedin-image-instructohub.png">
-    <!-- Additional Social Media -->
-    <meta property="article:author" content="https://www.linkedin.com/company/instructohub">
-    <meta property="article:publisher" content="https://www.facebook.com/people/InstructoHub/61572722776722/">
-    <!-- Canonical and Alternate URLs -->
-    <link rel="canonical" href="https://www.instructohub.com/">
-    <link rel="alternate" href="https://www.instructohub.com/" hreflang="en">
-    <link rel="alternate" href="https://www.instructohub.com/" hreflang="x-default">
-    <!-- Favicons and Icons -->
-    <link rel="icon" href="https://static.instructohub.com/staticfiles/assets/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="https://static.instructohub.com/staticfiles/assets/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180"
-        href="https://static.instructohub.com/staticfiles/assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="https://static.instructohub.com/staticfiles/assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="https://static.instructohub.com/staticfiles/assets/favicon-16x16.png">
-    <link rel="manifest" href="https://static.instructohub.com/staticfiles/assets/site.webmanifest">
-    <link rel="mask-icon" href="https://static.instructohub.com/staticfiles/assets/safari-pinned-tab.svg"
-        color="#e16b3b">
-    <meta name="msapplication-TileColor" content="#e16b3b">
-    <meta name="theme-color" content="#e16b3b">
-    <!-- Mobile App Links -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="InstructoHub - AI-Powered LMS Solutions">
-    <meta name="mobile-web-app-capable" content="yes">
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://static.instructohub.com">
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <!-- Structured Data - Organization -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "InstructoHub",
-        "legalName": "InstructoHub Private Limited",
-        "url": "https://www.instructohub.com",
-        "logo": "https://static.instructohub.com/staticfiles/assets/images/logo.png",
-        "foundingDate": "2025",
-        "founders": [
-            {
-                "@type": "Person",
-                "name": "Ankit Garg"
-            }
-            {
-                "@type": "Person",
-                "name": "Amitabh Vira"
-            }
-        ],
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Noida",
-            "addressRegion": "Uttar Pradesh",
-            "addressCountry": "India",
-            "postalCode": "201301"
-        },
-        "contactPoint": [
-            {
-                "@type": "ContactPoint",
-                "telephone": "+919810206863",
-                "contactType": "customer service",
-                "email": "ankit@instructohub.com",
-                "areaServed": "Worldwide",
-                "availableLanguage": ["English"]
-            },
-            {
-                "@type": "ContactPoint",
-                "telephone": "+919810206863",
-                "contactType": "sales",
-                "email": "ankit@instructohub.com",
-                "areaServed": "Worldwide",
-                "availableLanguage": ["English"]
-            }
-        ],
-        "sameAs": [
-            "https://www.linkedin.com/company/instructohub",
-            "https://www.facebook.com/people/InstructoHub/61572722776722/",
-            "https://x.com/InstructoH75197",
-            "https://www.youtube.com/@Instructo-Hub"
-        ],
-        "description": "InstructoHub provides AI-powered education solutions that integrate with any LMS to automate course creation, enhance student engagement, and streamline educational administration.",
-        "knowsAbout": [
-            "Artificial Intelligence in Education",
-            "Learning Management Systems",
-            "Course Authoring",
-            "Educational Technology",
-            "Automated Grading",
-            "Adaptive Learning",
-            "Curriculum Mapping",
-            "Bloom's Taxonomy"
-        ],
-        "memberOf": {
-            "@type": "Organization",
-            "name": "EdTech Industry"
-        }
-    }
-    </script>
-    <!-- Structured Data - Software Application -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "InstructoHub AI Education Suite",
-        "description": "Comprehensive AI-powered application suite for Learning Management Systems including automated course creation, student engagement tools, adaptive learning, and intelligent grading.",
-        "url": "https://www.instructohub.com",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "Web-based",
-        "offers": {
-            "@type": "Offer",
-            "category": "SaaS",
-            "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut"
-        },
-        "featureList": [
-            "AI-Powered Course Creation (InstructoGen)",
-            "Course Enhancement Tools (InstructoBoost)", 
-            "Student AI Assistant (InstructoEcho)",
-            "Adaptive Practice Mode (InstructoPulse)",
-            "Automated Grading (InstructoGrade)",
-            "Admin Control Panel (InstructoNex)",
-            "LMS Integration",
-            "Bloom's Taxonomy Alignment",
-            "Curriculum Mapping"
-        ],
-        "publisher": {
-            "@type": "Organization",
-            "name": "InstructoHub"
-        },
-        "datePublished": "2024",
-        "softwareVersion": "1.0",
-        "screenshot": "https://static.instructohub.com/staticfiles/assets/images/logo.png"
-    }
-    </script>
-    <!-- Structured Data - WebSite -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "InstructoHub",
-        "url": "https://www.instructohub.com",
-        "description": "AI-powered education solutions for Learning Management Systems",
-        "publisher": {
-            "@type": "Organization",
-            "name": "InstructoHub"
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://www.instructohub.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script>
-    <!-- Structured Data - Service -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "AI-Powered LMS Integration Services",
-        "description": "Professional AI integration services for Learning Management Systems including course automation, student engagement enhancement, and administrative optimization.",
-        "provider": {
-            "@type": "Organization",
-            "name": "InstructoHub"
-        },
-        "areaServed": "Worldwide",
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "InstructoHub AI Education Suite",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "InstructoGen - AI Course Creator"
-                    }
-                },
-                {
-                    "@type": "Offer", 
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "InstructoBoost - Course Enhancer"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service", 
-                        "name": "InstructoEcho - Student AI Assistant"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "InstructoPulse - Adaptive Learning"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "InstructoGrade - Automated Grading"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "InstructoNex - Admin Control Panel"
-                    }
-                }
-            ]
-        }
-    }
-    </script>
-    <!-- Additional Performance and SEO -->
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="format-detection" content="telephone=no">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17282898351"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'AW-17282898351');
-        gtag('event', 'conversion', {
-            'send_to': 'AW-17282898351/sRZACIWq6eUaEK-zkLFA',
-            'value': 1.0,
-            'currency': 'INR'
-        });
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <link rel="shortcut icon" href="https://static.instructohub.com/staticfiles/assets/favicon.ico" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="https://static.instructohub.com/staticfiles/assets/favicon.ico"
+      type="image/x-icon"
+    />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#fdf4f0',
-                            100: '#fce8e0',
-                            200: '#f9d1c1',
-                            300: '#f5b9a2',
-                            400: '#f09c7d',
-                            500: '#e16b3b', // Primary brand color
-                            600: '#d15a2b',
-                            700: '#b44a22',
-                            800: '#933c1d',
-                            900: '#78301a',
-                            DEFAULT: '#e16b3b',
-                        },
-                        secondary: {
-                            50: '#e7eaeb',
-                            100: '#cfd5d7',
-                            200: '#a0acb0',
-                            300: '#728389',
-                            400: '#435a62',
-                            500: '#1b3942', // Secondary brand color
-                            600: '#18333b',
-                            700: '#152b32',
-                            800: '#122229',
-                            900: '#0e1a20',
-                            DEFAULT: '#1b3942',
-                        },
-                        success: {
-                            DEFAULT: '#4CAF50',
-                            dark: '#3a8c3f',
-                        },
-                        danger: {
-                            DEFAULT: '#EF4444',
-                            dark: '#B91C1C',
-                        },
-                        neutral: {
-                            50: '#fafafa',
-                            100: '#f5f5f5',
-                            200: '#e5e5e5',
-                            300: '#d4d4d4',
-                            400: '#a3a3a3',
-                            500: '#737373',
-                            600: '#525252',
-                            700: '#404040',
-                            800: '#262626',
-                            900: '#171717',
-                        },
-                        background: {
-                            page: '#f7f7f7',
-                            card: '#ffffff',
-                        },
-                        border: {
-                            DEFAULT: '#e5e7eb',
-                            accent: '#e16b3b',
-                        },
-                        text: {
-                            primary: '#1b3942',
-                            secondary: '#4b5563',
-                            muted: '#6b7280',
-                            light: '#ffffff',
-                        },
-                    },
-                    animation: {
-                        fadeIn: 'fadeIn 0.5s ease-out forwards'
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': {
-                                opacity: '0',
-                                transform: 'translateY(10px)'
-                            },
-                            '100%': {
-                                opacity: '1',
-                                transform: 'translateY(0)'
-                            },
-                        }
-                    },
-                },
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#fdf4f0",
+                100: "#fce8e0",
+                200: "#f9d1c1",
+                300: "#f5b9a2",
+                400: "#f09c7d",
+                500: "#e16b3b", // Primary brand color
+                600: "#d15a2b",
+                700: "#b44a22",
+                800: "#933c1d",
+                900: "#78301a",
+                DEFAULT: "#e16b3b",
+              },
+              secondary: {
+                50: "#e7eaeb",
+                100: "#cfd5d7",
+                200: "#a0acb0",
+                300: "#728389",
+                400: "#435a62",
+                500: "#1b3942", // Secondary brand color
+                600: "#18333b",
+                700: "#152b32",
+                800: "#122229",
+                900: "#0e1a20",
+                DEFAULT: "#1b3942",
+              },
+              success: {
+                DEFAULT: "#4CAF50",
+                dark: "#3a8c3f",
+              },
+              danger: {
+                DEFAULT: "#EF4444",
+                dark: "#B91C1C",
+              },
+              neutral: {
+                50: "#fafafa",
+                100: "#f5f5f5",
+                200: "#e5e5e5",
+                300: "#d4d4d4",
+                400: "#a3a3a3",
+                500: "#737373",
+                600: "#525252",
+                700: "#404040",
+                800: "#262626",
+                900: "#171717",
+              },
+              background: {
+                page: "#f7f7f7",
+                card: "#ffffff",
+              },
+              border: {
+                DEFAULT: "#e5e7eb",
+                accent: "#e16b3b",
+              },
+              text: {
+                primary: "#1b3942",
+                secondary: "#4b5563",
+                muted: "#6b7280",
+                light: "#ffffff",
+              },
             },
-        }
+            animation: {
+              fadeIn: "fadeIn 0.5s ease-out forwards",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": {
+                  opacity: "0",
+                  transform: "translateY(10px)",
+                },
+                "100%": {
+                  opacity: "1",
+                  transform: "translateY(0)",
+                },
+              },
+            },
+          },
+        },
+      };
     </script>
     <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-                lucide.createIcons();
-                const header = document.getElementById('header');
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 10) {
-                        header.classList.add('scrolled');
-                    } else {
-                        header.classList.remove('scrolled');
-                    }
-                });
-            });
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-                lucide.createIcons();
-                document.getElementById('current-year').textContent = new Date().getFullYear();
-            });
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+          lucide.createIcons();
+          const header = document.getElementById("header");
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+              header.classList.add("scrolled");
+            } else {
+              header.classList.remove("scrolled");
+            }
+          });
+        });
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+          lucide.createIcons();
+          document.getElementById("current-year").textContent =
+            new Date().getFullYear();
+        });
     </script>
-</head>
+  </head>
 
-<body class="min-h-screen flex flex-col text-secondary">
+  <body class="min-h-screen flex flex-col text-secondary">
     <div class="w-full">
-        <div class="h-12 md:block hidden"></div>
-        <div class="h-16"></div>
+      <div class="h-12 md:block hidden"></div>
+      <div class="h-16"></div>
     </div>
     <div id="header-placeholder"></div>
 
     <div id="footer-placeholder"></div>
     <script>
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const closeIcon = document.getElementById('close-icon');
-            if (mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.remove('hidden');
-                menuIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
-            } else {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-            }
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const closeIcon = document.getElementById("close-icon");
+        if (mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove("hidden");
+          menuIcon.classList.add("hidden");
+          closeIcon.classList.remove("hidden");
+        } else {
+          mobileMenu.classList.add("hidden");
+          menuIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
         }
-        document.addEventListener('DOMContentLoaded', function () {
-            lucide.createIcons();
-        });
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
+      });
     </script>
-</body>
-
+  </body>
 </html>

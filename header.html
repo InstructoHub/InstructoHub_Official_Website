@@ -1,95 +1,135 @@
 <style>
-    #contact-bar {
-        transition: all 0.3s ease-in-out;
-        overflow: hidden;
-    }
+  #contact-bar {
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
 
-    #header.scrolled #contact-bar {
-        max-height: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-        opacity: 0;
-        transform: translateY(-100%);
-    }
+  #header.scrolled #contact-bar {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    transform: translateY(-100%);
+  }
 </style>
 <header class="w-full fixed top-0 z-50 transition-all duration-300" id="header">
-    <div class="bg-secondary text-white py-3 hidden md:block" id="contact-bar">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center">
-                <div class="flex gap-8">
-                    <a href="mailto:ankit@instructohub.com"
-                        class="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors">
-                        <i data-lucide="mail" class="w-4 h-4"></i>
-                        <span>ankit@instructohub.com</span>
-                    </a>
-                    <a href="tel:+919810206863"
-                        class="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors">
-                        <i data-lucide="phone" class="w-4 h-4"></i>
-                        <span>+919810206863</span>
-                    </a>
-                    <a href="#" class="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors">
-                        <i data-lucide="map-pin" class="w-4 h-4"></i>
-                        <span>Noida, UP, India</span>
-                    </a>
-                </div>
-                <div class="flex gap-6">
-                    <a href="https://x.com/InstructoH75197" class="text-gray-300 hover:text-brand transition-colors"
-                        aria-label="Twitter">
-                        <i data-lucide="twitter" class="w-4 h-4"></i>
-                    </a>
-                    <a href="https://www.facebook.com/people/InstructoHub/61572722776722/"
-                        class="text-gray-300 hover:text-brand transition-colors" aria-label="Facebook">
-                        <i data-lucide="facebook" class="w-4 h-4"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/instructohub"
-                        class="text-gray-300 hover:text-brand transition-colors" aria-label="LinkedIn">
-                        <i data-lucide="linkedin" class="w-4 h-4"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@Instructo-Hub"
-                        class="text-gray-300 hover:text-brand transition-colors" aria-label="Youtube">
-                        <i data-lucide="youtube" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
+  <div class="bg-secondary text-white py-3 hidden md:block" id="contact-bar">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center">
+        <div class="flex gap-8">
+          <a
+            href="mailto:ankit@instructohub.com"
+            class="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors"
+          >
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>ankit@instructohub.com</span>
+          </a>
+          <a
+            href="tel:+919810206863"
+            class="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors"
+          >
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            <span>+919810206863</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors"
+          >
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            <span>Noida, UP, India</span>
+          </a>
         </div>
+        <div class="flex gap-6">
+          <a
+            href="https://x.com/InstructoH75197"
+            class="text-gray-300 hover:text-brand transition-colors"
+            aria-label="Twitter"
+          >
+            <i data-lucide="twitter" class="w-4 h-4"></i>
+          </a>
+          <a
+            href="https://www.facebook.com/people/InstructoHub/61572722776722/"
+            class="text-gray-300 hover:text-brand transition-colors"
+            aria-label="Facebook"
+          >
+            <i data-lucide="facebook" class="w-4 h-4"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/instructohub"
+            class="text-gray-300 hover:text-brand transition-colors"
+            aria-label="LinkedIn"
+          >
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@Instructo-Hub"
+            class="text-gray-300 hover:text-brand transition-colors"
+            aria-label="Youtube"
+          >
+            <i data-lucide="youtube" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="bg-white border-b py-4" id="nav-bar">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center gap-6">
-                    <button class="md:hidden text-secondary-700 hover:text-brand transition-colors"
-                        onclick="toggleMobileMenu()" aria-label="Toggle menu">
-                        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
-                        <i data-lucide="x" class="w-6 h-6 hidden" id="close-icon"></i>
-                    </button>
-                    <a href="/" class="text-2xl font-bold">
-                        <img src="https://static.instructohub.com/staticfiles/assets/images/website/Instructo_hub_logo.png"
-                            alt="Logo" class="h-8">
-                    </a>
-                </div>
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="/"
-                        class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">Home</a>
-                    <div class="relative group">
-                        <a href="/" onclick="event.preventDefault()"
-                            class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">
-                            <span>Products</span>
-                            <i data-lucide="chevron-down"
-                                class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
-                        </a>
-                        <div
-                            class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-xl border border-neutral-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                            <div class="py-1">
-                                <a href="/InstructoHub_AI-First_LMS.html"
-                                    class="block px-4 py-2 text-sm text-secondary-700 hover:bg-brand-50 hover:text-brand">
-                                    InstructoHub AI-First LMS </a>
-                                <a href="/InstructoHub_Ai_Suite.html"
-                                    class="block px-4 py-2 text-sm text-secondary-700 hover:bg-brand-50 hover:text-brand">
-                                    InstructoHub AI Suite </a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="/Solutions.html"
+  </div>
+  <div class="bg-white border-b py-4" id="nav-bar">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center gap-6">
+          <button
+            class="md:hidden text-secondary-700 hover:text-brand transition-colors"
+            onclick="toggleMobileMenu()"
+            aria-label="Toggle menu"
+          >
+            <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+            <i data-lucide="x" class="w-6 h-6 hidden" id="close-icon"></i>
+          </button>
+          <a href="/" class="text-2xl font-bold">
+            <img
+              src="https://static.instructohub.com/staticfiles/assets/images/website/Instructo_hub_logo.png"
+              alt="Logo"
+              class="h-8"
+            />
+          </a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            href="/"
+            class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full"
+            >Home</a
+          >
+          <div class="relative group">
+            <a
+              href="/"
+              onclick="event.preventDefault()"
+              class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full"
+            >
+              <span>Products</span>
+              <i
+                data-lucide="chevron-down"
+                class="w-4 h-4 transition-transform group-hover:rotate-180"
+              ></i>
+            </a>
+            <div
+              class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-xl border border-neutral-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+            >
+              <div class="py-1">
+                <a
+                  href="/InstructoHub_AI-First_LMS.html"
+                  class="block px-4 py-2 text-sm text-secondary-700 hover:bg-brand-50 hover:text-brand"
+                >
+                  InstructoHub AI-First LMS
+                </a>
+                <a
+                  href="/InstructoHub_Ai_Suite.html"
+                  class="block px-4 py-2 text-sm text-secondary-700 hover:bg-brand-50 hover:text-brand"
+                >
+                  InstructoHub AI Suite
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- <a href="/Solutions.html"
                         class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">Solutions</a>
                     <a href="/Pricing.html"
                         class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">Pricing</a>
@@ -97,29 +137,40 @@
                         class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">Resources</a>
                     <a href="/About.html"
                         class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">About
-                        Us</a>
-                </nav>
-                <div class="flex items-center gap-6">
-                    <button
-                        class="hidden md:block px-6 py-2.5 bg-brand text-white rounded-md hover:bg-brand-600 transition-colors shadow-md hover:shadow-lg"
-                        onclick="window.location.href = '/register.html'"> Get Your LMS Now </button>
-                </div>
-            </div>
+                        Us</a> -->
+        </nav>
+        <div class="flex items-center gap-6">
+          <button
+            class="hidden md:block px-6 py-2.5 font-bold bg-brand text-white rounded-md hover:bg-brand-600 transition-colors shadow-md hover:shadow-lg"
+            onclick="window.location.href = '/register.html'"
+          >
+            Get Your LMS Now
+          </button>
         </div>
+      </div>
     </div>
-    <div class="md:hidden bg-white border-t shadow-lg hidden" id="mobile-menu">
-        <a href="#home" onclick="smoothScroll(event, '#home'); toggleMobileMenu();"
-            class="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">Home</a>
-        <div class="border-t border-gray-100">
-            <span class="block px-6 py-4 font-bold text-secondary-700">Products</span>
-            <a href="instructogen.html"
-                class="block pl-10 pr-6 py-3 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">Headless
-                LMS</a>
-            <a href="instructoboost.html"
-                class="block pl-10 pr-6 py-3 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">AI
-                Powered Suite</a>
-        </div>
-        <div class="border-t border-gray-100">
+  </div>
+  <div class="md:hidden bg-white border-t shadow-lg hidden" id="mobile-menu">
+    <a
+      href="#home"
+      onclick="smoothScroll(event, '#home'); toggleMobileMenu();"
+      class="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors"
+      >Home</a
+    >
+    <div class="border-t border-gray-100">
+      <span class="block px-6 py-4 font-bold text-secondary-700">Products</span>
+      <a
+        href="instructogen.html"
+        class="block pl-10 pr-6 py-3 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors"
+        >Headless LMS</a
+      >
+      <a
+        href="instructoboost.html"
+        class="block pl-10 pr-6 py-3 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors"
+        >AI Powered Suite</a
+      >
+    </div>
+    <!-- <div class="border-t border-gray-100">
             <a href="#solutions" onclick="smoothScroll(event, '#solutions'); toggleMobileMenu();"
                 class="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">Solutions</a>
         </div>
@@ -135,29 +186,44 @@
             <a href="#about" onclick="smoothScroll(event, '#about'); toggleMobileMenu();"
                 class="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">About
                 Us</a>
-        </div>
-        <div class="border-t border-gray-100 p-6">
-            <button
-                class="w-full px-6 py-3 bg-brand text-white rounded-md hover:bg-brand-600 transition-colors shadow-md"
-                onclick="window.location.href = '/register.html'">Get Your LMS Now</button>
-            <div class="mt-6 flex justify-center gap-8">
-                <a href="https://x.com/InstructoH75197" class="text-gray-500 hover:text-brand transition-colors"
-                    aria-label="Twitter">
-                    <i data-lucide="twitter" class="w-4 h-4"></i>
-                </a>
-                <a href="https://www.facebook.com/people/InstructoHub/61572722776722/"
-                    class="text-gray-500 hover:text-brand transition-colors" aria-label="Facebook">
-                    <i data-lucide="facebook" class="w-4 h-4"></i>
-                </a>
-                <a href="https://www.linkedin.com/company/instructohub"
-                    class="text-gray-500 hover:text-brand transition-colors" aria-label="LinkedIn">
-                    <i data-lucide="linkedin" class="w-4 h-4"></i>
-                </a>
-                <a href="https://www.youtube.com/@Instructo-Hub"
-                    class="text-gray-500 hover:text-brand transition-colors" aria-label="Youtube">
-                    <i data-lucide="youtube" class="w-4 h-4"></i>
-                </a>
-            </div>
-        </div>
+        </div> -->
+    <div class="border-t border-gray-100 p-6">
+      <button
+        class="w-full px-6 font-bold py-3 bg-brand text-white rounded-md hover:bg-brand-600 transition-colors shadow-md"
+        onclick="window.location.href = '/register.html'"
+      >
+        Get Your LMS Now
+      </button>
+      <div class="mt-6 flex justify-center gap-8">
+        <a
+          href="https://x.com/InstructoH75197"
+          class="text-gray-500 hover:text-brand transition-colors"
+          aria-label="Twitter"
+        >
+          <i data-lucide="twitter" class="w-4 h-4"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/people/InstructoHub/61572722776722/"
+          class="text-gray-500 hover:text-brand transition-colors"
+          aria-label="Facebook"
+        >
+          <i data-lucide="facebook" class="w-4 h-4"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/company/instructohub"
+          class="text-gray-500 hover:text-brand transition-colors"
+          aria-label="LinkedIn"
+        >
+          <i data-lucide="linkedin" class="w-4 h-4"></i>
+        </a>
+        <a
+          href="https://www.youtube.com/@Instructo-Hub"
+          class="text-gray-500 hover:text-brand transition-colors"
+          aria-label="Youtube"
+        >
+          <i data-lucide="youtube" class="w-4 h-4"></i>
+        </a>
+      </div>
     </div>
+  </div>
 </header>

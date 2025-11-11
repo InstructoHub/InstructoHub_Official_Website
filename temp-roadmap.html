@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Primary Meta Tags -->
+    <title>Product Roadmap | InstructoHub</title>
+    <meta name="title" content="Product Roadmap | InstructoHub" />
+    <meta
+      name="description"
+      content="Explore the InstructoHub product roadmap across Super Admin, Tenant Admin, Teacher, and Student roles. See what’s shipped and what’s next."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .version-btn.active {
+        border-color: #6366f1;
+        /* indigo-500 */
+        background-color: #eef2ff;
+        /* indigo-50 */
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
+          0 1px 2px -1px rgb(0 0 0 / 0.1);
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-slate-50 text-slate-800">
+    <main
+      class="max-w-7xl mx-auto px-4 mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6"
+    >
+      <aside class="lg:col-span-1 space-y-3" id="versionList"></aside>
+      <section class="lg:col-span-2" id="versionContent"></section>
+    </main>
+
+    <script>
+      // --- Configuration ---
+      const VERSIONS = ["V1.0", "V2.0", "V3.0", "V4.0"];
+      const ROLE_ORDER = ["Super Admin", "Tenant Admin", "Teacher", "Student"];
+      const roleIcons = {
+        "Super Admin": "fa-crown",
+        "Tenant Admin": "fa-user-shield",
+        Teacher: "fa-chalkboard-user",
+        Student: "fa-user-graduate",
+      };
+
+      // --- DOM Elements ---
+      const versionList = document.getElementById("versionList");
+      const versionContent = document.getElementById("versionContent");
+
+      // --- State Management ---
+      let roadmapItems = [];
+      let currentIndex = {};
+      let activeVersion = null;
+
+      // --- Core Functions ---
+      // Simplified buildIndex function, no longer needs query logic
+      function buildIndex(items) {
+        const index = {};
+        VERSIONS.forEach((v) => (index[v] = {}));
+        items.forEach((item) => {
+          VERSIONS.forEach((v) => {
+            if (item[v]) {
+              (index[v][item.role] ||= []).push(item);
+            }
+          });
+        });
+        VERSIONS.forEach((v) => {
+          Object.values(index[v]).forEach((arr) =>
+            arr.sort((a, b) => a.sno - b.sno)
+          );
+        });
+        return index;
+      }
+
+      // --- UI Rendering Functions ---
+      function featureCard(item) {
+        const card = document.createElement("article");
+        card.className =
+          "group relative bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition";
+        card.innerHTML = `
+          <div class="flex items-start gap-3">
+            <div class="shrink-0 h-10 w-10 rounded-xl bg-slate-900 text-white flex items-center justify-center">
+              <i class="fa-solid ${
+                roleIcons[item.role] || "fa-circle-user"
+              }"></i>
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="font-semibold text-slate-800">${
+                  item["Feature Description"]
+                }</h3>
+                ${
+                  item["V1.0"]
+                    ? `<span class="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700"><i class="fa-solid fa-flag-checkered mr-1"></i>MVP</span>`
+                    : ""
+                }
+                ${
+                  item.Innovation
+                    ? `<span class="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-amber-100 text-amber-700"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i>Idea</span>`
+                    : ""
+                }
+              </div>
+              <div class="text-xs text-slate-500 mt-1">#${item.sno} · ${
+          item.role
+        }</div>
+            </div>
+          </div>
+          ${
+            item.Innovation
+              ? `<p class="mt-2 text-xs text-slate-500"><i class='fa-solid fa-wand-magic-sparkles mr-1'></i>${item.Innovation}</p>`
+              : ""
+          }`;
+        return card;
+      }
+
+      function renderRolePanel(version, role, mount) {
+        if (!mount) return;
+        const items = currentIndex[version]?.[role] || [];
+        mount.innerHTML = ""; // Clear previous cards
+        if (items.length === 0) {
+          mount.innerHTML = `<div class='text-xs text-slate-400 text-center py-6'>No features for ${role}</div>`;
+          return;
+        }
+        const grid = document.createElement("div");
+        grid.className = "grid grid-cols-1 sm:grid-cols-2 gap-3";
+        items.forEach((it) => grid.appendChild(featureCard(it)));
+        mount.appendChild(grid);
+
+        document
+          .querySelectorAll(`#versionContent button.role-tab`)
+          .forEach((btn) => {
+            btn.classList.toggle(
+              "border-indigo-300",
+              btn.dataset.role === role
+            );
+            btn.classList.toggle("bg-indigo-50", btn.dataset.role === role);
+            btn.classList.toggle("shadow", btn.dataset.role === role);
+            btn.classList.toggle("border-slate-200", btn.dataset.role !== role);
+            btn.classList.toggle("bg-white", btn.dataset.role !== role);
+          });
+      }
+
+      function renderUI() {
+        // --- Render Left Panel (Version Buttons) ---
+        versionList.innerHTML = "";
+        VERSIONS.forEach((version) => {
+          const rolesPresent = Object.keys(currentIndex[version] || {});
+          const count = rolesPresent.reduce(
+            (acc, r) => acc + (currentIndex[version][r]?.length || 0),
+            0
+          );
+          const btn = document.createElement("button");
+          btn.className = `version-btn w-full text-left flex items-center justify-between gap-3 px-4 py-3 rounded-2xl border bg-white border-slate-200 hover:border-indigo-300 hover:shadow transition-all`;
+          btn.innerHTML = `
+            <span class="font-semibold">${version}</span>
+            <span class="text-xs text-slate-500">${count} feature${
+            count !== 1 ? "s" : ""
+          }</span>`;
+          if (count === 0) {
+            btn.classList.add("opacity-50", "cursor-not-allowed");
+          } else {
+            btn.addEventListener("click", () => {
+              activeVersion = version;
+              renderUI();
+            });
+          }
+          if (version === activeVersion) {
+            btn.classList.add("active");
+          }
+          versionList.appendChild(btn);
+        });
+
+        // --- Render Right Panel (Active Version Content) ---
+        versionContent.innerHTML = "";
+        if (
+          !activeVersion ||
+          Object.keys(currentIndex[activeVersion] || {}).length === 0
+        ) {
+          versionContent.innerHTML = `<div class="rounded-2xl border border-slate-200 bg-white p-6 text-center text-sm text-slate-500 min-h-[120px] flex items-center justify-center">Select a version to see its features.</div>`;
+          return;
+        }
+
+        const rolesInActiveVersion = Object.keys(currentIndex[activeVersion]);
+        const firstRole = ROLE_ORDER.find((r) =>
+          rolesInActiveVersion.includes(r)
+        );
+
+        const panel = document.createElement("div");
+        panel.className =
+          "rounded-2xl border border-slate-200 bg-white p-3 space-y-3";
+
+        const roleTabsContainer = document.createElement("div");
+        roleTabsContainer.className = "flex flex-wrap gap-2";
+
+        const cardContainer = document.createElement("div");
+        cardContainer.className = "min-h-[120px]";
+
+        ROLE_ORDER.forEach((role) => {
+          const exists = rolesInActiveVersion.includes(role);
+          const btn = document.createElement("button");
+          btn.className = `role-tab inline-flex items-center gap-2 px-3 py-2 rounded-xl border text-sm`;
+
+          if (exists) {
+            btn.classList.add(
+              "border-slate-200",
+              "bg-white",
+              "hover:border-indigo-300",
+              "hover:shadow"
+            );
+            btn.addEventListener("click", () =>
+              renderRolePanel(activeVersion, role, cardContainer)
+            );
+          } else {
+            btn.classList.add(
+              "border-slate-200",
+              "text-slate-400",
+              "bg-slate-50",
+              "cursor-not-allowed"
+            );
+          }
+
+          btn.dataset.role = role;
+          btn.innerHTML = `<i class="fa-solid ${
+            roleIcons[role] || "fa-circle-user"
+          } ${!exists ? "opacity-50" : ""}"></i><span>${role}</span>`;
+          roleTabsContainer.appendChild(btn);
+        });
+
+        panel.appendChild(roleTabsContainer);
+        panel.appendChild(cardContainer);
+        versionContent.appendChild(panel);
+
+        if (firstRole) {
+          renderRolePanel(activeVersion, firstRole, cardContainer);
+        }
+      }
+
+      // --- Main Application Logic ---
+      async function initialize() {
+        try {
+          const response = await fetch(
+            "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLgG3bwQwluniFX3NwsgeSroLjXQK6x1jy11JraAVfPtWRT_pbyZsqJd48w9j_VmcqN3TlX33y0_rLX_ZHlOS4K0D-WfuFao6Ixqv6pEp6_BdnfgtI-bTYVYUPXzwljOYa1fkzdmc6bXPHnNeiCfV3JPY8ajDhowIIOa7TNCYrmc87K4YqDs4hUdfaNWjI7WtQenh56rIc-_VOcLI_P1MiXfGbXQnvI6Uv-5wsT_xbgl_Gz72-idoi3nM3E3QS26Svc4tSelkJ0YKsP8S31YiiTtfoIYqg&lib=MuiWSqrUB3dQcVGv8-AhtGYwWGXUWTtSI"
+          );
+          if (!response.ok)
+            throw new Error(`HTTP error! status: ${response.status}`);
+          const data = await response.json();
+          roadmapItems = data.items;
+
+          // Process data and render the UI
+          currentIndex = buildIndex(roadmapItems);
+          activeVersion =
+            VERSIONS.find(
+              (v) => Object.keys(currentIndex[v] || {}).length > 0
+            ) || null;
+          renderUI();
+        } catch (error) {
+          console.error("Could not fetch or process roadmap data:", error);
+          versionContent.innerHTML = `<div class="rounded-2xl border border-dashed border-red-300 bg-red-50 text-red-700 p-6 text-center"><strong>Error loading roadmap data.</strong><br>Please check if temp.json exists and is a valid JSON file.</div>`;
+        }
+      }
+
+      initialize();
+    </script>
+  </body>
+</html>

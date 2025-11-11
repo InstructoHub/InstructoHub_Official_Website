@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Primary Meta Tags -->
+    <title>Contact Us | InstructoHub</title>
+    <meta name="title" content="Contact Us | InstructoHub" />
+    <meta
+      name="description"
+      content="Get in touch with InstructoHub. Reach out to us for inquiries about our AI-First LMS, AI Suite, pricing, or partnerships. We're here to help transform your learning platform."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#fdf4f0",
+                100: "#fce8e0",
+                200: "#f9d1c1",
+                300: "#f5b9a2",
+                400: "#f09c7d",
+                500: "#e16b3b",
+                600: "#d15a2b",
+                700: "#b44a22",
+                800: "#933c1d",
+                900: "#78301a",
+                DEFAULT: "#e16b3b",
+              },
+              secondary: {
+                50: "#e7eaeb",
+                100: "#cfd5d7",
+                200: "#a0acb0",
+                300: "#728389",
+                400: "#435a62",
+                500: "#1b3942",
+                600: "#18333b",
+                700: "#152b32",
+                800: "#122229",
+                900: "#0e1a20",
+                DEFAULT: "#1b3942",
+              },
+              success: { DEFAULT: "#4CAF50", dark: "#3a8c3f" },
+              danger: { DEFAULT: "#EF4444", dark: "#B91C1C" },
+              neutral: {
+                50: "#fafafa",
+                100: "#f5f5f5",
+                200: "#e5e5e5",
+                300: "#d4d4d4",
+                400: "#a3a3a3",
+                500: "#737373",
+                600: "#525252",
+                700: "#404040",
+                800: "#262626",
+                900: "#171717",
+              },
+              background: { page: "#f7f7f7", card: "#ffffff" },
+              border: { DEFAULT: "#e5e7eb", accent: "#e16b3b" },
+              text: {
+                primary: "#1b3942",
+                secondary: "#4b5563",
+                muted: "#6b7280",
+                light: "#ffffff",
+              },
+            },
+            animation: { fadeIn: "fadeIn 0.5s ease-out forwards" },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0", transform: "translateY(10px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      fetch("/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+          lucide.createIcons();
+          const header = document.getElementById("header");
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+              header.classList.add("scrolled");
+            } else {
+              header.classList.remove("scrolled");
+            }
+          });
+
+          // Mobile menu toggle
+          window.toggleMobileMenu = function () {
+            const menu = document.getElementById("mobile-menu");
+            const menuIcon = document.getElementById("menu-icon");
+            const closeIcon = document.getElementById("close-icon");
+            menu.classList.toggle("hidden");
+            menuIcon.classList.toggle("hidden");
+            closeIcon.classList.toggle("hidden");
+          };
+        });
+      fetch("/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+          lucide.createIcons();
+          const yearEl = document.getElementById("current-year");
+          if (yearEl) yearEl.textContent = new Date().getFullYear();
+        });
+    </script>
+    <style>
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: #e16b3b;
+        box-shadow: 0 0 0 3px rgba(225, 107, 59, 0.1);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col text-secondary bg-background-page">
+    <div class="w-full">
+      <div class="h-12 md:block hidden"></div>
+      <div class="h-16"></div>
+    </div>
+
+    <div id="header-placeholder"></div>
+
+    <main class="flex-1">
+      <!-- Hero Section -->
+      <section class="relative overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-brand/10 via-brand/5 to-secondary/10"
+        ></div>
+        <div class="relative container mx-auto px-4 py-20">
+          <div class="max-w-3xl mx-auto text-center">
+            <span
+              class="inline-flex items-center gap-2 text-brand font-semibold mb-4"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+              Get in Touch
+            </span>
+            <h1 class="text-5xl md:text-6xl text-secondary tracking-tight mb-6">
+              We'd love to hear from you
+            </h1>
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto text-secondary-700 leading-relaxed">
+              Have questions about our AI-First LMS or AI Suite? Want to schedule
+              a demo? We're here to help transform your learning platform.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            <!-- Contact Information Cards -->
+            <div class="lg:col-span-1 space-y-6">
+              <div>
+                <h2 class="text-3xl font-bold text-secondary mb-2">
+                  Let's Connect
+                </h2>
+                <p class="text-secondary-600 mb-8">
+                  Reach out to us through any of these channels. We typically
+                  respond within 24 hours.
+                </p>
+              </div>
+
+              <!-- Email Card -->
+              <div
+                class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-neutral-200"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="bg-brand-50 p-3 rounded-lg flex-shrink-0"
+                  >
+                    <i data-lucide="mail" class="w-6 h-6 text-brand"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-secondary mb-2">Email Us</h3>
+                    <p class="text-secondary-600 mb-3">
+                      Send us an email anytime!
+                    </p>
+                    <a
+                      href="mailto:info@instructohub.com"
+                      class="text-brand hover:text-brand-600 transition-colors font-medium"
+                    >
+                      info@instructohub.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone Card -->
+              <div
+                class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-neutral-200"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="bg-brand-50 p-3 rounded-lg flex-shrink-0"
+                  >
+                    <i data-lucide="phone" class="w-6 h-6 text-brand"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-secondary mb-2">Call Us</h3>
+                    <p class="text-secondary-600 mb-3">
+                      Mon - Fri, 9:00 AM - 6:00 PM IST
+                    </p>
+                    <a
+                      href="tel:+919910093433"
+                      class="text-brand hover:text-brand-600 transition-colors font-medium"
+                    >
+                      +91 99100 93433
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Location Card -->
+              <div
+                class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-neutral-200"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="bg-brand-50 p-3 rounded-lg flex-shrink-0"
+                  >
+                    <i data-lucide="map-pin" class="w-6 h-6 text-brand"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-secondary mb-2">Visit Us</h3>
+                    <p class="text-secondary-600 mb-3">
+                      Our office location
+                    </p>
+                    <p class="text-secondary-700 font-medium">
+                      6th Floor, C-56 A/12, Sector 62, Noida, Uttar Pradesh 201301, India. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Media -->
+              <div class="bg-white rounded-lg p-6 shadow-md border border-neutral-200">
+                <h3 class="font-semibold text-secondary mb-4">Follow Us</h3>
+                <div class="flex gap-4">
+                  <a
+                    href="https://x.com/InstructoH75197"
+                    target="_blank"
+                    class="bg-neutral-100 p-3 rounded-lg text-secondary-700 hover:bg-brand hover:text-white transition-colors"
+                    aria-label="Twitter"
+                  >
+                    <i data-lucide="twitter" class="w-5 h-5"></i>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/people/InstructoHub/61572722776722/"
+                    target="_blank"
+                    class="bg-neutral-100 p-3 rounded-lg text-secondary-700 hover:bg-brand hover:text-white transition-colors"
+                    aria-label="Facebook"
+                  >
+                    <i data-lucide="facebook" class="w-5 h-5"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/instructohub"
+                    target="_blank"
+                    class="bg-neutral-100 p-3 rounded-lg text-secondary-700 hover:bg-brand hover:text-white transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@Instructo-Hub"
+                    target="_blank"
+                    class="bg-neutral-100 p-3 rounded-lg text-secondary-700 hover:bg-brand hover:text-white transition-colors"
+                    aria-label="Youtube"
+                  >
+                    <i data-lucide="youtube" class="w-5 h-5"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="lg:col-span-2">
+              <div class="bg-white rounded-lg shadow-lg p-8 md:p-10 border border-neutral-200">
+                <h2 class="text-3xl font-bold text-secondary mb-2">
+                  Send us a Message
+                </h2>
+                <p class="text-secondary-600 mb-8">
+                  Fill out the form below and we'll get back to you as soon as
+                  possible.
+                </p>
+
+                <form
+                  class="contact-form space-y-6"
+                  onsubmit="handleSubmit(event)"
+                >
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        for="name"
+                        class="block text-sm font-medium text-secondary mb-2"
+                      >
+                        Full Name <span class="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        for="email"
+                        class="block text-sm font-medium text-secondary mb-2"
+                      >
+                        Email Address <span class="text-danger">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        for="phone"
+                        class="block text-sm font-medium text-secondary mb-2"
+                      >
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary"
+                        placeholder="+91 12345 67890"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        for="subject"
+                        class="block text-sm font-medium text-secondary mb-2"
+                      >
+                        Subject <span class="text-danger">*</span>
+                      </label>
+                      <select
+                        id="subject"
+                        name="subject"
+                        required
+                        class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary bg-white"
+                      >
+                        <option value="">Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="demo">Request a Demo</option>
+                        <option value="pricing">Pricing Information</option>
+                        <option value="support">Technical Support</option>
+                        <option value="partnership">Partnership Opportunity</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      for="message"
+                      class="block text-sm font-medium text-secondary mb-2"
+                    >
+                      Message <span class="text-danger">*</span>
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="6"
+                      required
+                      class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary resize-none"
+                      placeholder="Tell us how we can help you..."
+                    ></textarea>
+                  </div>
+
+                  <div class="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="consent"
+                      name="consent"
+                      required
+                      class="mt-1 w-4 h-4 text-brand border-neutral-300 rounded focus:ring-brand"
+                    />
+                    <label
+                      for="consent"
+                      class="text-sm text-secondary-600"
+                    >
+                      I agree to be contacted by InstructoHub regarding my
+                      inquiry. <span class="text-danger">*</span>
+                    </label>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="w-full md:w-auto px-8 py-3 bg-brand text-white font-semibold rounded-lg hover:bg-brand-600 transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                  >
+                    <span>Send Message</span>
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                  </button>
+                </form>
+
+                <div
+                  id="form-message"
+                  class="mt-6 hidden p-4 rounded-lg"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Office Hours Section -->
+      <section class="py-16 bg-white border-t border-neutral-200">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold text-secondary mb-4">
+                Business Hours
+              </h2>
+              <p class="text-secondary-600">
+                We're here to help during these hours
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="text-center p-6 bg-neutral-50 rounded-lg">
+                <i data-lucide="clock" class="w-8 h-8 text-brand mx-auto mb-4"></i>
+                <h3 class="font-semibold text-secondary mb-2">Monday - Friday</h3>
+                <p class="text-secondary-600">9:00 AM - 6:00 PM IST</p>
+              </div>
+              <div class="text-center p-6 bg-neutral-50 rounded-lg">
+                <i data-lucide="clock" class="w-8 h-8 text-brand mx-auto mb-4"></i>
+                <h3 class="font-semibold text-secondary mb-2">Saturday</h3>
+                <p class="text-secondary-600">10:00 AM - 2:00 PM IST</p>
+              </div>
+              <div class="text-center p-6 bg-neutral-50 rounded-lg">
+                <i data-lucide="calendar-x" class="w-8 h-8 text-brand mx-auto mb-4"></i>
+                <h3 class="font-semibold text-secondary mb-2">Sunday</h3>
+                <p class="text-secondary-600">Closed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Initialize icons
+      lucide.createIcons();
+
+      // Form submission handler
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        const form = event.target;
+        const formData = new FormData(form);
+        const messageDiv = document.getElementById("form-message");
+
+        // Here you would typically send the form data to your server
+        // For now, we'll show a success message
+        messageDiv.classList.remove("hidden");
+        messageDiv.classList.remove("bg-danger-50", "text-danger", "border-danger");
+        messageDiv.classList.add("bg-success-50", "text-success-dark", "border", "border-success");
+        messageDiv.innerHTML = `
+          <div class="flex items-center gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5"></i>
+            <p class="font-medium">Thank you for your message! We'll get back to you soon.</p>
+          </div>
+        `;
+        lucide.createIcons();
+
+        // Reset form
+        form.reset();
+
+        // Scroll to message
+        messageDiv.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+        // You can integrate with your backend API here
+        // Example:
+        // fetch('/api/contact', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify(Object.fromEntries(formData))
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //   // Handle success
+        // })
+        // .catch(error => {
+        //   // Handle error
+        // });
+      }
+
+      // Re-initialize icons after header/footer loads
+      setTimeout(() => {
+        lucide.createIcons();
+      }, 500);
+    </script>
+  </body>
+</html>
+

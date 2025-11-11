@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platform Features | InstructoHub</title>
+    <meta name="title" content="Platform Features | InstructoHub" />
+    <meta
+      name="description"
+      content="A deep dive into the powerful features of the AI-First LMS, organized by category. Explore tools for Admin, Content, AI, Assessment, and more."
+    />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-17282898351"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-17282898351");
+      gtag("event", "conversion", {
+        send_to: "AW-17282898351/sRZACIWq6eUaEK-zkLFA",
+        value: 1.0,
+        currency: "INR",
+      });
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#fdf4f0",
+                100: "#fce8e0",
+                200: "#f9d1c1",
+                300: "#f5b9a2",
+                400: "#f09c7d",
+                500: "#e16b3b",
+                600: "#d15a2b",
+                700: "#b44a22",
+                800: "#933c1d",
+                900: "#78301a",
+                DEFAULT: "#e16b3b",
+              },
+              secondary: {
+                50: "#e7eaeb",
+                100: "#cfd5d7",
+                200: "#a0acb0",
+                300: "#728389",
+                400: "#435a62",
+                500: "#1b3942",
+                600: "#18333b",
+                700: "#152b32",
+                800: "#122229",
+                900: "#0e1a20",
+                DEFAULT: "#1b3942",
+              },
+              success: {
+                DEFAULT: "#4CAF50",
+                dark: "#3a8c3f",
+              },
+              danger: {
+                DEFAULT: "#EF4444",
+                dark: "#B91C1C",
+              },
+              neutral: {
+                50: "#fafafa",
+                100: "#f5f5f5",
+                200: "#e5e5e5",
+                300: "#d4d4d4",
+                400: "#a3a3a3",
+                500: "#737373",
+                600: "#525252",
+                700: "#404040",
+                800: "#262626",
+                900: "#171717",
+              },
+              background: {
+                page: "#f7f7f7",
+                card: "#ffffff",
+              },
+              border: {
+                DEFAULT: "#e5e7eb",
+                accent: "#e16b3b",
+              },
+              text: {
+                primary: "#1b3942",
+                secondary: "#4b5563",
+                muted: "#6b7280",
+                light: "#ffffff",
+              },
+            },
+            animation: {
+              fadeIn: "fadeIn 0.5s ease-out forwards",
+              // Added spin animation for the loader
+              spin: "spin 1s linear infinite",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": {
+                  opacity: "0",
+                  transform: "translateY(10px)",
+                },
+                "100%": {
+                  opacity: "1",
+                  transform: "translateY(0)",
+                },
+              },
+              // Added spin keyframes for the loader
+              spin: {
+                from: { transform: "rotate(0deg)" },
+                to: { transform: "rotate(360deg)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+          lucide.createIcons();
+          const header = document.getElementById("header");
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+              header.classList.add("scrolled");
+            } else {
+              header.classList.remove("scrolled");
+            }
+          });
+        });
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+          lucide.createIcons();
+          document.getElementById("current-year").textContent =
+            new Date().getFullYear();
+        });
+    </script>
+    <style>
+      /* Ensure the page loader is on top of everything */
+      #page-loader {
+        z-index: 50; /* Tailwind z-50 */
+      }
+      /* Custom border for the spinner, using Tailwind classes but applying directly if not using a build process */
+      .loader-spinner {
+        border-top-color: #e16b3b; /* brand-500 */
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col text-secondary">
+    <div
+      id="page-loader"
+      class="fixed inset-0 bg-white flex items-center justify-center transition-opacity duration-300"
+    >
+      <div
+        class="loader-spinner w-16 h-16 border-4 rounded-full animate-spin"
+      ></div>
+    </div>
+    <div class="w-full">
+      <div class="h-12 md:block hidden"></div>
+      <div class="h-16"></div>
+    </div>
+    <div id="header-placeholder"></div>
+    <main id="main-content" class="hidden"> 
+      <section id="all-features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="grid lg:grid-cols-4 gap-12 lg:gap-16 items-start">
+            <aside class="lg:col-span-1 sticky top-28 hidden lg:block">
+              <h3 class="text-lg font-semibold text-secondary mb-4">
+                Jump to Category
+              </h3>
+              <nav id="sidebar-nav" class="flex flex-col space-y-2"></nav>
+            </aside>
+            <div class="lg:col-span-3">
+              <div id="features-container" class="space-y-20"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const closeIcon = document.getElementById("close-icon");
+        if (mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove("hidden");
+          menuIcon.classList.add("hidden");
+          closeIcon.classList.remove("hidden");
+        } else {
+          mobileMenu.classList.add("hidden");
+          menuIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
+      });
+      function slugify(text) {
+        return text
+          .toLowerCase()
+          .replace(/ & /g, "-")
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+      }
+      function createFeatureItem(feature) {
+        return `
+            <div class="feature-item">
+              <h4 class="text-lg font-semibold text-secondary mb-1 flex items-center gap-2">
+                <i data-lucide="${feature.icon}" class="w-5 h-5 text-brand"></i>
+                ${feature.name}
+              </h4>
+              <p class="text-secondary/70 pl-7">
+                ${feature.description}
+              </p>
+            </div>
+        `;
+      }
+      function createModule(module) {
+        const featuresHtml = module.features.map(createFeatureItem).join("");
+        return `
+            <div>
+              <h3 class="text-2xl font-semibold text-secondary mb-6 border-b border-neutral-200 pb-3">
+                ${module.title}
+              </h3>
+              <div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+                ${featuresHtml}
+              </div>
+            </div>
+        `;
+      }
+      function createCategoryArticle(category) {
+        const slug = slugify(category.title);
+        const iconMap = {
+          "Administration & Management": "server-cog",
+          "Content & Course Management": "book-open-check",
+          "AI-Powered Suite": "sparkles",
+          "Assessment & Grading": "graduation-cap",
+          "Communication & Collaboration": "message-circle",
+          "Analytics & Reporting": "pie-chart",
+          "User Experience & Integrations": "globe-2",
+        };
+        const categoryIcon = iconMap[category.title] || "folder";
+        const modulesHtml = category.modules.map(createModule).join("");
+        return `
+            <article id="${slug}">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="bg-brand/10 text-brand p-3 rounded-lg inline-block">
+                  <i data-lucide="${categoryIcon}" class="w-8 h-8"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-secondary">
+                  ${category.title}
+                </h2>
+              </div>
+              <p class="text-lg text-secondary/70 mb-10">
+                ${category.description}
+              </p>
+              <div class="space-y-12">
+                ${modulesHtml}
+              </div>
+            </article>
+        `;
+      }
+      function createSidebarLink(category) {
+        const slug = slugify(category.title);
+        return `
+            <a href="#${slug}" class="font-medium text-secondary/70 hover:text-brand border-l-2 border-transparent hover:border-brand pl-3 transition-all">
+              ${category.title}
+            </a>
+        `;
+      }
+      
+      // Function to hide the loader and show the content
+      function hideLoaderAndShowContent() {
+        document.getElementById("page-loader").classList.add("opacity-0");
+        // Wait for the opacity transition to complete before setting display: none
+        setTimeout(() => {
+            document.getElementById("page-loader").classList.add("hidden");
+            document.getElementById("main-content").classList.remove("hidden");
+        }, 300); // 300ms matches the transition duration
+      }
+      
+      async function loadFeatures() {
+        const apiUrl =
+          "https://script.google.com/macros/s/AKfycbySeZNvKzuOOpfVPDwi5sU7-qK6NNM6W0_NDkvY1GcAnhGVaiw9ALuJm5bKwwK8qrUEUw/exec";
+        const featuresContainer = document.getElementById("features-container");
+        const sidebarNav = document.getElementById("sidebar-nav");
+        try {
+          const response = await fetch(apiUrl);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+          const categories = data.categories;
+          featuresContainer.innerHTML = "";
+          sidebarNav.innerHTML = "";
+          const mainContentHtml = categories
+            .map(createCategoryArticle)
+            .join("");
+          featuresContainer.innerHTML = mainContentHtml;
+          const sidebarHtml = categories.map(createSidebarLink).join("");
+          sidebarNav.innerHTML = sidebarHtml;
+          lucide.createIcons();
+          initScrollInteractions();
+          
+          // 2. Hide the loader on successful load
+          hideLoaderAndShowContent();
+          
+        } catch (error) {
+          console.error("Error loading features data:", error);
+          featuresContainer.innerHTML =
+            '<p class="text-danger-dark text-center text-xl">Failed to load features. Please try again later.</p>';
+            
+          // 3. Hide the loader even on failure
+          hideLoaderAndShowContent();
+        }
+      }
+      function initScrollInteractions() {
+        const sections = document.querySelectorAll("article[id]");
+        const navLinks = document.querySelectorAll("aside nav a");
+        if (window.featureObserver) {
+          sections.forEach((section) =>
+            window.featureObserver.unobserve(section)
+          );
+        }
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                navLinks.forEach((link) => {
+                  link.classList.remove("text-brand", "border-brand");
+                  link.classList.add("text-secondary/70", "border-transparent");
+                  if (link.getAttribute("href") === `#${entry.target.id}`) {
+                    link.classList.add("text-brand", "border-brand");
+                    link.classList.remove(
+                      "text-secondary/70",
+                      "border-transparent"
+                    );
+                  }
+                });
+              }
+            });
+          },
+          { rootMargin: "-30% 0px -60% 0px" }
+        );
+        window.featureObserver = observer;
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+        navLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+              const offset = 100;
+              const topPos =
+                target.getBoundingClientRect().top + window.scrollY - offset;
+              window.scrollTo({
+                top: topPos,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      }
+      document.addEventListener("DOMContentLoaded", loadFeatures);
+    </script>
+    <script></script>
+  </body>
+</html>

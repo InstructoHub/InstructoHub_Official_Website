@@ -1,666 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Primary Meta Tags -->
-    <title>Create Your LMS | InstructoHub</title>
-    <meta name="title" content="Create Your LMS | InstructoHub" />
-    <meta
-      name="description"
-      content="Get your own AI-first LMS in minutes. Configure your domain, branding, and admin details to launch a secure, scalable learning platform powered by InstructoHub."
-    />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-17282898351"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "AW-17282898351");
-      gtag("event", "conversion", {
-        send_to: "AW-17282898351/sRZACIWq6eUaEK-zkLFA",
-        value: 1.0,
-        currency: "INR",
-      });
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                50: "#fdf4f0",
-                100: "#fce8e0",
-                200: "#f9d1c1",
-                300: "#f5b9a2",
-                400: "#f09c7d",
-                500: "#e16b3b", // Primary brand color
-                600: "#d15a2b",
-                700: "#b44a22",
-                800: "#933c1d",
-                900: "#78301a",
-                DEFAULT: "#e16b3b",
-              },
-              secondary: {
-                50: "#e7eaeb",
-                100: "#cfd5d7",
-                200: "#a0acb0",
-                300: "#728389",
-                400: "#435a62",
-                500: "#1b3942", // Secondary brand color
-                600: "#18333b",
-                700: "#152b32",
-                800: "#122229",
-                900: "#0e1a20",
-                DEFAULT: "#1b3942",
-              },
-              success: {
-                DEFAULT: "#4CAF50",
-                dark: "#3a8c3f",
-              },
-              danger: {
-                DEFAULT: "#EF4444",
-                dark: "#B91C1C",
-              },
-              neutral: {
-                50: "#fafafa",
-                100: "#f5f5f5",
-                200: "#e5e5e5",
-                300: "#d4d4d4",
-                400: "#a3a3a3",
-                500: "#737373",
-                600: "#525252",
-                700: "#404040",
-                800: "#262626",
-                900: "#171717",
-              },
-              background: {
-                page: "#f7f7f7",
-                card: "#ffffff",
-              },
-              border: {
-                DEFAULT: "#e5e7eb",
-                accent: "#e16b3b",
-              },
-              text: {
-                primary: "#1b3942",
-                secondary: "#4b5563",
-                muted: "#6b7280",
-                light: "#ffffff",
-              },
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Primary Meta Tags -->
+  <title>Create Your LMS | InstructoHub</title>
+  <meta name="title" content="Create Your LMS | InstructoHub" />
+  <meta name="description"
+    content="Get your own AI-first LMS in minutes. Configure your domain, branding, and admin details to launch a secure, scalable learning platform powered by InstructoHub." />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8GYGC3JQPD');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#fdf4f0",
+              100: "#fce8e0",
+              200: "#f9d1c1",
+              300: "#f5b9a2",
+              400: "#f09c7d",
+              500: "#e16b3b", // Primary brand color
+              600: "#d15a2b",
+              700: "#b44a22",
+              800: "#933c1d",
+              900: "#78301a",
+              DEFAULT: "#e16b3b",
             },
-            animation: {
-              fadeIn: "fadeIn 0.5s ease-out forwards",
+            secondary: {
+              50: "#e7eaeb",
+              100: "#cfd5d7",
+              200: "#a0acb0",
+              300: "#728389",
+              400: "#435a62",
+              500: "#1b3942", // Secondary brand color
+              600: "#18333b",
+              700: "#152b32",
+              800: "#122229",
+              900: "#0e1a20",
+              DEFAULT: "#1b3942",
             },
-            keyframes: {
-              fadeIn: {
-                "0%": {
-                  opacity: "0",
-                  transform: "translateY(10px)",
-                },
-                "100%": {
-                  opacity: "1",
-                  transform: "translateY(0)",
-                },
+            success: {
+              DEFAULT: "#4CAF50",
+              dark: "#3a8c3f",
+            },
+            danger: {
+              DEFAULT: "#EF4444",
+              dark: "#B91C1C",
+            },
+            neutral: {
+              50: "#fafafa",
+              100: "#f5f5f5",
+              200: "#e5e5e5",
+              300: "#d4d4d4",
+              400: "#a3a3a3",
+              500: "#737373",
+              600: "#525252",
+              700: "#404040",
+              800: "#262626",
+              900: "#171717",
+            },
+            background: {
+              page: "#f7f7f7",
+              card: "#ffffff",
+            },
+            border: {
+              DEFAULT: "#e5e7eb",
+              accent: "#e16b3b",
+            },
+            text: {
+              primary: "#1b3942",
+              secondary: "#4b5563",
+              muted: "#6b7280",
+              light: "#ffffff",
+            },
+          },
+          animation: {
+            fadeIn: "fadeIn 0.5s ease-out forwards",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(10px)",
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)",
               },
             },
           },
         },
-      };
-    </script>
-    <script>
-      fetch("header.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("header-placeholder").innerHTML = data;
-          lucide.createIcons();
-          const header = document.getElementById("header");
-          window.addEventListener("scroll", () => {
-            if (window.scrollY > 10) {
-              header.classList.add("scrolled");
-            } else {
-              header.classList.remove("scrolled");
-            }
-          });
+      },
+    };
+  </script>
+  <script>
+    fetch("header.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        lucide.createIcons();
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
         });
-      fetch("footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("footer-placeholder").innerHTML = data;
-          lucide.createIcons();
-          document.getElementById("current-year").textContent =
-            new Date().getFullYear();
-        });
-    </script>
-  </head>
-
-  <body class="min-h-screen flex flex-col text-secondary">
-    <div class="w-full">
-      <div class="h-12 md:block hidden"></div>
-      <div class="h-16"></div>
-    </div>
-    <div id="header-placeholder"></div>
-    <div
-      class="text-secondary fixed inset-0 bg-gradient-to-br from-secondary-800 via-secondary-700 to-secondary-900 bg-opacity-95 flex flex-col items-center justify-center z-50 backdrop-blur-sm hidden"
-      id="creation-loader"
-    >
-      <div
-        class="bg-background-card rounded-xl shadow-2xl p-6 w-full max-w-md text-center relative overflow-hidden"
-      >
-        <div
-          class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-400 via-brand-500 to-brand-600"
-          id="progress-bar"
-        ></div>
-        <div class="relative">
-          <div class="w-16 h-16 mx-auto mb-4 relative">
-            <div
-              class="absolute inset-0 rounded-full bg-gradient-to-r from-brand-400 to-brand-600 animate-spin opacity-20"
-            ></div>
-            <div
-              class="absolute inset-2 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 animate-pulse flex items-center justify-center"
-            >
-              <i data-lucide="server" class="w-6 h-6 text-white"></i>
-            </div>
-          </div>
-          <h3
-            class="text-2xl font-bold bg-gradient-to-r from-brand-600 to-brand-500 bg-clip-text text-transparent mb-2"
-          >
-            Creating Your InstructoHub LMS
-          </h3>
+      });
+    fetch("footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+        lucide.createIcons();
+        document.getElementById("current-year").textContent =
+          new Date().getFullYear();
+      });
+  </script>
+</head>
+<body class="min-h-screen flex flex-col text-secondary">
+  <div class="w-full">
+    <div class="h-12 md:block hidden"></div>
+    <div class="h-16"></div>
+  </div>
+  <div id="header-placeholder"></div>
+  <div
+    class="text-secondary fixed inset-0 bg-gradient-to-br from-secondary-800 via-secondary-700 to-secondary-900 bg-opacity-95 flex flex-col items-center justify-center z-50 backdrop-blur-sm hidden"
+    id="creation-loader">
+    <div class="bg-background-card rounded-xl shadow-2xl p-6 w-full max-w-md text-center relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-400 via-brand-500 to-brand-600"
+        id="progress-bar"></div>
+      <div class="relative">
+        <div class="w-16 h-16 mx-auto mb-4 relative">
           <div
-            class="flex items-center justify-center mb-4 p-3 bg-neutral-50 rounded-lg"
-          >
-            <div
-              class="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-brand-500 to-brand-600 rounded-full mr-2 animate-pulse"
-              id="step-icon"
-            >
-              <i data-lucide="zap" class="w-4 h-4 text-white"></i>
-            </div>
-            <p class="text-text-secondary text-sm" id="step-message">
-              Getting your information processed
-            </p>
+            class="absolute inset-0 rounded-full bg-gradient-to-r from-brand-400 to-brand-600 animate-spin opacity-20">
           </div>
           <div
-            class="w-full bg-neutral-200 rounded-full h-2 mb-3 overflow-hidden"
-          >
-            <div
-              class="bg-gradient-to-r from-brand-400 via-brand-500 to-brand-600 h-2 rounded-full transition-all duration-300 ease-out relative"
-              id="progress-fill"
-            >
-              <div
-                class="absolute inset-0 bg-white opacity-30 animate-pulse"
-              ></div>
-            </div>
+            class="absolute inset-2 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 animate-pulse flex items-center justify-center">
+            <i data-lucide="server" class="w-6 h-6 text-white"></i>
           </div>
-          <div class="flex justify-between text-xs text-text-muted mb-3">
-            <span id="progress-percent">0% Complete</span>
-            <span id="time-remaining">~70s remaining</span>
+        </div>
+        <h3 class="text-2xl font-bold bg-gradient-to-r from-brand-600 to-brand-500 bg-clip-text text-transparent mb-2">
+          Creating Your InstructoHub LMS
+        </h3>
+        <div class="flex items-center justify-center mb-4 p-3 bg-neutral-50 rounded-lg">
+          <div
+            class="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-brand-500 to-brand-600 rounded-full mr-2 animate-pulse"
+            id="step-icon">
+            <i data-lucide="zap" class="w-4 h-4 text-white"></i>
           </div>
-          <div class="grid grid-cols-8 gap-1 mb-4" id="step-indicators">
-            <div class="h-1 rounded-full bg-neutral-200"></div>
-            <div class="h-1 rounded-full bg-neutral-200"></div>
-            <div class="h-1 rounded-full bg-neutral-200"></div>
-            <div class="h-1 rounded-full bg-neutral-200"></div>
-            <div class="h-1 rounded-full bg-neutral-200"></div>
-            <div class="h-1 rounded-full bg-neutral-200"></div>
-            <div class="h-1 rounded-full bg-neutral-200"></div>
-            <div class="h-1 rounded-full bg-neutral-200"></div>
-          </div>
-          <p class="text-xs text-text-muted leading-relaxed">
-            Please keep this window open. We're setting up your complete
-            InstructoHub environment with database, plugins, and security
-            configurations. This process typically takes 60-80 seconds.
+          <p class="text-text-secondary text-sm" id="step-message">
+            Getting your information processed
           </p>
         </div>
+        <div class="w-full bg-neutral-200 rounded-full h-2 mb-3 overflow-hidden">
+          <div
+            class="bg-gradient-to-r from-brand-400 via-brand-500 to-brand-600 h-2 rounded-full transition-all duration-300 ease-out relative"
+            id="progress-fill">
+            <div class="absolute inset-0 bg-white opacity-30 animate-pulse"></div>
+          </div>
+        </div>
+        <div class="flex justify-between text-xs text-text-muted mb-3">
+          <span id="progress-percent">0% Complete</span>
+          <span id="time-remaining">~70s remaining</span>
+        </div>
+        <div class="grid grid-cols-8 gap-1 mb-4" id="step-indicators">
+          <div class="h-1 rounded-full bg-neutral-200"></div>
+          <div class="h-1 rounded-full bg-neutral-200"></div>
+          <div class="h-1 rounded-full bg-neutral-200"></div>
+          <div class="h-1 rounded-full bg-neutral-200"></div>
+          <div class="h-1 rounded-full bg-neutral-200"></div>
+          <div class="h-1 rounded-full bg-neutral-200"></div>
+          <div class="h-1 rounded-full bg-neutral-200"></div>
+          <div class="h-1 rounded-full bg-neutral-200"></div>
+        </div>
+        <p class="text-xs text-text-muted leading-relaxed">
+          Please keep this window open. We're setting up your complete
+          InstructoHub environment with database, plugins, and security
+          configurations. This process typically takes 60-80 seconds.
+        </p>
       </div>
     </div>
-    <main class="text-secondary container mx-auto max-w-4xl py-8">
-      <div
-        class="bg-neutral-100 backdrop-blur-sm p-6 rounded-xl shadow-xl border border-brand-100 relative"
-      >
-        <div
-          class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-400 via-brand-500 to-brand-600"
-        ></div>
-        <div class="text-center mb-8">
-          <p class="text-text-secondary text-xl font-bold max-w-2xl mx-auto">
-            Get your own LMS in minutes. Fill in the details below to launch
-            your professional-grade LMS now.
-          </p>
+  </div>
+  <main class="text-secondary container mx-auto max-w-4xl py-8">
+    <div class="bg-neutral-100 backdrop-blur-sm p-6 rounded-xl shadow-xl border border-brand-100 relative">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-400 via-brand-500 to-brand-600"></div>
+      <div class="text-center mb-8">
+        <p class="text-text-secondary text-xl font-bold max-w-2xl mx-auto">
+          Get your own LMS in minutes. Fill in the details below to launch
+          your professional-grade LMS now.
+        </p>
+      </div>
+      <div class="p-4 mb-6 rounded-xl flex items-start shadow-lg border-l-4 animate-fadeIn hidden" id="status-message">
+        <div class="flex-shrink-0 mr-3">
+          <div class="flex items-center justify-center w-6 h-6 rounded-full" id="status-icon">
+            <i data-lucide="check-circle" class="w-4 h-4 text-white"></i>
+          </div>
         </div>
-        <div
-          class="p-4 mb-6 rounded-xl flex items-start shadow-lg border-l-4 animate-fadeIn hidden"
-          id="status-message"
-        >
-          <div class="flex-shrink-0 mr-3">
+        <div class="flex-grow">
+          <p class="text-sm font-medium" id="status-text"></p>
+        </div>
+        <button onclick="hideStatus()" class="ml-4 text-lg font-bold hover:opacity-70 transition-opacity">
+          ×
+        </button>
+      </div>
+      <form id="lms-form" class="space-y-8">
+        <section>
+          <div class="flex items-start border-b border-brand-100 pb-3 mb-6">
             <div
-              class="flex items-center justify-center w-6 h-6 rounded-full"
-              id="status-icon"
-            >
-              <i data-lucide="check-circle" class="w-4 h-4 text-white"></i>
+              class="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-brand-500 to-brand-600 rounded-lg mr-3 shadow-md">
+              <i data-lucide="globe" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold text-text-primary">
+                LMS Configuration
+              </h2>
+              <p class="text-text-secondary text-sm mt-1">
+                Configure your LMS's basic settings and domain
+              </p>
             </div>
           </div>
-          <div class="flex-grow">
-            <p class="text-sm font-medium" id="status-text"></p>
+          <div class="grid grid-cols-1 gap-4">
+            <div class="group">
+              <label for="subdomain" class="block text-sm font-semibold text-text-primary mb-2">
+                LMS Subdomain <span class="text-danger">*</span>
+              </label>
+              <div class="flex items-center">
+                <input type="text" id="subdomain" name="subdomain" value="sitename" placeholder="e.g., my-learning-site"
+                  required
+                  class="w-full px-3 py-2 border border-neutral-300 rounded-l-lg shadow-sm focus:ring-2 focus:ring-brand-400 focus:border-brand-500 transition-all duration-200 hover:border-neutral-400" />
+                <span
+                  class="inline-flex items-center bg-gradient-to-r from-neutral-100 to-brand-50 px-3 py-2 rounded-r-lg border border-l-0 border-neutral-300 text-text-secondary text-sm font-medium">
+                  .instructohub.com
+                </span>
+              </div>
+              <p class="mt-1 text-sm" id="subdomain-status"></p>
+            </div>
           </div>
-          <button
-            onclick="hideStatus()"
-            class="ml-4 text-lg font-bold hover:opacity-70 transition-opacity"
-          >
-            ×
+        </section>
+        <section>
+          <div class="flex items-start border-b border-brand-100 pb-3 mb-6">
+            <div
+              class="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-brand-500 to-brand-600 rounded-lg mr-3 shadow-md">
+              <i data-lucide="school" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold text-text-primary">
+                Institution Details
+              </h2>
+              <p class="text-text-secondary text-sm mt-1">
+                Customize your learning management system settings
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="md:col-span-2 group">
+              <label for="institution_name" class="block text-sm font-semibold text-text-primary mb-2">
+                Your Institution Name <span class="text-danger">*</span>
+              </label>
+              <input type="text" id="institution_name" name="institution_name" value="My Learning Platform"
+                placeholder="e.g., My Learning Academy" required
+                class="w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm focus:ring-2 focus:ring-brand-400 focus:border-brand-500 transition-all duration-200 hover:border-neutral-400" />
+            </div>
+            <div class="group">
+              <label for="admin_email" class="block text-sm font-semibold text-text-primary mb-2">
+                Admin Email <span class="text-danger">*</span>
+              </label>
+              <input type="email" id="admin_email" name="admin_email" value="admin@example.com"
+                placeholder="admin@yourorganization.com" required
+                class="w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm focus:ring-2 focus:ring-brand-400 focus:border-brand-500 transition-all duration-200 hover:border-neutral-400" />
+            </div>
+            <div class="group">
+              <label for="admin_user" class="block text-sm font-semibold text-text-primary mb-2">
+                Admin Username <span class="text-danger">*</span>
+              </label>
+              <input type="text" id="admin_user" name="admin_user" value="admin" placeholder="Choose a strong username"
+                required
+                class="w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm focus:ring-2 focus:ring-brand-400 focus:border-brand-500 transition-all duration-200 hover:border-neutral-400" />
+            </div>
+            <div class="md:col-span-2 group">
+              <label for="admin_password" class="block text-sm font-semibold text-text-primary mb-2">
+                Admin Password <span class="text-danger">*</span>
+              </label>
+              <input type="password" id="admin_password" name="admin_password" value="Ankit@1234"
+                placeholder="Enter a secure password (8+ characters)" required
+                class="w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm focus:ring-2 focus:ring-brand-400 focus:border-brand-500 transition-all duration-200 hover:border-neutral-400" />
+            </div>
+          </div>
+        </section>
+        <div class="g-recaptcha my-6" data-sitekey="6LcZpXkrAAAAAKFhLjBZR8x1-1YDqg23PArCezQb"></div>
+        <div class="pt-6 border-t border-brand-100 flex justify-center">
+          <button type="submit" id="submit-btn"
+            class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-xl text-text-light bg-gradient-to-r from-brand-500 via-brand-600 to-brand-500 hover:from-brand-600 hover:via-brand-700 hover:to-brand-600 focus:outline-none focus:ring-4 focus:ring-brand-300 transition-all duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+            <i data-lucide="zap" class="w-5 h-5 mr-2"></i>
+            Create InstructoHub LMS
           </button>
         </div>
-        <form id="lms-form" class="space-y-8">
-          <section>
-            <div class="flex items-start border-b border-brand-100 pb-3 mb-6">
-              <div
-                class="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-brand-500 to-brand-600 rounded-lg mr-3 shadow-md"
-              >
-                <i data-lucide="globe" class="w-5 h-5 text-white"></i>
-              </div>
-              <div>
-                <h2 class="text-xl font-semibold text-text-primary">
-                  LMS Configuration
-                </h2>
-                <p class="text-text-secondary text-sm mt-1">
-                  Configure your LMS's basic settings and domain
-                </p>
-              </div>
-            </div>
-            <div class="grid grid-cols-1 gap-4">
-              <div class="group">
-                <label
-                  for="subdomain"
-                  class="block text-sm font-semibold text-text-primary mb-2"
-                >
-                  LMS Subdomain <span class="text-danger">*</span>
-                </label>
-                <div class="flex items-center">
-                  <input
-                    type="text"
-                    id="subdomain"
-                    name="subdomain"
-                    value="sitename"
-                    placeholder="e.g., my-learning-site"
-                    required
-                    class="w-full px-3 py-2 border border-neutral-300 rounded-l-lg shadow-sm focus:ring-2 focus:ring-brand-400 focus:border-brand-500 transition-all duration-200 hover:border-neutral-400"
-                  />
-                  <span
-                    class="inline-flex items-center bg-gradient-to-r from-neutral-100 to-brand-50 px-3 py-2 rounded-r-lg border border-l-0 border-neutral-300 text-text-secondary text-sm font-medium"
-                  >
-                    .instructohub.com
-                  </span>
-                </div>
-                <p class="mt-1 text-sm" id="subdomain-status"></p>
-              </div>
-            </div>
-          </section>
-          <section>
-            <div class="flex items-start border-b border-brand-100 pb-3 mb-6">
-              <div
-                class="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-brand-500 to-brand-600 rounded-lg mr-3 shadow-md"
-              >
-                <i data-lucide="school" class="w-5 h-5 text-white"></i>
-              </div>
-              <div>
-                <h2 class="text-xl font-semibold text-text-primary">
-                  Institution Details
-                </h2>
-                <p class="text-text-secondary text-sm mt-1">
-                  Customize your learning management system settings
-                </p>
-              </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="md:col-span-2 group">
-                <label
-                  for="institution_name"
-                  class="block text-sm font-semibold text-text-primary mb-2"
-                >
-                  Your Institution Name <span class="text-danger">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="institution_name"
-                  name="institution_name"
-                  value="My Learning Platform"
-                  placeholder="e.g., My Learning Academy"
-                  required
-                  class="w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm focus:ring-2 focus:ring-brand-400 focus:border-brand-500 transition-all duration-200 hover:border-neutral-400"
-                />
-              </div>
-              <div class="group">
-                <label
-                  for="admin_email"
-                  class="block text-sm font-semibold text-text-primary mb-2"
-                >
-                  Admin Email <span class="text-danger">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="admin_email"
-                  name="admin_email"
-                  value="admin@example.com"
-                  placeholder="admin@yourorganization.com"
-                  required
-                  class="w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm focus:ring-2 focus:ring-brand-400 focus:border-brand-500 transition-all duration-200 hover:border-neutral-400"
-                />
-              </div>
-              <div class="group">
-                <label
-                  for="admin_user"
-                  class="block text-sm font-semibold text-text-primary mb-2"
-                >
-                  Admin Username <span class="text-danger">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="admin_user"
-                  name="admin_user"
-                  value="admin"
-                  placeholder="Choose a strong username"
-                  required
-                  class="w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm focus:ring-2 focus:ring-brand-400 focus:border-brand-500 transition-all duration-200 hover:border-neutral-400"
-                />
-              </div>
-              <div class="md:col-span-2 group">
-                <label
-                  for="admin_password"
-                  class="block text-sm font-semibold text-text-primary mb-2"
-                >
-                  Admin Password <span class="text-danger">*</span>
-                </label>
-                <input
-                  type="password"
-                  id="admin_password"
-                  name="admin_password"
-                  value="Ankit@1234"
-                  placeholder="Enter a secure password (8+ characters)"
-                  required
-                  class="w-full px-3 py-2 border border-neutral-300 rounded-lg shadow-sm focus:ring-2 focus:ring-brand-400 focus:border-brand-500 transition-all duration-200 hover:border-neutral-400"
-                />
-              </div>
-            </div>
-          </section>
-          <div
-            class="g-recaptcha my-6"
-            data-sitekey="6LcZpXkrAAAAAKFhLjBZR8x1-1YDqg23PArCezQb"
-          ></div>
-          <div class="pt-6 border-t border-brand-100 flex justify-center">
-            <button
-              type="submit"
-              id="submit-btn"
-              class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-xl text-text-light bg-gradient-to-r from-brand-500 via-brand-600 to-brand-500 hover:from-brand-600 hover:via-brand-700 hover:to-brand-600 focus:outline-none focus:ring-4 focus:ring-brand-300 transition-all duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-            >
-              <i data-lucide="zap" class="w-5 h-5 mr-2"></i>
-              Create InstructoHub LMS
-            </button>
-          </div>
-        </form>
-      </div>
-    </main>
-    <div id="footer-placeholder"></div>
-    <script>
-      const steps = [
-        {
-          icon: "zap",
-          text: "Getting your information processed",
-          delay: 0,
-        },
-        {
-          icon: "server",
-          text: "Our servers talking to each other to start the process",
-          delay: 12.5,
-        },
-        {
-          icon: "database",
-          text: "Your dedicated database is getting ready, we understand, privacy is important",
-          delay: 25,
-        },
-        {
-          icon: "shield",
-          text: "Creating secure environment and configuring user permissions",
-          delay: 37.5,
-        },
-        {
-          icon: "school",
-          text: "Installing essential plugins and learning tools for your LMS",
-          delay: 50,
-        },
-        {
-          icon: "globe",
-          text: "Setting up your domain, for your better identity",
-          delay: 62.5,
-        },
-        {
-          icon: "check-circle",
-          text: "Setting up SSL because security matters the most",
-          delay: 75,
-        },
-        {
-          icon: "check-circle",
-          text: "This is the last step, hold your breath we are just getting it ready...",
-          delay: 87.5,
-        },
-      ];
-      let progress = 0;
-      let currentStep = 0;
-      let progressInterval;
-      let subdomainCheckTimeout;
-      function showStatus(type, message) {
-        const statusDiv = document.getElementById("status-message");
-        const statusIcon = document.getElementById("status-icon");
-        const statusText = document.getElementById("status-text");
-        statusDiv.className = `p-4 mb-6 rounded-xl flex items-start shadow-lg border-l-4 animate-fadeIn ${
-          type === "success"
-            ? "bg-gradient-to-r from-success/10 to-success/5 text-success-dark border-success"
-            : "bg-gradient-to-r from-danger/10 to-danger/5 text-danger-dark border-danger"
+      </form>
+    </div>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script>
+    const steps = [
+      {
+        icon: "zap",
+        text: "Getting your information processed",
+        delay: 0,
+      },
+      {
+        icon: "server",
+        text: "Our servers talking to each other to start the process",
+        delay: 12.5,
+      },
+      {
+        icon: "database",
+        text: "Your dedicated database is getting ready, we understand, privacy is important",
+        delay: 25,
+      },
+      {
+        icon: "shield",
+        text: "Creating secure environment and configuring user permissions",
+        delay: 37.5,
+      },
+      {
+        icon: "school",
+        text: "Installing essential plugins and learning tools for your LMS",
+        delay: 50,
+      },
+      {
+        icon: "globe",
+        text: "Setting up your domain, for your better identity",
+        delay: 62.5,
+      },
+      {
+        icon: "check-circle",
+        text: "Setting up SSL because security matters the most",
+        delay: 75,
+      },
+      {
+        icon: "check-circle",
+        text: "This is the last step, hold your breath we are just getting it ready...",
+        delay: 87.5,
+      },
+    ];
+    let progress = 0;
+    let currentStep = 0;
+    let progressInterval;
+    let subdomainCheckTimeout;
+    function showStatus(type, message) {
+      const statusDiv = document.getElementById("status-message");
+      const statusIcon = document.getElementById("status-icon");
+      const statusText = document.getElementById("status-text");
+      statusDiv.className = `p-4 mb-6 rounded-xl flex items-start shadow-lg border-l-4 animate-fadeIn ${type === "success"
+          ? "bg-gradient-to-r from-success/10 to-success/5 text-success-dark border-success"
+          : "bg-gradient-to-r from-danger/10 to-danger/5 text-danger-dark border-danger"
         }`;
-        statusIcon.className = `flex items-center justify-center w-6 h-6 rounded-full ${
-          type === "success" ? "bg-success" : "bg-danger"
+      statusIcon.className = `flex items-center justify-center w-6 h-6 rounded-full ${type === "success" ? "bg-success" : "bg-danger"
         }`;
-        statusIcon.innerHTML =
-          type === "success"
-            ? '<i data-lucide="check-circle" class="w-4 h-4 text-white"></i>'
-            : '<i data-lucide="alert-triangle" class="w-4 h-4 text-white"></i>';
-        statusText.textContent = message;
-        statusDiv.classList.remove("hidden");
-        lucide.createIcons();
+      statusIcon.innerHTML =
+        type === "success"
+          ? '<i data-lucide="check-circle" class="w-4 h-4 text-white"></i>'
+          : '<i data-lucide="alert-triangle" class="w-4 h-4 text-white"></i>';
+      statusText.textContent = message;
+      statusDiv.classList.remove("hidden");
+      lucide.createIcons();
+    }
+    function hideStatus() {
+      document.getElementById("status-message").classList.add("hidden");
+    }
+    async function checkSubdomainAvailability() {
+      const subdomain = document.getElementById("subdomain").value.trim();
+      const statusElement = document.getElementById("subdomain-status");
+      if (!subdomain) {
+        statusElement.innerHTML = "";
+        return;
       }
-      function hideStatus() {
-        document.getElementById("status-message").classList.add("hidden");
-      }
-      async function checkSubdomainAvailability() {
-        const subdomain = document.getElementById("subdomain").value.trim();
-        const statusElement = document.getElementById("subdomain-status");
-        if (!subdomain) {
-          statusElement.innerHTML = "";
-          return;
-        }
-        statusElement.innerHTML =
-          '<span class="text-yellow-600">Checking…</span>';
-        try {
-          const response = await fetch(
-            `https://admin.mdl.instructohub.com/local/multitenant/tenant_find_api.php?name=${encodeURIComponent(
-              subdomain
-            )}`,
-            {
-              method: "GET",
-              mode: "cors",
-            }
-          );
-          const result = await response.json();
-          if (!result) {
-            statusElement.innerHTML =
-              '<span class="text-danger">That subdomain is already taken.</span>';
-          } else {
-            statusElement.innerHTML =
-              '<span class="text-success">Good news! It\'s available.</span>';
+      statusElement.innerHTML =
+        '<span class="text-yellow-600">Checking…</span>';
+      try {
+        const response = await fetch(
+          `https://admin.mdl.instructohub.com/local/multitenant/tenant_find_api.php?name=${encodeURIComponent(
+            subdomain
+          )}`,
+          {
+            method: "GET",
+            mode: "cors",
           }
-        } catch (error) {
-          console.error("Error checking tenant:", error);
+        );
+        const result = await response.json();
+        if (!result) {
           statusElement.innerHTML =
-            '<span class="text-warning">Couldn\'t verify availability. Try again.</span>';
+            '<span class="text-danger">That subdomain is already taken.</span>';
+        } else {
+          statusElement.innerHTML =
+            '<span class="text-success">Good news! It\'s available.</span>';
+        }
+      } catch (error) {
+        console.error("Error checking tenant:", error);
+        statusElement.innerHTML =
+          '<span class="text-warning">Couldn\'t verify availability. Try again.</span>';
+      }
+    }
+    function startCreationLoader() {
+      document.getElementById("creation-loader").classList.remove("hidden");
+      progress = 0;
+      currentStep = 0;
+      const totalDuration = 70000;
+      progressInterval = setInterval(() => {
+        progress = Math.min(progress + 100 / (totalDuration / 100), 99);
+        updateProgress();
+      }, 100);
+      steps.forEach((step, index) => {
+        setTimeout(() => {
+          currentStep = index;
+          updateStep(step);
+        }, (step.delay / 100) * totalDuration);
+      });
+    }
+    function updateProgress() {
+      const progressBar = document.getElementById("progress-bar");
+      const progressFill = document.getElementById("progress-fill");
+      const progressPercent = document.getElementById("progress-percent");
+      const timeRemaining = document.getElementById("time-remaining");
+      progressBar.style.width = `${progress}%`;
+      progressFill.style.width = `${progress}%`;
+      progressPercent.textContent = `${Math.round(progress)}% Complete`;
+      timeRemaining.textContent = `~${Math.max(
+        0,
+        Math.round((100 - progress) * 0.7)
+      )}s remaining`;
+    }
+    function updateStep(step) {
+      const stepIcon = document.getElementById("step-icon");
+      const stepMessage = document.getElementById("step-message");
+      const stepIndicators = document.getElementById("step-indicators");
+      stepIcon.innerHTML = `<i data-lucide="${step.icon}" class="w-4 h-4 text-white"></i>`;
+      stepMessage.textContent = step.text;
+      const indicators = stepIndicators.children;
+      for (let i = 0; i < indicators.length; i++) {
+        if (i <= currentStep) {
+          indicators[i].className =
+            "h-1 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 transition-all duration-500";
+        } else {
+          indicators[i].className = "h-1 rounded-full bg-neutral-200";
         }
       }
-      function startCreationLoader() {
-        document.getElementById("creation-loader").classList.remove("hidden");
-        progress = 0;
-        currentStep = 0;
-        const totalDuration = 70000;
-        progressInterval = setInterval(() => {
-          progress = Math.min(progress + 100 / (totalDuration / 100), 99);
-          updateProgress();
-        }, 100);
-        steps.forEach((step, index) => {
-          setTimeout(() => {
-            currentStep = index;
-            updateStep(step);
-          }, (step.delay / 100) * totalDuration);
-        });
+      lucide.createIcons();
+    }
+    function stopCreationLoader() {
+      if (progressInterval) {
+        clearInterval(progressInterval);
       }
-      function updateProgress() {
-        const progressBar = document.getElementById("progress-bar");
-        const progressFill = document.getElementById("progress-fill");
-        const progressPercent = document.getElementById("progress-percent");
-        const timeRemaining = document.getElementById("time-remaining");
-        progressBar.style.width = `${progress}%`;
-        progressFill.style.width = `${progress}%`;
-        progressPercent.textContent = `${Math.round(progress)}% Complete`;
-        timeRemaining.textContent = `~${Math.max(
-          0,
-          Math.round((100 - progress) * 0.7)
-        )}s remaining`;
+      document.getElementById("creation-loader").classList.add("hidden");
+    }
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData();
+      const captchaToken = grecaptcha.getResponse();
+      if (!captchaToken) {
+        showStatus("error", "Please complete the CAPTCHA.");
+        return;
       }
-      function updateStep(step) {
-        const stepIcon = document.getElementById("step-icon");
-        const stepMessage = document.getElementById("step-message");
-        const stepIndicators = document.getElementById("step-indicators");
-        stepIcon.innerHTML = `<i data-lucide="${step.icon}" class="w-4 h-4 text-white"></i>`;
-        stepMessage.textContent = step.text;
-        const indicators = stepIndicators.children;
-        for (let i = 0; i < indicators.length; i++) {
-          if (i <= currentStep) {
-            indicators[i].className =
-              "h-1 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 transition-all duration-500";
-          } else {
-            indicators[i].className = "h-1 rounded-full bg-neutral-200";
-          }
-        }
-        lucide.createIcons();
-      }
-      function stopCreationLoader() {
-        if (progressInterval) {
-          clearInterval(progressInterval);
-        }
-        document.getElementById("creation-loader").classList.add("hidden");
-      }
-      async function handleSubmit(event) {
-        event.preventDefault();
-        const formData = new FormData();
-        const captchaToken = grecaptcha.getResponse();
-        if (!captchaToken) {
-          showStatus("error", "Please complete the CAPTCHA.");
-          return;
-        }
-        formData.append("g-recaptcha-response", captchaToken);
-        const form = event.target;
-        formData.append("subdomain", form.subdomain.value);
-        formData.append("institution_name", form.institution_name.value);
-        formData.append("admin_email", form.admin_email.value);
-        formData.append("admin_user", form.admin_user.value);
-        formData.append("admin_password", form.admin_password.value);
-        const submitBtn = document.getElementById("submit-btn");
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `
+      formData.append("g-recaptcha-response", captchaToken);
+      const form = event.target;
+      formData.append("subdomain", form.subdomain.value);
+      formData.append("institution_name", form.institution_name.value);
+      formData.append("admin_email", form.admin_email.value);
+      formData.append("admin_user", form.admin_user.value);
+      formData.append("admin_password", form.admin_password.value);
+      const submitBtn = document.getElementById("submit-btn");
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
                 <div class="animate-spin -ml-1 mr-3 h-5 w-5 border-2 border-text-light border-t-transparent rounded-full"></div>
                 Creating Your LMS...
             `;
-        startCreationLoader();
-        try {
-          const response = await fetch(
-            "https://admin.mdl.instructohub.com/local/multitenant/process_tenant.php",
-            {
-              method: "POST",
-              body: formData,
-              mode: "cors",
-            }
-          );
-          if (response.ok) {
-            showStatus(
-              "success",
-              `🎉 Success! Your InstructoHub LMS "${form.institution_name.value}" is now live at ${form.subdomain.value}.instructohub.com`
-            );
-            setTimeout(() => {
-              window.location.href = `https://${form.subdomain.value}.instructohub.com`;
-            }, 2000);
-          } else {
-            showStatus(
-              "error",
-              "Creation failed. Please verify your configuration and try again. If the issue persists, contact support."
-            );
+      startCreationLoader();
+      try {
+        const response = await fetch(
+          "https://admin.mdl.instructohub.com/local/multitenant/process_tenant.php",
+          {
+            method: "POST",
+            body: formData,
+            mode: "cors",
           }
-        } catch (error) {
-          console.error("Error creating tenant:", error);
+        );
+        if (response.ok) {
+          showStatus(
+            "success",
+            `🎉 Success! Your InstructoHub LMS "${form.institution_name.value}" is now live at ${form.subdomain.value}.instructohub.com`
+          );
+          setTimeout(() => {
+            window.location.href = `https://${form.subdomain.value}.instructohub.com`;
+          }, 2000);
+        } else {
           showStatus(
             "error",
-            "Network error occurred. Please check your connection and try again."
+            "Creation failed. Please verify your configuration and try again. If the issue persists, contact support."
           );
-        } finally {
-          stopCreationLoader();
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = `
+        }
+      } catch (error) {
+        console.error("Error creating tenant:", error);
+        showStatus(
+          "error",
+          "Network error occurred. Please check your connection and try again."
+        );
+      } finally {
+        stopCreationLoader();
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
                     <i data-lucide="zap" class="w-5 h-5 mr-2"></i>
                     Create InstructoHub LMS
                 `;
-          lucide.createIcons();
-        }
-      }
-      function handleInputChange(event) {
-        const { id, value } = event.target;
-        hideStatus();
-        if (id === "subdomain") {
-          document.getElementById("subdomain-status").innerHTML = "";
-          if (subdomainCheckTimeout) {
-            clearTimeout(subdomainCheckTimeout);
-          }
-          if (value.trim()) {
-            subdomainCheckTimeout = setTimeout(checkSubdomainAvailability, 500);
-          }
-        }
-      }
-      function toggleMobileMenu() {
-        const mobileMenu = document.getElementById("mobile-menu");
-        const menuIcon = document.getElementById("menu-icon");
-        const closeIcon = document.getElementById("close-icon");
-        if (mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.remove("hidden");
-          menuIcon.classList.add("hidden");
-          closeIcon.classList.remove("hidden");
-        } else {
-          mobileMenu.classList.add("hidden");
-          menuIcon.classList.remove("hidden");
-          closeIcon.classList.add("hidden");
-        }
-      }
-      document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("lms-form");
-        form.addEventListener("submit", handleSubmit);
-        const inputs = form.querySelectorAll("input");
-        inputs.forEach((input) => {
-          input.addEventListener("input", handleInputChange);
-          input.addEventListener("keyup", handleInputChange);
-        });
         lucide.createIcons();
+      }
+    }
+    function handleInputChange(event) {
+      const { id, value } = event.target;
+      hideStatus();
+      if (id === "subdomain") {
+        document.getElementById("subdomain-status").innerHTML = "";
+        if (subdomainCheckTimeout) {
+          clearTimeout(subdomainCheckTimeout);
+        }
+        if (value.trim()) {
+          subdomainCheckTimeout = setTimeout(checkSubdomainAvailability, 500);
+        }
+      }
+    }
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("lms-form");
+      form.addEventListener("submit", handleSubmit);
+      const inputs = form.querySelectorAll("input");
+      inputs.forEach((input) => {
+        input.addEventListener("input", handleInputChange);
+        input.addEventListener("keyup", handleInputChange);
       });
-    </script>
-  </body>
+      lucide.createIcons();
+    });
+  </script>
+</body>
 </html>

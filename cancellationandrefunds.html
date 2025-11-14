@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Primary Meta Tags -->
+  <title>Pricing | InstructoHub</title>
+  <meta name="title" content="Pricing | InstructoHub" />
+  <meta name="description" content="Cancellation & Refunds" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8GYGC3JQPD');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#fdf4f0",
+              100: "#fce8e0",
+              200: "#f9d1c1",
+              300: "#f5b9a2",
+              400: "#f09c7d",
+              500: "#e16b3b", // Primary brand color
+              600: "#d15a2b",
+              700: "#b44a22",
+              800: "#933c1d",
+              900: "#78301a",
+              DEFAULT: "#e16b3b",
+            },
+            secondary: {
+              50: "#e7eaeb",
+              100: "#cfd5d7",
+              200: "#a0acb0",
+              300: "#728389",
+              400: "#435a62",
+              500: "#1b3942", // Secondary brand color
+              600: "#18333b",
+              700: "#152b32",
+              800: "#122229",
+              900: "#0e1a20",
+              DEFAULT: "#1b3942",
+            },
+            success: {
+              DEFAULT: "#4CAF50",
+              dark: "#3a8c3f",
+            },
+            danger: {
+              DEFAULT: "#EF4444",
+              dark: "#B91C1C",
+            },
+            neutral: {
+              50: "#fafafa",
+              100: "#f5f5f5",
+              200: "#e5e5e5",
+              300: "#d4d4d4",
+              400: "#a3a3a3",
+              500: "#737373",
+              600: "#525252",
+              700: "#404040",
+              800: "#262626",
+              900: "#171717",
+            },
+            background: {
+              page: "#f7f7f7",
+              card: "#ffffff",
+            },
+            border: {
+              DEFAULT: "#e5e7eb",
+              accent: "#e16b3b",
+            },
+            text: {
+              primary: "#1b3942",
+              secondary: "#4b5563",
+              muted: "#6b7280",
+              light: "#ffffff",
+            },
+          },
+          animation: {
+            fadeIn: "fadeIn 0.5s ease-out forwards",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(10px)",
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)",
+              },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    fetch("header.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        lucide.createIcons();
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      });
+    fetch("footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+        lucide.createIcons();
+        document.getElementById("current-year").textContent =
+          new Date().getFullYear();
+      });
+  </script>
+</head>
+<body class="min-h-screen flex flex-col text-secondary">
+  <div class="w-full">
+    <div class="h-12 md:block hidden"></div>
+    <div class="h-16"></div>
+  </div>
+  <div id="header-placeholder"></div>
+  <main>
+    <section class="bg-gradient-to-br from-brand to-brand-600 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-semibold mb-6">Cancellation & Refunds</h2>
+        <p class="text-xl mb-4 max-w-3xl mx-auto opacity-90">
+          Cancellation & Refunds
+        </p>
+        <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+          <strong>Cancellation & Refund Policy
+            Last updated on Nov 12 2025
+            INSTRUCTOHUB PRIVATE LIMITED believes in helping its customers as far as possible, and has therefore a
+            liberal cancellation policy. Under this policy:
+            Cancellations will be considered only if the request is made within 15 days of placing the order. However,
+            the cancellation request may not be entertained if the orders have been communicated to the
+            vendors/merchants and they have initiated the process of shipping them.
+            INSTRUCTOHUB PRIVATE LIMITED does not accept cancellation requests for perishable items like flowers,
+            eatables etc. However, refund/replacement can be made if the customer establishes that the quality of
+            product delivered is not good.
+            In case of receipt of damaged or defective items please report the same to our Customer Service team. The
+            request will, however, be entertained once the merchant has checked and determined the same at his own end.
+            This should be reported within 15 days of receipt of the products.
+            In case you feel that the product received is not as shown on the site or as per your expectations, you must
+            bring it to the notice of our customer service within 15 days of receiving the product. The Customer Service
+            Team after looking into your complaint will take an appropriate decision.
+            In case of complaints regarding products that come with a warranty from manufacturers, please refer the
+            issue to them.
+            In case of any Refunds approved by the INSTRUCTOHUB PRIVATE LIMITED, it'll take 9-15 days for the refund to
+            be processed to the end customer.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/register.html"
+            class="px-8 py-4 bg-white text-brand font-semibold rounded-lg hover:bg-neutral-100 transition-transform hover:scale-105 shadow-xl">
+            Start Free Trial
+          </a>
+          <a href="/Contact.html"
+            class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand transition">
+            Schedule a Demo
+          </a>
+        </div>
+        <p class="mt-6 text-sm opacity-75">No credit card required • Set up in minutes • Cancel anytime</p>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const currencyToggle = document.getElementById('currency-toggle');
+      const billingToggle = document.getElementById('billing-toggle');
+      function updatePricingDisplay() {
+        const currency = currencyToggle.value;
+        const period = billingToggle.value;
+        const inrMonthly = document.querySelectorAll('.inrmonthly');
+        const inrAnnual = document.querySelectorAll('.inrannualy');
+        const usdMonthly = document.querySelectorAll('.usdmonthly');
+        const usdAnnual = document.querySelectorAll('.usdannualy');
+        const inrSimple = document.querySelectorAll('.inr:not(.inrmonthly):not(.inrannualy)');
+        const usdSimple = document.querySelectorAll('.usd:not(.usdmonthly):not(.usdannualy)');
+        [...inrMonthly, ...inrAnnual, ...usdMonthly, ...usdAnnual, ...inrSimple, ...usdSimple].forEach(el => {
+          el.classList.add('hidden');
+        });
+        if (currency === 'inr') {
+          inrSimple.forEach(el => el.classList.remove('hidden'));
+          if (period === 'monthly') {
+            inrMonthly.forEach(el => el.classList.remove('hidden'));
+          } else {
+            inrAnnual.forEach(el => el.classList.remove('hidden'));
+          }
+        } else {
+          usdSimple.forEach(el => el.classList.remove('hidden'));
+          if (period === 'monthly') {
+            usdMonthly.forEach(el => el.classList.remove('hidden'));
+          } else {
+            usdAnnual.forEach(el => el.classList.remove('hidden'));
+          }
+        }
+      }
+      currencyToggle.addEventListener('change', updatePricingDisplay);
+      billingToggle.addEventListener('change', updatePricingDisplay);
+      updatePricingDisplay();
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>

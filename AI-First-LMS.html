@@ -1,484 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Primary Meta Tags -->
-    <title>AI-First LMS | InstructoHub</title>
-    <meta name="title" content="AI-First LMS | InstructoHub" />
-    <meta
-      name="description"
-      content="Launch a modern, AI-first Learning Management System in minutes. Automate course creation, enable adaptive learning, provide AI tutoring, and centralize governance—built for schools, universities, and enterprises."
-    />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-17282898351"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "AW-17282898351");
-      gtag("event", "conversion", {
-        send_to: "AW-17282898351/sRZACIWq6eUaEK-zkLFA",
-        value: 1.0,
-        currency: "INR",
-      });
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                50: "#fdf4f0",
-                100: "#fce8e0",
-                200: "#f9d1c1",
-                300: "#f5b9a2",
-                400: "#f09c7d",
-                500: "#e16b3b", // Primary brand color
-                600: "#d15a2b",
-                700: "#b44a22",
-                800: "#933c1d",
-                900: "#78301a",
-                DEFAULT: "#e16b3b",
-              },
-              secondary: {
-                50: "#e7eaeb",
-                100: "#cfd5d7",
-                200: "#a0acb0",
-                300: "#728389",
-                400: "#435a62",
-                500: "#1b3942", // Secondary brand color
-                600: "#18333b",
-                700: "#152b32",
-                800: "#122229",
-                900: "#0e1a20",
-                DEFAULT: "#1b3942",
-              },
-              success: {
-                DEFAULT: "#4CAF50",
-                dark: "#3a8c3f",
-              },
-              danger: {
-                DEFAULT: "#EF4444",
-                dark: "#B91C1C",
-              },
-              neutral: {
-                50: "#fafafa",
-                100: "#f5f5f5",
-                200: "#e5e5e5",
-                300: "#d4d4d4",
-                400: "#a3a3a3",
-                500: "#737373",
-                600: "#525252",
-                700: "#404040",
-                800: "#262626",
-                900: "#171717",
-              },
-              background: {
-                page: "#f7f7f7",
-                card: "#ffffff",
-              },
-              border: {
-                DEFAULT: "#e5e7eb",
-                accent: "#e16b3b",
-              },
-              text: {
-                primary: "#1b3942",
-                secondary: "#4b5563",
-                muted: "#6b7280",
-                light: "#ffffff",
-              },
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Primary Meta Tags -->
+  <title>AI-First LMS | InstructoHub</title>
+  <meta name="title" content="AI-First LMS | InstructoHub" />
+  <meta name="description"
+    content="Launch a modern, AI-first Learning Management System in minutes. Automate course creation, enable adaptive learning, provide AI tutoring, and centralize governance—built for schools, universities, and enterprises." />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8GYGC3JQPD');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#fdf4f0",
+              100: "#fce8e0",
+              200: "#f9d1c1",
+              300: "#f5b9a2",
+              400: "#f09c7d",
+              500: "#e16b3b", // Primary brand color
+              600: "#d15a2b",
+              700: "#b44a22",
+              800: "#933c1d",
+              900: "#78301a",
+              DEFAULT: "#e16b3b",
             },
-            animation: {
-              fadeIn: "fadeIn 0.5s ease-out forwards",
+            secondary: {
+              50: "#e7eaeb",
+              100: "#cfd5d7",
+              200: "#a0acb0",
+              300: "#728389",
+              400: "#435a62",
+              500: "#1b3942", // Secondary brand color
+              600: "#18333b",
+              700: "#152b32",
+              800: "#122229",
+              900: "#0e1a20",
+              DEFAULT: "#1b3942",
             },
-            keyframes: {
-              fadeIn: {
-                "0%": {
-                  opacity: "0",
-                  transform: "translateY(10px)",
-                },
-                "100%": {
-                  opacity: "1",
-                  transform: "translateY(0)",
-                },
+            success: {
+              DEFAULT: "#4CAF50",
+              dark: "#3a8c3f",
+            },
+            danger: {
+              DEFAULT: "#EF4444",
+              dark: "#B91C1C",
+            },
+            neutral: {
+              50: "#fafafa",
+              100: "#f5f5f5",
+              200: "#e5e5e5",
+              300: "#d4d4d4",
+              400: "#a3a3a3",
+              500: "#737373",
+              600: "#525252",
+              700: "#404040",
+              800: "#262626",
+              900: "#171717",
+            },
+            background: {
+              page: "#f7f7f7",
+              card: "#ffffff",
+            },
+            border: {
+              DEFAULT: "#e5e7eb",
+              accent: "#e16b3b",
+            },
+            text: {
+              primary: "#1b3942",
+              secondary: "#4b5563",
+              muted: "#6b7280",
+              light: "#ffffff",
+            },
+          },
+          animation: {
+            fadeIn: "fadeIn 0.5s ease-out forwards",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(10px)",
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)",
               },
             },
           },
         },
-      };
-    </script>
-    <script>
-      fetch("header.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("header-placeholder").innerHTML = data;
-          lucide.createIcons();
-          const header = document.getElementById("header");
-          window.addEventListener("scroll", () => {
-            if (window.scrollY > 10) {
-              header.classList.add("scrolled");
-            } else {
-              header.classList.remove("scrolled");
-            }
-          });
-        });
-      fetch("footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("footer-placeholder").innerHTML = data;
-          lucide.createIcons();
-          document.getElementById("current-year").textContent =
-            new Date().getFullYear();
-        });
-    </script>
-  </head>
-
-  <body class="min-h-screen flex flex-col text-secondary">
-    <div class="w-full">
-      <div class="h-12 md:block hidden"></div>
-      <div class="h-16"></div>
-    </div>
-    <div id="header-placeholder"></div>
-
-    <main>
-      <!-- REVISED Hero Section -->
-      <section class="bg-neutral-50 pt-20 pb-20 md:pt-40 md:pb-20">
-        <div class="container mx-auto px-4 text-center">
-          <span class="text-brand font-semibold uppercase tracking-wider"
-            >AI-First LMS</span
-          >
-          <h1
-            class="text-5xl md:text-7xl mb-6 text-secondary"
-            style="line-height: 1.25 !important"
-          >
-            Revolutionizing Learning with <br />
-            an <span class="text-brand">AI-First LMS</span>
-          </h1>
-          <p
-            class="text-2xl pb-6 text-secondary-700 md:text-2xl mt-6 max-w-4xl mx-auto"
-          >
-            Launch a fully-featured, AI-powered learning platform in minutes. No
-            lengthy sales calls, no complex setup — Just a smarter, more
-            intuitive way to teach and learn.
-          </p>
-
-          <!-- Merged "How it Works" Steps -->
-          <div class="mt-12 max-w-5xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-8 text-left">
-              <div class="flex items-start p-4">
-                <div
-                  class="bg-brand text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-semibold mr-4 mt-1"
-                >
-                  1
-                </div>
-                <div>
-                  <h3 class="text-xl font-semibold text-secondary">
-                    Register & Configure
-                  </h3>
-                  <p class="text-secondary-700 mt-1">
-                    Sign up instantly and brand your campus in our intuitive
-                    setup wizard.
-                  </p>
-                </div>
-              </div>
-              <div class="flex items-start p-4">
-                <div
-                  class="bg-brand text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-semibold mr-4 mt-1"
-                >
-                  2
-                </div>
-                <div>
-                  <h3 class="text-xl font-semibold text-secondary">
-                    Create with AI
-                  </h3>
-                  <p class="text-secondary-700 mt-1">
-                    Use our AI Co-Pilot to build your first course from simple
-                    prompts or existing content.
-                  </p>
-                </div>
-              </div>
-              <div class="flex items-start p-4">
-                <div
-                  class="bg-brand text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-semibold mr-4 mt-1"
-                >
-                  3
-                </div>
-                <div>
-                  <h3 class="text-xl font-semibold text-secondary">
-                    Invite & Launch
-                  </h3>
-                  <p class="text-secondary-700 mt-1">
-                    Onboard your educators and students with a single click and
-                    go live.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-12">
-            <a
-              href="#"
-              class="bg-brand text-white font-semibold py-4 px-8 rounded-lg hover:bg-brand-600 transition-transform hover:scale-105 shadow-lg"
-            >
-              Launch Your AI Campus Today
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Problem/Solution Section -->
-      <section class="py-20">
-        <div class="container mx-auto px-4">
-          <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="text-center md:text-left">
-              <span class="text-brand font-semibold uppercase tracking-wider"
-                >Rethink Your LMS</span
-              >
-              <h2 class="text-4xl font-semibold text-secondary mt-2">
-                Tired of Rigid, Outdated Systems?
-              </h2>
-              <p class="text-2xl text-secondary-700 mt-4">
-                Traditional Learning Management Systems force you into a box.
-                They are difficult to customize, tedious to manage, and fail to
-                provide the personalized experiences modern learners expect. The
-                result? Wasted time for educators and disengaged students.
-              </p>
-              <p class="text-2xl text-secondary-700 mt-4">
-                We decided to build something better from the ground up.
-              </p>
-            </div>
-            <div>
-              <!-- <img src="https://placehold.co/600x400/e2e8f0/334155?text=Frustrating+LMS+UI"
-                            alt="Abstract representation of a frustrating LMS" class="rounded-2xl shadow-xl w-full"> -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- "Who It's For" Section -->
-      <section class="py-20 bg-neutral-50">
-        <div class="container mx-auto px-4">
-          <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-4xl font-semibold text-secondary">
-              An Ecosystem for Every Educator
-            </h2>
-            <p class="text-2xl text-secondary-700 mt-4">
-              Our AI-First LMS is engineered with the flexibility to serve the
-              unique needs of any learning environment.
-            </p>
-          </div>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            <div
-              class="bg-white p-8 text-center rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200"
-            >
-              <i
-                data-lucide="university"
-                class="w-12 h-12 text-brand mx-auto mb-4"
-              ></i>
-              <h3 class="text-2xl font-semibold text-secondary">
-                Higher Education
-              </h3>
-              <p class="text-secondary-700 mt-2">
-                For universities and colleges building a dynamic, scalable
-                digital campus.
-              </p>
-            </div>
-            <div
-              class="bg-white p-8 text-center rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200"
-            >
-              <i
-                data-lucide="school"
-                class="w-12 h-12 text-brand mx-auto mb-4"
-              ></i>
-              <h3 class="text-2xl font-semibold text-secondary">
-                K-12 Institutions
-              </h3>
-              <p class="text-secondary-700 mt-2">
-                Empowering teachers and engaging students from primary to
-                secondary school.
-              </p>
-            </div>
-            <div
-              class="bg-white p-8 text-center rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200"
-            >
-              <i
-                data-lucide="briefcase"
-                class="w-12 h-12 text-brand mx-auto mb-4"
-              ></i>
-              <h3 class="text-2xl font-semibold text-secondary">
-                Corporate Training
-              </h3>
-              <p class="text-secondary-700 mt-2">
-                For businesses focused on effective employee onboarding and
-                skill development.
-              </p>
-            </div>
-            <div
-              class="bg-white p-8 text-center rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200"
-            >
-              <i
-                data-lucide="rocket"
-                class="w-12 h-12 text-brand mx-auto mb-4"
-              ></i>
-              <h3 class="text-2xl font-semibold text-secondary">
-                EdTech Innovators
-              </h3>
-              <p class="text-secondary-700 mt-2">
-                The perfect headless foundation for startups building the next
-                big thing in education.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Core Features Section -->
-      <section class="py-20">
-        <div class="container mx-auto px-4">
-          <div class="text-center max-w-5xl mx-auto mb-16">
-            <h2 class="text-4xl font-semibold text-secondary">
-              Everything You Need, Intelligently Integrated
-            </h2>
-            <p class="text-2xl text-secondary-700 mt-4">
-              Our AI-First LMS isn't just a collection of features; it's a
-              cohesive ecosystem where every component is designed to work
-              together to save time, improve outcomes, and delight users.
-            </p>
-          </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-neutral-50 p-8 rounded-2xl">
-              <i data-lucide="feather" class="w-10 h-10 text-brand mb-4"></i>
-              <h3 class="text-2xl font-semibold text-secondary">
-                AI Co-Pilot for Educators
-              </h3>
-              <p class="text-xl text-secondary-700 mt-2">
-                Automate course creation, generate assessments, and get grading
-                assistance. Reclaim hundreds of hours and focus on what truly
-                matters: teaching.
-              </p>
-            </div>
-            <div class="bg-neutral-50 p-8 rounded-2xl">
-              <i
-                data-lucide="git-branch-plus"
-                class="w-10 h-10 text-brand mb-4"
-              ></i>
-              <h3 class="text-2xl font-semibold text-secondary">
-                Adaptive Learning Engine
-              </h3>
-              <p class="text-xl text-secondary-700 mt-2">
-                Deliver truly personalized learning paths that adjust to each
-                student's pace and understanding, ensuring every learner is
-                perfectly challenged and supported.
-              </p>
-            </div>
-            <div class="bg-neutral-50 p-8 rounded-2xl">
-              <i
-                data-lucide="message-circle"
-                class="w-10 h-10 text-brand mb-4"
-              ></i>
-              <h3 class="text-2xl font-semibold text-secondary">
-                24/7 AI Student Tutor
-              </h3>
-              <p class="text-xl text-secondary-700 mt-2">
-                Provide instant, on-demand academic support with an intelligent
-                chatbot that can answer questions, clarify concepts, and guide
-                students through their coursework.
-              </p>
-            </div>
-            <div class="bg-neutral-50 p-8 rounded-2xl">
-              <i
-                data-lucide="layout-dashboard"
-                class="w-10 h-10 text-brand mb-4"
-              ></i>
-              <h3 class="text-2xl font-semibold text-secondary">
-                Intuitive, Clutter-Free Design
-              </h3>
-              <p class="text-xl text-secondary-700 mt-2">
-                Experience a clean, modern interface that's a joy to use for
-                everyone. Our platform is designed for effortless onboarding and
-                seamless cross-device compatibility.
-              </p>
-            </div>
-            <div class="bg-neutral-50 p-8 rounded-2xl">
-              <i data-lucide="settings-2" class="w-10 h-10 text-brand mb-4"></i>
-              <h3 class="text-2xl font-semibold text-secondary">
-                Unparalleled Customization
-              </h3>
-              <p class="text-xl text-secondary-700 mt-2">
-                Tailor every aspect of the platform to match your brand and
-                pedagogical vision. Our headless architecture provides complete
-                control over the user experience.
-              </p>
-            </div>
-            <div class="bg-neutral-50 p-8 rounded-2xl">
-              <i
-                data-lucide="shield-check"
-                class="w-10 h-10 text-brand mb-4"
-              ></i>
-              <h3 class="text-2xl font-semibold text-secondary">
-                Centralized AI Governance
-              </h3>
-              <p class="text-xl text-secondary-700 mt-2">
-                Manage your entire AI ecosystem from one powerful dashboard.
-                Control policies, monitor usage and ROI, and ensure your AI
-                strategy delivers real impact.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Final CTA Section -->
-      <section class="py-20 bg-neutral-50">
-        <div class="container mx-auto px-4 text-center">
-          <h2 class="text-4xl font-semibold text-secondary">
-            Ready to Build the Future of Learning?
-          </h2>
-          <p class="text-2xl text-secondary-700 mt-4 max-w-5xl mx-auto">
-            Stop wrestling with outdated technology. Join the institutions that
-            are empowering their educators and inspiring their students with a
-            truly modern learning platform.
-          </p>
-          <div class="mt-8">
-            <a
-              href="#"
-              class="bg-brand text-white font-semibold py-4 px-8 rounded-lg hover:bg-brand-600 transition-transform hover:scale-105 shadow-lg"
-            >
-              Get Started for Free
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-    <div id="footer-placeholder"></div>
-    <script>
-      function toggleMobileMenu() {
-        const mobileMenu = document.getElementById("mobile-menu");
-        const menuIcon = document.getElementById("menu-icon");
-        const closeIcon = document.getElementById("close-icon");
-        if (mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.remove("hidden");
-          menuIcon.classList.add("hidden");
-          closeIcon.classList.remove("hidden");
-        } else {
-          mobileMenu.classList.add("hidden");
-          menuIcon.classList.remove("hidden");
-          closeIcon.classList.add("hidden");
-        }
-      }
-      document.addEventListener("DOMContentLoaded", function () {
+      },
+    };
+  </script>
+  <script>
+    fetch("header.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("header-placeholder").innerHTML = data;
         lucide.createIcons();
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
       });
-    </script>
-  </body>
+    fetch("footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+        lucide.createIcons();
+        document.getElementById("current-year").textContent =
+          new Date().getFullYear();
+      });
+  </script>
+</head>
+<body class="min-h-screen flex flex-col text-secondary">
+  <div class="w-full">
+    <div class="h-12 md:block hidden"></div>
+    <div class="h-16"></div>
+  </div>
+  <div id="header-placeholder"></div>
+  <main>
+    <!-- REVISED Hero Section -->
+    <section class="bg-neutral-50 pt-20 pb-20 md:pt-40 md:pb-20">
+      <div class="container mx-auto px-4 text-center">
+        <span class="text-brand font-semibold uppercase tracking-wider">AI-First LMS</span>
+        <h1 class="text-5xl md:text-7xl mb-6 text-secondary" style="line-height: 1.25 !important">
+          Revolutionizing Learning with <br />
+          an <span class="text-brand">AI-First LMS</span>
+        </h1>
+        <p class="text-2xl pb-6 text-secondary-700 md:text-2xl mt-6 max-w-4xl mx-auto">
+          Launch a fully-featured, AI-powered learning platform in minutes. No
+          lengthy sales calls, no complex setup — Just a smarter, more
+          intuitive way to teach and learn.
+        </p>
+        <!-- Merged "How it Works" Steps -->
+        <div class="mt-12 max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-3 gap-8 text-left">
+            <div class="flex items-start p-4">
+              <div
+                class="bg-brand text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-semibold mr-4 mt-1">
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-secondary">
+                  Register & Configure
+                </h3>
+                <p class="text-secondary-700 mt-1">
+                  Sign up instantly and brand your campus in our intuitive
+                  setup wizard.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start p-4">
+              <div
+                class="bg-brand text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-semibold mr-4 mt-1">
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-secondary">
+                  Create with AI
+                </h3>
+                <p class="text-secondary-700 mt-1">
+                  Use our AI Co-Pilot to build your first course from simple
+                  prompts or existing content.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start p-4">
+              <div
+                class="bg-brand text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-semibold mr-4 mt-1">
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-secondary">
+                  Invite & Launch
+                </h3>
+                <p class="text-secondary-700 mt-1">
+                  Onboard your educators and students with a single click and
+                  go live.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12">
+          <a href="#"
+            class="bg-brand text-white font-semibold py-4 px-8 rounded-lg hover:bg-brand-600 transition-transform hover:scale-105 shadow-lg">
+            Launch Your AI Campus Today
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Problem/Solution Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="text-center md:text-left">
+            <span class="text-brand font-semibold uppercase tracking-wider">Rethink Your LMS</span>
+            <h2 class="text-4xl font-semibold text-secondary mt-2">
+              Tired of Rigid, Outdated Systems?
+            </h2>
+            <p class="text-2xl text-secondary-700 mt-4">
+              Traditional Learning Management Systems force you into a box.
+              They are difficult to customize, tedious to manage, and fail to
+              provide the personalized experiences modern learners expect. The
+              result? Wasted time for educators and disengaged students.
+            </p>
+            <p class="text-2xl text-secondary-700 mt-4">
+              We decided to build something better from the ground up.
+            </p>
+          </div>
+          <div>
+            <!-- <img src="https://placehold.co/600x400/e2e8f0/334155?text=Frustrating+LMS+UI"
+                            alt="Abstract representation of a frustrating LMS" class="rounded-2xl shadow-xl w-full"> -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- "Who It's For" Section -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-4xl font-semibold text-secondary">
+            An Ecosystem for Every Educator
+          </h2>
+          <p class="text-2xl text-secondary-700 mt-4">
+            Our AI-First LMS is engineered with the flexibility to serve the
+            unique needs of any learning environment.
+          </p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div
+            class="bg-white p-8 text-center rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200">
+            <i data-lucide="university" class="w-12 h-12 text-brand mx-auto mb-4"></i>
+            <h3 class="text-2xl font-semibold text-secondary">
+              Higher Education
+            </h3>
+            <p class="text-secondary-700 mt-2">
+              For universities and colleges building a dynamic, scalable
+              digital campus.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 text-center rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200">
+            <i data-lucide="school" class="w-12 h-12 text-brand mx-auto mb-4"></i>
+            <h3 class="text-2xl font-semibold text-secondary">
+              K-12 Institutions
+            </h3>
+            <p class="text-secondary-700 mt-2">
+              Empowering teachers and engaging students from primary to
+              secondary school.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 text-center rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200">
+            <i data-lucide="briefcase" class="w-12 h-12 text-brand mx-auto mb-4"></i>
+            <h3 class="text-2xl font-semibold text-secondary">
+              Corporate Training
+            </h3>
+            <p class="text-secondary-700 mt-2">
+              For businesses focused on effective employee onboarding and
+              skill development.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 text-center rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200">
+            <i data-lucide="rocket" class="w-12 h-12 text-brand mx-auto mb-4"></i>
+            <h3 class="text-2xl font-semibold text-secondary">
+              EdTech Innovators
+            </h3>
+            <p class="text-secondary-700 mt-2">
+              The perfect headless foundation for startups building the next
+              big thing in education.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Core Features Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-5xl mx-auto mb-16">
+          <h2 class="text-4xl font-semibold text-secondary">
+            Everything You Need, Intelligently Integrated
+          </h2>
+          <p class="text-2xl text-secondary-700 mt-4">
+            Our AI-First LMS isn't just a collection of features; it's a
+            cohesive ecosystem where every component is designed to work
+            together to save time, improve outcomes, and delight users.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-neutral-50 p-8 rounded-2xl">
+            <i data-lucide="feather" class="w-10 h-10 text-brand mb-4"></i>
+            <h3 class="text-2xl font-semibold text-secondary">
+              AI Co-Pilot for Educators
+            </h3>
+            <p class="text-xl text-secondary-700 mt-2">
+              Automate course creation, generate assessments, and get grading
+              assistance. Reclaim hundreds of hours and focus on what truly
+              matters: teaching.
+            </p>
+          </div>
+          <div class="bg-neutral-50 p-8 rounded-2xl">
+            <i data-lucide="git-branch-plus" class="w-10 h-10 text-brand mb-4"></i>
+            <h3 class="text-2xl font-semibold text-secondary">
+              Adaptive Learning Engine
+            </h3>
+            <p class="text-xl text-secondary-700 mt-2">
+              Deliver truly personalized learning paths that adjust to each
+              student's pace and understanding, ensuring every learner is
+              perfectly challenged and supported.
+            </p>
+          </div>
+          <div class="bg-neutral-50 p-8 rounded-2xl">
+            <i data-lucide="message-circle" class="w-10 h-10 text-brand mb-4"></i>
+            <h3 class="text-2xl font-semibold text-secondary">
+              24/7 AI Student Tutor
+            </h3>
+            <p class="text-xl text-secondary-700 mt-2">
+              Provide instant, on-demand academic support with an intelligent
+              chatbot that can answer questions, clarify concepts, and guide
+              students through their coursework.
+            </p>
+          </div>
+          <div class="bg-neutral-50 p-8 rounded-2xl">
+            <i data-lucide="layout-dashboard" class="w-10 h-10 text-brand mb-4"></i>
+            <h3 class="text-2xl font-semibold text-secondary">
+              Intuitive, Clutter-Free Design
+            </h3>
+            <p class="text-xl text-secondary-700 mt-2">
+              Experience a clean, modern interface that's a joy to use for
+              everyone. Our platform is designed for effortless onboarding and
+              seamless cross-device compatibility.
+            </p>
+          </div>
+          <div class="bg-neutral-50 p-8 rounded-2xl">
+            <i data-lucide="settings-2" class="w-10 h-10 text-brand mb-4"></i>
+            <h3 class="text-2xl font-semibold text-secondary">
+              Unparalleled Customization
+            </h3>
+            <p class="text-xl text-secondary-700 mt-2">
+              Tailor every aspect of the platform to match your brand and
+              pedagogical vision. Our headless architecture provides complete
+              control over the user experience.
+            </p>
+          </div>
+          <div class="bg-neutral-50 p-8 rounded-2xl">
+            <i data-lucide="shield-check" class="w-10 h-10 text-brand mb-4"></i>
+            <h3 class="text-2xl font-semibold text-secondary">
+              Centralized AI Governance
+            </h3>
+            <p class="text-xl text-secondary-700 mt-2">
+              Manage your entire AI ecosystem from one powerful dashboard.
+              Control policies, monitor usage and ROI, and ensure your AI
+              strategy delivers real impact.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Final CTA Section -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-semibold text-secondary">
+          Ready to Build the Future of Learning?
+        </h2>
+        <p class="text-2xl text-secondary-700 mt-4 max-w-5xl mx-auto">
+          Stop wrestling with outdated technology. Join the institutions that
+          are empowering their educators and inspiring their students with a
+          truly modern learning platform.
+        </p>
+        <div class="mt-8">
+          <a href="#"
+            class="bg-brand text-white font-semibold py-4 px-8 rounded-lg hover:bg-brand-600 transition-transform hover:scale-105 shadow-lg">
+            Get Started for Free
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      lucide.createIcons();
+    });
+  </script>
+</body>
 </html>

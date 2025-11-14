@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InstructoHub Blog | AI-Powered LMS Insights & EdTech Resources</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="icon" href="/favicon.ico">
+  <meta name="description"
+    content="Discover insights on AI-powered LMS platforms, headless learning systems, and the future of education. Expert articles from InstructoHub.">
+  <meta name="keywords"
+    content="AI LMS, headless learning management system, EdTech, future of learning, education technology">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8GYGC3JQPD');
+  </script>
+  <style>
+    :root {
+      --brand-50: #fdf4f0;
+      --brand-100: #fce8e0;
+      --brand-200: #f9d1c1;
+      --brand-500: #e16b3b;
+      --brand-600: #d15a2b;
+      --secondary-500: #1b3942;
+      --secondary-600: #18333b;
+      --secondary-700: #152b32;
+    }
+    .bg-brand {
+      background-color: var(--brand-500);
+    }
+    .bg-brand-50 {
+      background-color: var(--brand-50);
+    }
+    .bg-brand-100 {
+      background-color: var(--brand-100);
+    }
+    .bg-brand-200 {
+      background-color: var(--brand-200);
+    }
+    .bg-brand-600 {
+      background-color: var(--brand-600);
+    }
+    .hover\:bg-brand-600:hover {
+      background-color: var(--brand-600);
+    }
+    .text-brand {
+      color: var(--brand-500);
+    }
+    .border-brand {
+      border-color: var(--brand-500);
+    }
+    .bg-secondary {
+      background-color: var(--secondary-500);
+    }
+    .bg-secondary-700 {
+      background-color: var(--secondary-700);
+    }
+    .hover\:bg-secondary-700:hover {
+      background-color: var(--secondary-700);
+    }
+    .text-secondary {
+      color: var(--secondary-500);
+    }
+    .text-secondary-600 {
+      color: var(--secondary-600);
+    }
+    .text-secondary-700 {
+      color: var(--secondary-700);
+    }
+    .from-brand {
+      --tw-gradient-from: var(--brand-500);
+    }
+    .to-brand-600 {
+      --tw-gradient-to: var(--brand-600);
+    }
+    .blog-card {
+      transition: all 0.3s ease;
+      border: 1px solid #e5e7eb;
+    }
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(225, 107, 59, 0.1);
+      border-color: var(--brand-500);
+    }
+    .blog-card.coming-soon {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    .blog-card.coming-soon:hover {
+      transform: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-color: #e5e7eb;
+    }
+    .coming-soon-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background-color: var(--brand-500);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .category-badge {
+      display: inline-block;
+      background-color: var(--brand-50);
+      color: var(--brand-500);
+      padding: 6px 12px;
+      border-radius: 24px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 text-secondary">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-brand-50 via-white to-neutral-50 pt-32 pb-20">
+    <div class="container mx-auto px-4 text-center">
+      <span class="text-brand font-semibold uppercase tracking-wider text-sm">Blog</span>
+      <h1 class="text-5xl md:text-6xl font-bold text-secondary mt-4 mb-6">
+        Insights on the <span class="text-brand">Future of Learning</span>
+      </h1>
+      <p class="text-xl text-secondary-700 max-w-3xl mx-auto">
+        Discover how AI-First LMS platforms are transforming education. Expert articles on EdTech, learning innovation,
+        and institutional transformation.
+      </p>
+    </div>
+  </section>
+  <!-- Blog Grid Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Blog #1: Active (Clickable) -->
+        <a href="/blog/ai-first-lms-winning-2025.html"
+          class="blog-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
+          <div class="relative h-48 bg-gradient-to-br from-brand-100 to-brand-200 overflow-hidden">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-16 h-16 text-brand opacity-30"></i>
+            </div>
+            <img src="/assets/images/blog/ai-first-lms-hero.jpg" alt="AI-First LMS Platform"
+              class="w-full h-full object-cover opacity-0">
+          </div>
+          <div class="p-6">
+            <div class="category-badge">EdTech Trends</div>
+            <h3 class="text-xl font-bold text-secondary mb-2 line-clamp-2">
+              Why AI-First LMS Like InstructoHub is Winning in 2025
+            </h3>
+            <p class="text-secondary-700 text-sm mb-4 line-clamp-3">
+              Discover why AI-First Learning Management Systems are revolutionizing education and how they differ from
+              traditional monolithic platforms.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-neutral-200">
+              <span class="text-sm text-secondary-600">8 min read</span>
+              <span class="text-brand font-semibold text-sm">Read →</span>
+            </div>
+          </div>
+        </a>
+        <!-- Blog #2: Coming Soon -->
+        <div class="blog-card coming-soon bg-white rounded-xl overflow-hidden shadow-lg relative">
+          <div class="coming-soon-badge">Coming Soon</div>
+          <div class="relative h-48 bg-gradient-to-br from-brand-100 to-brand-200 overflow-hidden opacity-50">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i data-lucide="zap" class="w-16 h-16 text-brand opacity-20"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="category-badge">EdTech Trends</div>
+            <h3 class="text-xl font-bold text-secondary mb-2">
+              AI in Education: 5 Real Use Cases Beyond ChatGPT
+            </h3>
+            <p class="text-secondary-700 text-sm mb-4 line-clamp-3">
+              Move beyond the hype. Explore five concrete, transformative applications of AI in educational institutions
+              right now.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-neutral-200">
+              <span class="text-sm text-secondary-600">—</span>
+              <span class="text-secondary-600 font-semibold text-sm">Soon</span>
+            </div>
+          </div>
+        </div>
+        <!-- Blog #3: Coming Soon -->
+        <div class="blog-card coming-soon bg-white rounded-xl overflow-hidden shadow-lg relative">
+          <div class="coming-soon-badge">Coming Soon</div>
+          <div class="relative h-48 bg-gradient-to-br from-brand-100 to-brand-200 overflow-hidden opacity-50">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i data-lucide="rocket" class="w-16 h-16 text-brand opacity-20"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="category-badge">Implementation</div>
+            <h3 class="text-xl font-bold text-secondary mb-2">
+              How Universities Can Launch Courses 10x Faster: A Playbook
+            </h3>
+            <p class="text-secondary-700 text-sm mb-4 line-clamp-3">
+              From 6 months to 2 weeks. Learn the step-by-step approach to dramatically accelerate course development.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-neutral-200">
+              <span class="text-sm text-secondary-600">—</span>
+              <span class="text-secondary-600 font-semibold text-sm">Soon</span>
+            </div>
+          </div>
+        </div>
+        <!-- Blog #4: Coming Soon -->
+        <div class="blog-card coming-soon bg-white rounded-xl overflow-hidden shadow-lg relative">
+          <div class="coming-soon-badge">Coming Soon</div>
+          <div class="relative h-48 bg-gradient-to-br from-brand-100 to-brand-200 overflow-hidden opacity-50">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i data-lucide="chart-bar" class="w-16 h-16 text-brand opacity-20"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="category-badge">Comparison</div>
+            <h3 class="text-xl font-bold text-secondary mb-2">
+              Modern LMS Platforms vs. Traditional Systems: A 2025 Comparison
+            </h3>
+            <p class="text-secondary-700 text-sm mb-4 line-clamp-3">
+              Complete comparison of what's changed in LMS architecture, why it matters, and how to evaluate platforms
+              today.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-neutral-200">
+              <span class="text-sm text-secondary-600">—</span>
+              <span class="text-secondary-600 font-semibold text-sm">Soon</span>
+            </div>
+          </div>
+        </div>
+        <!-- Blog #5: Coming Soon -->
+        <div class="blog-card coming-soon bg-white rounded-xl overflow-hidden shadow-lg relative">
+          <div class="coming-soon-badge">Coming Soon</div>
+          <div class="relative h-48 bg-gradient-to-br from-brand-100 to-brand-200 overflow-hidden opacity-50">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i data-lucide="palette" class="w-16 h-16 text-brand opacity-20"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="category-badge">Implementation</div>
+            <h3 class="text-xl font-bold text-secondary mb-2">
+              White-Label LMS: Complete Guide for EdTech Innovators
+            </h3>
+            <p class="text-secondary-700 text-sm mb-4 line-clamp-3">
+              Everything you need to know about white-label LMS solutions, customization options, and deployment
+              strategies.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-neutral-200">
+              <span class="text-sm text-secondary-600">—</span>
+              <span class="text-secondary-600 font-semibold text-sm">Soon</span>
+            </div>
+          </div>
+        </div>
+        <!-- Blog #6: Coming Soon -->
+        <div class="blog-card coming-soon bg-white rounded-xl overflow-hidden shadow-lg relative">
+          <div class="coming-soon-badge">Coming Soon</div>
+          <div class="relative h-48 bg-gradient-to-br from-brand-100 to-brand-200 overflow-hidden opacity-50">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i data-lucide="shield" class="w-16 h-16 text-brand opacity-20"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="category-badge">Data & Compliance</div>
+            <h3 class="text-xl font-bold text-secondary mb-2">
+              Student Data Privacy: What Educational Institutions Must Know
+            </h3>
+            <p class="text-secondary-700 text-sm mb-4 line-clamp-3">
+              Essential guide to data protection, compliance requirements, and best practices for institutional data
+              governance.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-neutral-200">
+              <span class="text-sm text-secondary-600">—</span>
+              <span class="text-secondary-600 font-semibold text-sm">Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-br from-brand to-brand-600 text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Transform Your Institution with AI-First Learning</h2>
+      <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+        Ready to explore how InstructoHub can revolutionize your teaching, learning, and institutional operations?
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://instructohub.com/register.html"
+          class="px-8 py-4 bg-white text-brand font-bold rounded-lg hover:bg-neutral-100 transition-transform hover:scale-105 shadow-xl">
+          Try Your Own Instance
+        </a>
+        <a href="https://instructohub.com/contact.html"
+          class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-brand transition">
+          Schedule a Demo
+        </a>
+      </div>
+      <p class="mt-6 text-sm opacity-75">No credit card required • Set up in minutes • Cancel anytime</p>
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

@@ -103,12 +103,28 @@
             class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">
             Pricing
           </a>
-          <a href="/About.html"
-            class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">
-            About Us
-          </a>
+          <div class="relative group">
+            <button
+              class="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full">
+              <span>About Us</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-60 bg-white rounded-lg shadow-lg border border-neutral-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div class="py-2">
+                <a href="/About.html"
+                  class="block px-4 py-2 text-sm text-secondary-700 hover:bg-brand-50 hover:text-brand">
+                  Our Journey
+                </a>
+                <div class="border-t border-neutral-100 my-1"></div>
+                <a href="/Contact.html"
+                  class="block px-4 py-2 text-sm text-secondary-700 hover:bg-brand-50 hover:text-brand">
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
         </nav>
-
         <div class="flex items-center gap-6">
           <button
             class="hidden md:block px-6 py-2.5 font-bold bg-brand text-white rounded-md hover:bg-brand-600 transition-colors shadow-md hover:shadow-lg"
@@ -124,30 +140,19 @@
       class="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">Home</a>
     <div class="border-t border-gray-100">
       <span class="block px-6 py-4 font-bold text-secondary-700">Products</span>
-      <a href="instructogen.html"
-        class="block pl-10 pr-6 py-3 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">Headless
-        LMS</a>
-      <a href="instructoboost.html"
-        class="block pl-10 pr-6 py-3 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">AI Powered
-        Suite</a>
+      <a href="AI-First-LMS.html"
+        class="block pl-10 pr-6 py-3 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">AI-First LMS</a>
+      <a href="Advanced-Features.html"
+        class="block pl-16 pr-6 py-3 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">Advanced Features</a>
+      <a href="AI-Suite.html"
+        class="block pl-10 pr-6 py-3 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">AI Suite</a>
     </div>
-    <!-- <div class="border-t border-gray-100">
-            <a href="#solutions" onclick="smoothScroll(event, '#solutions'); toggleMobileMenu();"
-                class="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">Solutions</a>
-        </div>
-        <div class="border-t border-gray-100">
-            <a href="#pricing" onclick="smoothScroll(event, '#pricing'); toggleMobileMenu();"
-                class="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">Pricing</a>
-        </div>
-        <div class="border-t border-gray-100">
-            <a href="#resources" onclick="smoothScroll(event, '#resources'); toggleMobileMenu();"
-                class="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">Resources</a>
-        </div>
-        <div class="border-t border-gray-100">
-            <a href="#about" onclick="smoothScroll(event, '#about'); toggleMobileMenu();"
-                class="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">About
-                Us</a>
-        </div> -->
+    <a href="#mission" onclick="smoothScroll(event, '#mission'); toggleMobileMenu();"
+      class="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">Mission & Vision</a>
+    <a href="#pricing" onclick="smoothScroll(event, '#pricing'); toggleMobileMenu();"
+      class="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">Pricing</a>
+    <a href="#about" onclick="smoothScroll(event, '#about'); toggleMobileMenu();"
+      class="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors">About Us</a>
     <div class="border-t border-gray-100 p-6">
       <button
         class="w-full px-6 font-bold py-3 bg-brand text-white rounded-md hover:bg-brand-600 transition-colors shadow-md"

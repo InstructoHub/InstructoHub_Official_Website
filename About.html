@@ -1,448 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Primary Meta Tags -->
-    <title>About Us | InstructoHub</title>
-    <meta name="title" content="About Us | InstructoHub" />
-    <meta
-      name="description"
-      content="Learn about InstructoHub’s mission to build AI-first learning platforms. We help institutions deliver personalized, efficient, secure education with our AI-First LMS and AI Suite."
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                50: "#fdf4f0",
-                100: "#fce8e0",
-                200: "#f9d1c1",
-                300: "#f5b9a2",
-                400: "#f09c7d",
-                500: "#e16b3b",
-                600: "#d15a2b",
-                700: "#b44a22",
-                800: "#933c1d",
-                900: "#78301a",
-                DEFAULT: "#e16b3b",
-              },
-              secondary: {
-                50: "#e7eaeb",
-                100: "#cfd5d7",
-                200: "#a0acb0",
-                300: "#728389",
-                400: "#435a62",
-                500: "#1b3942",
-                600: "#18333b",
-                700: "#152b32",
-                800: "#122229",
-                900: "#0e1a20",
-                DEFAULT: "#1b3942",
-              },
-              success: { DEFAULT: "#4CAF50", dark: "#3a8c3f" },
-              danger: { DEFAULT: "#EF4444", dark: "#B91C1C" },
-              neutral: {
-                50: "#fafafa",
-                100: "#f5f5f5",
-                200: "#e5e5e5",
-                300: "#d4d4d4",
-                400: "#a3a3a3",
-                500: "#737373",
-                600: "#525252",
-                700: "#404040",
-                800: "#262626",
-                900: "#171717",
-              },
-              background: { page: "#f7f7f7", card: "#ffffff" },
-              border: { DEFAULT: "#e5e7eb", accent: "#e16b3b" },
-              text: {
-                primary: "#1b3942",
-                secondary: "#4b5563",
-                muted: "#6b7280",
-                light: "#ffffff",
-              },
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Primary Meta Tags -->
+  <title>About Us | InstructoHub</title>
+  <meta name="title" content="About Us | InstructoHub" />
+  <meta name="description"
+    content="Learn about InstructoHub's mission to build AI-first learning platforms. We help institutions deliver personalized, efficient, secure education with our AI-First LMS and AI Suite." />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8GYGC3JQPD');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#fdf4f0",
+              100: "#fce8e0",
+              200: "#f9d1c1",
+              300: "#f5b9a2",
+              400: "#f09c7d",
+              500: "#e16b3b",
+              600: "#d15a2b",
+              700: "#b44a22",
+              800: "#933c1d",
+              900: "#78301a",
+              DEFAULT: "#e16b3b",
             },
-            animation: { fadeIn: "fadeIn 0.5s ease-out forwards" },
-            keyframes: {
-              fadeIn: {
-                "0%": { opacity: "0", transform: "translateY(10px)" },
-                "100%": { opacity: "1", transform: "translateY(0)" },
-              },
+            secondary: {
+              50: "#e7eaeb",
+              100: "#cfd5d7",
+              200: "#a0acb0",
+              300: "#728389",
+              400: "#435a62",
+              500: "#1b3942",
+              600: "#18333b",
+              700: "#152b32",
+              800: "#122229",
+              900: "#0e1a20",
+              DEFAULT: "#1b3942",
+            },
+            success: { DEFAULT: "#4CAF50", dark: "#3a8c3f" },
+            danger: { DEFAULT: "#EF4444", dark: "#B91C1C" },
+            neutral: {
+              50: "#fafafa",
+              100: "#f5f5f5",
+              200: "#e5e5e5",
+              300: "#d4d4d4",
+              400: "#a3a3a3",
+              500: "#737373",
+              600: "#525252",
+              700: "#404040",
+              800: "#262626",
+              900: "#171717",
+            },
+            background: { page: "#f7f7f7", card: "#ffffff" },
+            border: { DEFAULT: "#e5e7eb", accent: "#e16b3b" },
+            text: {
+              primary: "#1b3942",
+              secondary: "#4b5563",
+              muted: "#6b7280",
+              light: "#ffffff",
+            },
+          },
+          animation: { fadeIn: "fadeIn 0.5s ease-out forwards" },
+          keyframes: {
+            fadeIn: {
+              "0%": { opacity: "0", transform: "translateY(10px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" },
             },
           },
         },
-      };
-    </script>
-    <script>
-      fetch("/header.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("header-placeholder").innerHTML = data;
-          lucide.createIcons();
-          const header = document.getElementById("header");
-          window.addEventListener("scroll", () => {
-            if (window.scrollY > 10) {
-              header.classList.add("scrolled");
-            } else {
-              header.classList.remove("scrolled");
-            }
-          });
+      },
+    };
+  </script>
+  <script>
+    fetch("/header.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        lucide.createIcons();
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
         });
-      fetch("/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("footer-placeholder").innerHTML = data;
-          lucide.createIcons();
-          const yearEl = document.getElementById("current-year");
-          if (yearEl) yearEl.textContent = new Date().getFullYear();
-        });
-    </script>
-  </head>
-  <body class="min-h-screen flex flex-col text-secondary bg-background-page">
-    <div class="w-full">
-      <div class="h-12 md:block hidden"></div>
-      <div class="h-16"></div>
-    </div>
-
-    <div id="header-placeholder"></div>
-
-    <main class="flex-1">
-      <!-- Hero -->
-      <section class="relative overflow-hidden">
-        <div
-          class="absolute inset-0 bg-gradient-to-br from-brand/10 via-brand/5 to-secondary/10"
-        ></div>
-        <div class="relative container mx-auto px-4 py-20">
-          <div class="max-w-full">
+      });
+    fetch("/footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+        lucide.createIcons();
+        const yearEl = document.getElementById("current-year");
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+      });
+  </script>
+</head>
+<body class="min-h-screen flex flex-col text-secondary bg-background-page">
+  <div class="w-full">
+    <div class="h-12 md:block hidden"></div>
+    <div class="h-16"></div>
+  </div>
+  <div id="header-placeholder"></div>
+  <main class="flex-1">
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-brand/10 via-brand/5 to-secondary/10"></div>
+      <div class="relative container mx-auto px-4 py-20">
+        <div class="max-w-full">
+          <span class="inline-flex items-center gap-2 text-brand font-semibold mb-4">
+            <i data-lucide="stars" class="w-5 h-5"></i>
+            About InstructoHub
+          </span>
+          <h1 class="text-6xl text-secondary tracking-tight mb-6">
+            We're building the AI-first future of learning
+          </h1>
+          <p class="text-2xl max-w-5xl text-secondary-700 leading-relaxed">
+            From classrooms to enterprises, we power personalized learning,
+            automated creation, and data-driven outcomes with delightful,
+            secure technology.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
             <span
-              class="inline-flex items-center gap-2 text-brand font-semibold mb-4"
-            >
-              <i data-lucide="stars" class="w-5 h-5"></i>
-              About InstructoHub
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border text-secondary text-lg shadow-sm">
+              <i data-lucide="shield-check" class="w-4 h-4 text-brand"></i>
+              Privacy-first by design
             </span>
-            <h1 class="text-6xl text-secondary tracking-tight mb-6">
-              We’re building the AI-first future of learning
-            </h1>
-            <p class="text-2xl max-w-5xl text-secondary-700 leading-relaxed">
-              From classrooms to enterprises, we power personalized learning,
-              automated creation, and data-driven outcomes with delightful,
-              secure technology.
+            <span
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border text-secondary text-lg shadow-sm">
+              <i data-lucide="cpu" class="w-4 h-4 text-brand"></i>
+              AI-native workflows
+            </span>
+            <span
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border text-secondary text-lg shadow-sm">
+              <i data-lucide="sparkles" class="w-4 h-4 text-brand"></i>
+              Modern, accessible UX
+            </span>
+          </div>
+        </div>
+        <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="bg-white border rounded-xl p-6 text-center shadow-sm">
+            <div class="text-3xl font-semibold text-brand">AI-First</div>
+            <div class="text-secondary-700 text-lg pt-2">
+              Built for tomorrow's learners
+            </div>
+          </div>
+          <div class="bg-white border rounded-xl p-6 text-center shadow-sm">
+            <div class="text-3xl font-semibold text-brand">Secure</div>
+            <div class="text-secondary-700 text-lg pt-2">
+              Privacy at the core
+            </div>
+          </div>
+          <div class="bg-white border rounded-xl p-6 text-center shadow-sm">
+            <div class="text-3xl font-semibold text-brand">Scalable</div>
+            <div class="text-secondary-700 text-lg pt-2">Grows with you</div>
+          </div>
+          <div class="bg-white border rounded-xl p-6 text-center shadow-sm">
+            <div class="text-3xl font-semibold text-brand">Supported</div>
+            <div class="text-secondary-700 text-lg pt-2">
+              Your success, our priority
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Why choose us -->
+    <section class="bg-white border-y">
+      <div class="container mx-auto px-4 py-16 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-5xl leading-tight text-secondary mb-6">
+            Why Institutions Choose Us
+          </h2>
+          <ul class="space-y-3 text-secondary-700">
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand mt-0.5"></i>
+              <span class="text-lg">AI-native workflows for content, assessments, analytics</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand mt-0.5"></i>
+              <span class="text-lg">Enterprise-grade security and privacy controls</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand mt-0.5"></i>
+              <span class="text-lg">Modern UX with accessibility and mobile-first design</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand mt-0.5"></i>
+              <span class="text-lg">Dedicated support and continuous improvements</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-background-page rounded-xl border p-8">
+          <h3 class="text-xl font-semibold text-brand mb-3">At a Glance</h3>
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <div class="text-3xl font-semibold text-secondary">99.9%</div>
+              <div class="text-brand-600">Uptime target</div>
+            </div>
+            <div>
+              <div class="text-3xl font-semibold text-secondary">GDPR</div>
+              <div class="text-brand-600">Privacy-first by design</div>
+            </div>
+            <div>
+              <div class="text-3xl font-semibold text-secondary">10x</div>
+              <div class="text-brand-600">Faster content creation</div>
+            </div>
+            <div>
+              <div class="text-3xl font-semibold text-secondary">24/7</div>
+              <div class="text-brand-600">Support availability</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Timeline -->
+    <section class="bg-background-page">
+      <div class="container mx-auto px-4 py-16">
+        <h2 class="text-5xl leading-tight text-secondary mb-8">
+          Our Journey
+        </h2>
+        <ol class="relative border-s border-neutral-200 space-y-10">
+          <li class="ms-4">
+            <div class="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full bg-brand"></div>
+            <time class="mb-1 text-xl font-medium text-brand">2023</time>
+            <h3 class="text-xl font-semibold text-secondary">
+              InstructoHub is founded
+            </h3>
+            <p class="text-text-secondary text-xl">
+              We set out to make AI-first learning accessible and secure.
             </p>
-            <div class="mt-8 flex flex-wrap items-center gap-3">
-              <span
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border text-secondary text-lg shadow-sm"
-              >
-                <i data-lucide="shield-check" class="w-4 h-4 text-brand"></i>
-                Privacy-first by design
-              </span>
-              <span
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border text-secondary text-lg shadow-sm"
-              >
-                <i data-lucide="cpu" class="w-4 h-4 text-brand"></i>
-                AI-native workflows
-              </span>
-              <span
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border text-secondary text-lg shadow-sm"
-              >
-                <i data-lucide="sparkles" class="w-4 h-4 text-brand"></i>
-                Modern, accessible UX
-              </span>
+          </li>
+          <li class="ms-4">
+            <div class="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full bg-brand"></div>
+            <time class="mb-1 text-xl font-medium text-brand">2024</time>
+            <h3 class="text-xl font-semibold text-secondary">
+              AI-First LMS launch
+            </h3>
+            <p class="text-text-secondary text-xl">
+              Unified content, assessment, and analytics for modern
+              institutions.
+            </p>
+          </li>
+          <li class="ms-4">
+            <div class="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full bg-brand"></div>
+            <time class="mb-1 text-xl font-medium text-brand">2025</time>
+            <h3 class="text-xl font-semibold text-secondary">
+              AI Suite expands
+            </h3>
+            <p class="text-text-secondary text-xl">
+              Advanced creation tools and performance insights to scale
+              outcomes.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <!-- Culture & Values -->
+    <section class="bg-white border-t">
+      <div class="container mx-auto px-4 py-16">
+        <h2 class="text-5xl leading-tight text-secondary mb-8">
+          What we value
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="rounded-xl border p-6 bg-background-page">
+            <div class="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center mb-4">
+              <i data-lucide="lock" class="w-5 h-5"></i>
             </div>
+            <h3 class="text-2xl font-semibold text-secondary mb-2">
+              Privacy-first
+            </h3>
+            <p class="text-secondary-700 text-lg">
+              We design for trust: secure infrastructure, transparent
+              controls, and responsible AI.
+            </p>
           </div>
-          <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="bg-white border rounded-xl p-6 text-center shadow-sm">
-              <div class="text-3xl font-semibold text-brand">AI-First</div>
-              <div class="text-secondary-700 text-lg pt-2">
-                Built for tomorrow’s learners
-              </div>
+          <div class="rounded-xl border p-6 bg-background-page">
+            <div class="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center mb-4">
+              <i data-lucide="users" class="w-5 h-5"></i>
             </div>
-            <div class="bg-white border rounded-xl p-6 text-center shadow-sm">
-              <div class="text-3xl font-semibold text-brand">Secure</div>
-              <div class="text-secondary-700 text-lg pt-2">
-                Privacy at the core
-              </div>
-            </div>
-            <div class="bg-white border rounded-xl p-6 text-center shadow-sm">
-              <div class="text-3xl font-semibold text-brand">Scalable</div>
-              <div class="text-secondary-700 text-lg pt-2">Grows with you</div>
-            </div>
-            <div class="bg-white border rounded-xl p-6 text-center shadow-sm">
-              <div class="text-3xl font-semibold text-brand">Supported</div>
-              <div class="text-secondary-700 text-lg pt-2">
-                Your success, our priority
-              </div>
-            </div>
+            <h3 class="text-2xl font-semibold text-secondary mb-2">
+              Learner-centered
+            </h3>
+            <p class="text-secondary-700 text-lg">
+              Accessibility, joy, and clarity in every interaction for every
+              learner.
+            </p>
           </div>
-        </div>
-      </section>
-
-      <!-- Why choose us -->
-      <section class="bg-white border-y">
-        <div
-          class="container mx-auto px-4 py-16 grid md:grid-cols-2 gap-12 items-center"
-        >
-          <div>
-            <h2 class="text-5xl leading-tight text-secondary mb-6">
-              Why Institutions Choose Us
-            </h2>
-            <ul class="space-y-3 text-secondary-700">
-              <li class="flex items-start gap-3">
-                <i
-                  data-lucide="check-circle-2"
-                  class="w-5 h-5 text-brand mt-0.5"
-                ></i>
-                <span class="text-lg"
-                  >AI-native workflows for content, assessments, analytics</span
-                >
-              </li>
-              <li class="flex items-start gap-3">
-                <i
-                  data-lucide="check-circle-2"
-                  class="w-5 h-5 text-brand mt-0.5"
-                ></i>
-                <span class="text-lg"
-                  >Enterprise-grade security and privacy controls</span
-                >
-              </li>
-              <li class="flex items-start gap-3">
-                <i
-                  data-lucide="check-circle-2"
-                  class="w-5 h-5 text-brand mt-0.5"
-                ></i>
-                <span class="text-lg"
-                  >Modern UX with accessibility and mobile-first design</span
-                >
-              </li>
-              <li class="flex items-start gap-3">
-                <i
-                  data-lucide="check-circle-2"
-                  class="w-5 h-5 text-brand mt-0.5"
-                ></i>
-                <span class="text-lg"
-                  >Dedicated support and continuous improvements</span
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="bg-background-page rounded-xl border p-8">
-            <h3 class="text-xl font-semibold text-brand mb-3">At a Glance</h3>
-            <div class="grid grid-cols-2 gap-6">
-              <div>
-                <div class="text-3xl font-semibold text-secondary">99.9%</div>
-                <div class="text-brand-600">Uptime target</div>
-              </div>
-              <div>
-                <div class="text-3xl font-semibold text-secondary">GDPR</div>
-                <div class="text-brand-600">Privacy-first by design</div>
-              </div>
-              <div>
-                <div class="text-3xl font-semibold text-secondary">10x</div>
-                <div class="text-brand-600">Faster content creation</div>
-              </div>
-              <div>
-                <div class="text-3xl font-semibold text-secondary">24/7</div>
-                <div class="text-brand-600">Support availability</div>
-              </div>
+          <div class="rounded-xl border p-6 bg-background-page">
+            <div class="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center mb-4">
+              <i data-lucide="line-chart" class="w-5 h-5"></i>
             </div>
+            <h3 class="text-2xl font-semibold text-secondary mb-2">
+              Outcomes-driven
+            </h3>
+            <p class="text-secondary-700 text-lg">
+              We measure what matters and iterate fast to improve learning
+              impact.
+            </p>
           </div>
         </div>
-      </section>
-
-      <!-- Timeline -->
-      <section class="bg-background-page">
-        <div class="container mx-auto px-4 py-16">
-          <h2 class="text-5xl leading-tight text-secondary mb-8">
-            Our Journey
+      </div>
+    </section>
+    <!-- Team / Leadership -->
+    <section class="bg-background-page">
+      <div class="container mx-auto px-4 py-16">
+        <div class="bg-white rounded-xl border p-8">
+          <h2 class="text-5xl leading-tight text-secondary mb-6">
+            Leadership
           </h2>
-          <ol class="relative border-s border-neutral-200 space-y-10">
-            <li class="ms-4">
-              <div
-                class="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full bg-brand"
-              ></div>
-              <time class="mb-1 text-xl font-medium text-brand">2023</time>
-              <h3 class="text-xl font-semibold text-secondary">
-                InstructoHub is founded
-              </h3>
-              <p class="text-text-secondary text-xl">
-                We set out to make AI-first learning accessible and secure.
-              </p>
-            </li>
-            <li class="ms-4">
-              <div
-                class="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full bg-brand"
-              ></div>
-              <time class="mb-1 text-xl font-medium text-brand">2024</time>
-              <h3 class="text-xl font-semibold text-secondary">
-                AI-First LMS launch
-              </h3>
-              <p class="text-text-secondary text-xl">
-                Unified content, assessment, and analytics for modern
-                institutions.
-              </p>
-            </li>
-            <li class="ms-4">
-              <div
-                class="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full bg-brand"
-              ></div>
-              <time class="mb-1 text-xl font-medium text-brand">2025</time>
-              <h3 class="text-xl font-semibold text-secondary">
-                AI Suite expands
-              </h3>
-              <p class="text-text-secondary text-xl">
-                Advanced creation tools and performance insights to scale
-                outcomes.
-              </p>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- Culture & Values -->
-      <section class="bg-white border-t">
-        <div class="container mx-auto px-4 py-16">
-          <h2 class="text-5xl leading-tight text-secondary mb-8">
-            What we value
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="rounded-xl border p-6 bg-background-page">
-              <div
-                class="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center mb-4"
-              >
-                <i data-lucide="lock" class="w-5 h-5"></i>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="flex gap-4">
+              <div class="w-16 h-16 rounded-lg bg-neutral-200 flex items-center justify-center text-secondary font-bold"
+                aria-label="Amitabh Vira avatar">
+                <img src="/assets/images/amitabh.png" alt="Amitabh Vira"
+                  class="w-full h-full object-cover rounded-lg" />
               </div>
-              <h3 class="text-2xl font-semibold text-secondary mb-2">
-                Privacy-first
-              </h3>
-              <p class="text-secondary-700 text-lg">
-                We design for trust: secure infrastructure, transparent
-                controls, and responsible AI.
-              </p>
+              <div>
+                <h4 class="text-lg font-semibold text-secondary">
+                  <a href="https://www.linkedin.com/in/amitabh-vira" target="_blank" rel="noopener noreferrer">Amitabh
+                    Vira</a>
+                </h4>
+                <p class="text-secondary-700">Co-Founder & CEO</p>
+                <p class="text-secondary-700">
+                  Leads strategy, partnerships, and execution.
+                </p>
+              </div>
             </div>
-            <div class="rounded-xl border p-6 bg-background-page">
-              <div
-                class="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center mb-4"
-              >
-                <i data-lucide="users" class="w-5 h-5"></i>
+            <div class="flex gap-4">
+              <div class="w-16 h-16 rounded-lg bg-neutral-200 flex items-center justify-center text-secondary font-bold"
+                aria-label="Ankit Garg avatar">
+                <img src="/assets/images/ankit.png" alt="Ankit Garg" class="w-full h-full object-cover rounded-lg" />
               </div>
-              <h3 class="text-2xl font-semibold text-secondary mb-2">
-                Learner-centered
-              </h3>
-              <p class="text-secondary-700 text-lg">
-                Accessibility, joy, and clarity in every interaction for every
-                learner.
-              </p>
-            </div>
-            <div class="rounded-xl border p-6 bg-background-page">
-              <div
-                class="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center mb-4"
-              >
-                <i data-lucide="line-chart" class="w-5 h-5"></i>
-              </div>
-              <h3 class="text-2xl font-semibold text-secondary mb-2">
-                Outcomes-driven
-              </h3>
-              <p class="text-secondary-700 text-lg">
-                We measure what matters and iterate fast to improve learning
-                impact.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Team / Leadership -->
-      <section class="bg-background-page">
-        <div class="container mx-auto px-4 py-16">
-          <div class="bg-white rounded-xl border p-8">
-            <h2 class="text-5xl leading-tight text-secondary mb-6">
-              Leadership
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8">
-              <div class="flex gap-4">
-                <div
-                  class="w-16 h-16 rounded-lg bg-neutral-200 flex items-center justify-center text-secondary font-bold"
-                  aria-label="Amitabh Vira avatar"
-                >
-                  <img
-                    src="/assets/images/amitabh.png"
-                    alt="Amitabh Vira"
-                    class="w-full h-full object-cover rounded-lg"
-                  />
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-secondary">
-                    <a
-                      href="https://www.linkedin.com/in/amitabh-vira"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Amitabh Vira</a
-                    >
-                  </h4>
-                  <p class="text-secondary-700">Co-Founder & CEO</p>
-                  <p class="text-secondary-700">
-                    Leads strategy, partnerships, and execution.
-                  </p>
-                </div>
-              </div>
-              <div class="flex gap-4">
-                <div
-                  class="w-16 h-16 rounded-lg bg-neutral-200 flex items-center justify-center text-secondary font-bold"
-                  aria-label="Ankit Garg avatar"
-                >
-                  <img
-                    src="/assets/images/ankit.png"
-                    alt="Ankit Garg"
-                    class="w-full h-full object-cover rounded-lg"
-                  />
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-secondary">
-                    <a
-                      href="https://www.linkedin.com/in/ankitgarg3"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Ankit Garg</a
-                    >
-                  </h4>
-                  <p class="text-secondary-700">Co-Founder & COO</p>
-                  <p class="text-secondary-700">
-                    Owns product direction and operations.
-                  </p>
-                </div>
+              <div>
+                <h4 class="text-lg font-semibold text-secondary">
+                  <a href="https://www.linkedin.com/in/ankitgarg3" target="_blank" rel="noopener noreferrer">Ankit
+                    Garg</a>
+                </h4>
+                <p class="text-secondary-700">Co-Founder & COO</p>
+                <p class="text-secondary-700">
+                  Owns product direction and operations.
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
+      </div>
+    </section>
     <!-- CTA -->
-    <section
-      class="bg-gradient-to-b from-brand-50/20 to-brand-100 text-center py-16 text-secondary"
-    >
+    <section class="bg-gradient-to-b from-brand-50/20 to-brand-100 text-center py-16 text-secondary">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-secondary">
           Ready to experience AI-first learning?
         </h2>
         <p class="text-secondary/80 max-w-3xl text-xl mx-auto mb-8">
           Start with InstructoHub today and transform how your institution
-              teaches and learns.
+          teaches and learns.
         </p>
-        <a
-          href="/Contact.html"
-          class="bg-brand-600 text-white font-semibold px-10 py-4 rounded-lg hover:bg-brand-700 transition-transform hover:scale-105 inline-block shadow-lg"
-        >
+        <a href="/Contact.html"
+          class="bg-brand-600 text-white font-semibold px-10 py-4 rounded-lg hover:bg-brand-700 transition-transform hover:scale-105 inline-block shadow-lg">
           Get Started Today
         </a>
       </div>
     </section>
-
     <div id="footer-placeholder"></div>
-
     <script>
       function toggleMobileMenu() {
         const mobileMenu = document.getElementById("mobile-menu");
@@ -462,5 +395,5 @@
         lucide.createIcons();
       });
     </script>
-  </body>
+</body>
 </html>

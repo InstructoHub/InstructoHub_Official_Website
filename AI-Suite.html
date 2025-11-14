@@ -1,424 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Primary Meta Tags -->
-    <title>AI Suite | InstructoHub</title>
-    <meta name="title" content="AI Suite | InstructoHub" />
-    <meta
-      name="description"
-      content="Supercharge Canvas, Moodle, and more with the InstructoHub AI Suite. Automate content and assessments, enable AI tutoring, and gain analytics—no migration required."
-    />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-17282898351"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "AW-17282898351");
-      gtag("event", "conversion", {
-        send_to: "AW-17282898351/sRZACIWq6eUaEK-zkLFA",
-        value: 1.0,
-        currency: "INR",
-      });
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                50: "#fdf4f0",
-                100: "#fce8e0",
-                200: "#f9d1c1",
-                300: "#f5b9a2",
-                400: "#f09c7d",
-                500: "#e16b3b", // Primary brand color
-                600: "#d15a2b",
-                700: "#b44a22",
-                800: "#933c1d",
-                900: "#78301a",
-                DEFAULT: "#e16b3b",
-              },
-              secondary: {
-                50: "#e7eaeb",
-                100: "#cfd5d7",
-                200: "#a0acb0",
-                300: "#728389",
-                400: "#435a62",
-                500: "#1b3942", // Secondary brand color
-                600: "#18333b",
-                700: "#152b32",
-                800: "#122229",
-                900: "#0e1a20",
-                DEFAULT: "#1b3942",
-              },
-              success: {
-                DEFAULT: "#4CAF50",
-                dark: "#3a8c3f",
-              },
-              danger: {
-                DEFAULT: "#EF4444",
-                dark: "#B91C1C",
-              },
-              neutral: {
-                50: "#fafafa",
-                100: "#f5f5f5",
-                200: "#e5e5e5",
-                300: "#d4d4d4",
-                400: "#a3a3a3",
-                500: "#737373",
-                600: "#525252",
-                700: "#404040",
-                800: "#262626",
-                900: "#171717",
-              },
-              background: {
-                page: "#f7f7f7",
-                card: "#ffffff",
-              },
-              border: {
-                DEFAULT: "#e5e7eb",
-                accent: "#e16b3b",
-              },
-              text: {
-                primary: "#1b3942",
-                secondary: "#4b5563",
-                muted: "#6b7280",
-                light: "#ffffff",
-              },
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Primary Meta Tags -->
+  <title>AI Suite | InstructoHub</title>
+  <meta name="title" content="AI Suite | InstructoHub" />
+  <meta name="description"
+    content="Supercharge Canvas, Moodle, and more with the InstructoHub AI Suite. Automate content and assessments, enable AI tutoring, and gain analytics—no migration required." />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8GYGC3JQPD');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#fdf4f0",
+              100: "#fce8e0",
+              200: "#f9d1c1",
+              300: "#f5b9a2",
+              400: "#f09c7d",
+              500: "#e16b3b", // Primary brand color
+              600: "#d15a2b",
+              700: "#b44a22",
+              800: "#933c1d",
+              900: "#78301a",
+              DEFAULT: "#e16b3b",
             },
-            animation: {
-              fadeIn: "fadeIn 0.5s ease-out forwards",
+            secondary: {
+              50: "#e7eaeb",
+              100: "#cfd5d7",
+              200: "#a0acb0",
+              300: "#728389",
+              400: "#435a62",
+              500: "#1b3942", // Secondary brand color
+              600: "#18333b",
+              700: "#152b32",
+              800: "#122229",
+              900: "#0e1a20",
+              DEFAULT: "#1b3942",
             },
-            keyframes: {
-              fadeIn: {
-                "0%": {
-                  opacity: "0",
-                  transform: "translateY(10px)",
-                },
-                "100%": {
-                  opacity: "1",
-                  transform: "translateY(0)",
-                },
+            success: {
+              DEFAULT: "#4CAF50",
+              dark: "#3a8c3f",
+            },
+            danger: {
+              DEFAULT: "#EF4444",
+              dark: "#B91C1C",
+            },
+            neutral: {
+              50: "#fafafa",
+              100: "#f5f5f5",
+              200: "#e5e5e5",
+              300: "#d4d4d4",
+              400: "#a3a3a3",
+              500: "#737373",
+              600: "#525252",
+              700: "#404040",
+              800: "#262626",
+              900: "#171717",
+            },
+            background: {
+              page: "#f7f7f7",
+              card: "#ffffff",
+            },
+            border: {
+              DEFAULT: "#e5e7eb",
+              accent: "#e16b3b",
+            },
+            text: {
+              primary: "#1b3942",
+              secondary: "#4b5563",
+              muted: "#6b7280",
+              light: "#ffffff",
+            },
+          },
+          animation: {
+            fadeIn: "fadeIn 0.5s ease-out forwards",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(10px)",
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)",
               },
             },
           },
         },
-      };
-    </script>
-    <script>
-      fetch("header.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("header-placeholder").innerHTML = data;
-          lucide.createIcons();
-          const header = document.getElementById("header");
-          window.addEventListener("scroll", () => {
-            if (window.scrollY > 10) {
-              header.classList.add("scrolled");
-            } else {
-              header.classList.remove("scrolled");
-            }
-          });
+      },
+    };
+  </script>
+  <script>
+    fetch("header.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        lucide.createIcons();
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
         });
-      fetch("footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("footer-placeholder").innerHTML = data;
-          lucide.createIcons();
-          document.getElementById("current-year").textContent =
-            new Date().getFullYear();
-        });
-    </script>
-  </head>
-
-  <body class="min-h-screen flex flex-col bg-background-page text-secondary">
-    <div class="w-full">
-      <div class="h-12 md:block hidden"></div>
-      <div class="h-16"></div>
-    </div>
-    <div id="header-placeholder"></div>
-
-    <main>
-      <section class="bg-secondary text-white pt-20 pb-20 md:pt-40 md:pb-20">
-        <div class="container mx-auto px-4 text-center">
-          <span class="text-brand font-semibold uppercase tracking-wider"
-            >InstructoHub AI-Suite</span
-          >
-          <h1
-            class="text-5xl md:text-7xl text-white max-w-4xl mx-auto"
-            style="line-height: 1.25 !important"
-          >
-            Supercharge Your Existing LMS with
-            <span class="text-brand">AI Layer</span>
-          </h1>
-          <p
-            class="text-2xl pb-6 text-neutral-300 md:text-2xl mt-6 max-w-4xl mx-auto"
-          >
-            Love your current LMS but crave more power? Seamlessly integrate our
-            suite of intelligent tools into Canvas, Moodle to unlock
-            next-generation capabilities.
-          </p>
-
-          <!-- Merged "How it Works" Steps -->
-          <div class="mt-12 max-w-5xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-8 text-left">
-              <div class="flex items-start p-4">
-                <div
-                  class="bg-brand text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-semibold mr-4 mt-1"
-                >
-                  1
-                </div>
-                <div>
-                  <h3 class="text-xl font-semibold text-white">
-                    Register & Configure
-                  </h3>
-                  <p class="text-neutral-300 mt-1">
-                    Sign up instantly and brand your campus in our intuitive
-                    setup wizard.
-                  </p>
-                </div>
+      });
+    fetch("footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+        lucide.createIcons();
+        document.getElementById("current-year").textContent =
+          new Date().getFullYear();
+      });
+  </script>
+</head>
+<body class="min-h-screen flex flex-col bg-background-page text-secondary">
+  <div class="w-full">
+    <div class="h-12 md:block hidden"></div>
+    <div class="h-16"></div>
+  </div>
+  <div id="header-placeholder"></div>
+  <main>
+    <section class="bg-secondary text-white pt-20 pb-20 md:pt-40 md:pb-20">
+      <div class="container mx-auto px-4 text-center">
+        <span class="text-brand font-semibold uppercase tracking-wider">InstructoHub AI-Suite</span>
+        <h1 class="text-5xl md:text-7xl text-white max-w-4xl mx-auto" style="line-height: 1.25 !important">
+          Supercharge Your Existing LMS with
+          <span class="text-brand">AI Layer</span>
+        </h1>
+        <p class="text-2xl pb-6 text-neutral-300 md:text-2xl mt-6 max-w-4xl mx-auto">
+          Love your current LMS but crave more power? Seamlessly integrate our
+          suite of intelligent tools into Canvas, Moodle to unlock
+          next-generation capabilities.
+        </p>
+        <!-- Merged "How it Works" Steps -->
+        <div class="mt-12 max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-3 gap-8 text-left">
+            <div class="flex items-start p-4">
+              <div
+                class="bg-brand text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-semibold mr-4 mt-1">
+                1
               </div>
-              <div class="flex items-start p-4">
-                <div
-                  class="bg-brand text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-semibold mr-4 mt-1"
-                >
-                  2
-                </div>
-                <div>
-                  <h3 class="text-xl font-semibold text-white">
-                    Create with AI
-                  </h3>
-                  <p class="text-neutral-300 mt-1">
-                    Use our AI Co-Pilot to build your first course from simple
-                    prompts or existing content.
-                  </p>
-                </div>
-              </div>
-              <div class="flex items-start p-4">
-                <div
-                  class="bg-brand text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-semibold mr-4 mt-1"
-                >
-                  3
-                </div>
-                <div>
-                  <h3 class="text-xl font-semibold text-white">
-                    Invite & Launch
-                  </h3>
-                  <p class="text-neutral-300 mt-1">
-                    Onboard your educators and students with a single click and
-                    go live.
-                  </p>
-                </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white">
+                  Register & Configure
+                </h3>
+                <p class="text-neutral-300 mt-1">
+                  Sign up instantly and brand your campus in our intuitive
+                  setup wizard.
+                </p>
               </div>
             </div>
-          </div>
-          <div class="mt-12">
-            <a
-              href="#"
-              class="bg-brand text-white font-semibold py-4 px-8 rounded-lg hover:bg-brand-600 transition-transform hover:scale-105 shadow-lg"
-            >
-              Enhance Your LMS Today
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="py-24 bg-white">
-        <div class="container mx-auto px-4">
-          <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <span class="text-brand font-semibold uppercase tracking-wider"
-                >Keep Your Platform, Add the Power</span
-              >
-              <h2 class="text-4xl font-semibold text-secondary mt-2">
-                The Perfect Upgrade Path
-              </h2>
-              <p class="text-2xl text-secondary-700 mt-4">
-                You've invested time and resources into your current LMS. The
-                InstructoHub AI Suite is designed for institutions that want to
-                leverage AI without the disruption of a full platform migration.
-                Our tools integrate via LTI for a seamless experience.
-              </p>
+            <div class="flex items-start p-4">
+              <div
+                class="bg-brand text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-semibold mr-4 mt-1">
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white">
+                  Create with AI
+                </h3>
+                <p class="text-neutral-300 mt-1">
+                  Use our AI Co-Pilot to build your first course from simple
+                  prompts or existing content.
+                </p>
+              </div>
             </div>
-            <div>
-              <!-- <img src="https://placehold.co/600x400/1b3942/ffffff?text=Your+LMS+%2B+AI+Suite"
-                            alt="Diagram showing an existing LMS being enhanced by the AI Suite"
-                            class="rounded-2xl shadow-xl w-full"> -->
+            <div class="flex items-start p-4">
+              <div
+                class="bg-brand text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-semibold mr-4 mt-1">
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white">
+                  Invite & Launch
+                </h3>
+                <p class="text-neutral-300 mt-1">
+                  Onboard your educators and students with a single click and
+                  go live.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="py-24 bg-neutral-50">
-        <div class="container mx-auto px-4">
-          <div class="text-center max-w-5xl mx-auto mb-16">
-            <h2 class="text-4xl font-semibold text-secondary">
-              A Modular Toolkit for Modern Pedagogy
+        <div class="mt-12">
+          <a href="#"
+            class="bg-brand text-white font-semibold py-4 px-8 rounded-lg hover:bg-brand-600 transition-transform hover:scale-105 shadow-lg">
+            Enhance Your LMS Today
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <span class="text-brand font-semibold uppercase tracking-wider">Keep Your Platform, Add the Power</span>
+            <h2 class="text-4xl font-semibold text-secondary mt-2">
+              The Perfect Upgrade Path
             </h2>
-            <p class="text-2xl text-secondary mt-4">
-              Each tool in the AI Suite is a standalone powerhouse designed to
-              solve a specific challenge. Deploy them individually or as a
-              package to transform your teaching workflow.
+            <p class="text-2xl text-secondary-700 mt-4">
+              You've invested time and resources into your current LMS. The
+              InstructoHub AI Suite is designed for institutions that want to
+              leverage AI without the disruption of a full platform migration.
+              Our tools integrate via LTI for a seamless experience.
             </p>
           </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div
-              class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200"
-            >
-              <i
-                data-lucide="brain-circuit"
-                class="w-10 h-10 text-brand mb-4"
-              ></i>
-              <h3 class="text-2xl font-semibold text-text-primary">
-                InstructoGen™
-              </h3>
-              <p class="text-xl text-text-secondary mt-2">
-                The AI Course Architect. Generate comprehensive,
-                standards-aligned courses from simple prompts in minutes.
-              </p>
-            </div>
-            <div
-              class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200"
-            >
-              <i data-lucide="sparkles" class="w-10 h-10 text-brand mb-4"></i>
-              <h3 class="text-2xl font-semibold text-text-primary">
-                InstructoBoost™
-              </h3>
-              <p class="text-xl text-text-secondary mt-2">
-                Your Content Enhancer. Automatically enrich course materials
-                with interactive elements and multimedia.
-              </p>
-            </div>
-            <div
-              class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200"
-            >
-              <i data-lucide="bot" class="w-10 h-10 text-brand mb-4"></i>
-              <h3 class="text-2xl font-semibold text-text-primary">
-                InstructoEcho™
-              </h3>
-              <p class="text-xl text-text-secondary mt-2">
-                The 24/7 AI Tutor. Embed an intelligent, course-aware chatbot
-                that provides instant, personalized student support.
-              </p>
-            </div>
-            <div
-              class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200"
-            >
-              <i data-lucide="activity" class="w-10 h-10 text-brand mb-4"></i>
-              <h3 class="text-2xl font-semibold text-text-primary">
-                InstructoPulse™
-              </h3>
-              <p class="text-xl text-text-secondary mt-2">
-                Real-time Analytics Engine. Gain deep insights into student
-                engagement, comprehension, and at-risk behaviors.
-              </p>
-            </div>
-            <div
-              class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200"
-            >
-              <i
-                data-lucide="file-check-2"
-                class="w-10 h-10 text-brand mb-4"
-              ></i>
-              <h3 class="text-2xl font-semibold text-text-primary">
-                InstructoGrade™
-              </h3>
-              <p class="text-xl text-text-secondary mt-2">
-                The Automated Grading Assistant. Get instant, rubric-based
-                feedback on assignments, freeing up educator time.
-              </p>
-            </div>
-            <div
-              class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200"
-            >
-              <i data-lucide="network" class="w-10 h-10 text-brand mb-4"></i>
-              <h3 class="text-2xl font-semibold text-text-primary">
-                InstructoNex™
-              </h3>
-              <p class="text-xl text-text-secondary mt-2">
-                The Central AI Hub. A unified dashboard to manage tools, control
-                policies, and monitor institutional ROI.
-              </p>
-            </div>
+          <div>
+            <!-- <img src="https://placehold.co/600x400/1b3942/ffffff?text=Your+LMS+%2B+AI+Suite"
+                            alt="Diagram showing an existing LMS being enhanced by the AI Suite"
+                            class="rounded-2xl shadow-xl w-full"> -->
           </div>
         </div>
-      </section>
-
-      <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-          <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-4xl font-semibold text-secondary">
-              Seamless Integration, Zero Disruption
-            </h2>
-            <p class="text-2xl text-secondary mt-6">
-              Our suite is built on open standards (LTI 1.3) for easy
-              compatibility.
+      </div>
+    </section>
+    <section class="py-24 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-5xl mx-auto mb-16">
+          <h2 class="text-4xl font-semibold text-secondary">
+            A Modular Toolkit for Modern Pedagogy
+          </h2>
+          <p class="text-2xl text-secondary mt-4">
+            Each tool in the AI Suite is a standalone powerhouse designed to
+            solve a specific challenge. Deploy them individually or as a
+            package to transform your teaching workflow.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200">
+            <i data-lucide="brain-circuit" class="w-10 h-10 text-brand mb-4"></i>
+            <h3 class="text-2xl font-semibold text-text-primary">
+              InstructoGen™
+            </h3>
+            <p class="text-xl text-text-secondary mt-2">
+              The AI Course Architect. Generate comprehensive,
+              standards-aligned courses from simple prompts in minutes.
             </p>
           </div>
           <div
-            class="flex justify-center items-center flex-wrap gap-x-12 md:gap-x-16 gap-y-4 mt-16"
-          >
-            <span class="text-3xl font-semibold text-neutral-500">Canvas</span>
-            <span class="text-3xl font-semibold text-neutral-500">Moodle</span>
+            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200">
+            <i data-lucide="sparkles" class="w-10 h-10 text-brand mb-4"></i>
+            <h3 class="text-2xl font-semibold text-text-primary">
+              InstructoBoost™
+            </h3>
+            <p class="text-xl text-text-secondary mt-2">
+              Your Content Enhancer. Automatically enrich course materials
+              with interactive elements and multimedia.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200">
+            <i data-lucide="bot" class="w-10 h-10 text-brand mb-4"></i>
+            <h3 class="text-2xl font-semibold text-text-primary">
+              InstructoEcho™
+            </h3>
+            <p class="text-xl text-text-secondary mt-2">
+              The 24/7 AI Tutor. Embed an intelligent, course-aware chatbot
+              that provides instant, personalized student support.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200">
+            <i data-lucide="activity" class="w-10 h-10 text-brand mb-4"></i>
+            <h3 class="text-2xl font-semibold text-text-primary">
+              InstructoPulse™
+            </h3>
+            <p class="text-xl text-text-secondary mt-2">
+              Real-time Analytics Engine. Gain deep insights into student
+              engagement, comprehension, and at-risk behaviors.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200">
+            <i data-lucide="file-check-2" class="w-10 h-10 text-brand mb-4"></i>
+            <h3 class="text-2xl font-semibold text-text-primary">
+              InstructoGrade™
+            </h3>
+            <p class="text-xl text-text-secondary mt-2">
+              The Automated Grading Assistant. Get instant, rubric-based
+              feedback on assignments, freeing up educator time.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-brand-200">
+            <i data-lucide="network" class="w-10 h-10 text-brand mb-4"></i>
+            <h3 class="text-2xl font-semibold text-text-primary">
+              InstructoNex™
+            </h3>
+            <p class="text-xl text-text-secondary mt-2">
+              The Central AI Hub. A unified dashboard to manage tools, control
+              policies, and monitor institutional ROI.
+            </p>
           </div>
         </div>
-      </section>
-
-      <section class="py-20 bg-neutral-50">
-        <div class="container mx-auto px-4 text-center">
+      </div>
+    </section>
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto">
           <h2 class="text-4xl font-semibold text-secondary">
-            Unlock the Power of AI in Your LMS
+            Seamless Integration, Zero Disruption
           </h2>
-          <p class="text-2xl text-secondary-700 mt-4 max-w-5xl mx-auto">
-            Give your educators the tools they deserve and your students the
-            support they need. Start your free trial of the InstructoHub AI
-            Suite today.
+          <p class="text-2xl text-secondary mt-6">
+            Our suite is built on open standards (LTI 1.3) for easy
+            compatibility.
           </p>
-          <div class="mt-8">
-            <a
-              href="#"
-              class="bg-brand text-white font-semibold py-4 px-8 rounded-lg hover:bg-brand-600 transition-transform hover:scale-105 shadow-lg"
-            >
-              Start Your Free Trial
-            </a>
-          </div>
         </div>
-      </section>
-    </main>
-
-    <div id="footer-placeholder"></div>
-    <script>
-      function toggleMobileMenu() {
-        const mobileMenu = document.getElementById("mobile-menu");
-        const menuIcon = document.getElementById("menu-icon");
-        const closeIcon = document.getElementById("close-icon");
-
-        if (!mobileMenu || !menuIcon || !closeIcon) return;
-
-        if (mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.remove("hidden");
-          menuIcon.classList.add("hidden");
-          closeIcon.classList.remove("hidden");
-        } else {
-          mobileMenu.classList.add("hidden");
-          menuIcon.classList.remove("hidden");
-          closeIcon.classList.add("hidden");
-        }
+        <div class="flex justify-center items-center flex-wrap gap-x-12 md:gap-x-16 gap-y-4 mt-16">
+          <span class="text-3xl font-semibold text-neutral-500">Canvas</span>
+          <span class="text-3xl font-semibold text-neutral-500">Moodle</span>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-semibold text-secondary">
+          Unlock the Power of AI in Your LMS
+        </h2>
+        <p class="text-2xl text-secondary-700 mt-4 max-w-5xl mx-auto">
+          Give your educators the tools they deserve and your students the
+          support they need. Start your free trial of the InstructoHub AI
+          Suite today.
+        </p>
+        <div class="mt-8">
+          <a href="#"
+            class="bg-brand text-white font-semibold py-4 px-8 rounded-lg hover:bg-brand-600 transition-transform hover:scale-105 shadow-lg">
+            Start Your Free Trial
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+      if (!mobileMenu || !menuIcon || !closeIcon) return;
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
       }
-      document.addEventListener("DOMContentLoaded", function () {
-        lucide.createIcons();
-      });
-    </script>
-  </body>
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      lucide.createIcons();
+    });
+  </script>
+</body>
 </html>

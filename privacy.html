@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Primary Meta Tags -->
+  <title>Pricing | InstructoHub</title>
+  <meta name="title" content="Pricing | InstructoHub" />
+  <meta name="description"
+    content="Transparent pricing for InstructoHub's AI-First LMS and AI Suite. Choose flexible plans for individuals, teams, and institutions with clear benefits and no hidden fees." />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8GYGC3JQPD');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#fdf4f0",
+              100: "#fce8e0",
+              200: "#f9d1c1",
+              300: "#f5b9a2",
+              400: "#f09c7d",
+              500: "#e16b3b", // Primary brand color
+              600: "#d15a2b",
+              700: "#b44a22",
+              800: "#933c1d",
+              900: "#78301a",
+              DEFAULT: "#e16b3b",
+            },
+            secondary: {
+              50: "#e7eaeb",
+              100: "#cfd5d7",
+              200: "#a0acb0",
+              300: "#728389",
+              400: "#435a62",
+              500: "#1b3942", // Secondary brand color
+              600: "#18333b",
+              700: "#152b32",
+              800: "#122229",
+              900: "#0e1a20",
+              DEFAULT: "#1b3942",
+            },
+            success: {
+              DEFAULT: "#4CAF50",
+              dark: "#3a8c3f",
+            },
+            danger: {
+              DEFAULT: "#EF4444",
+              dark: "#B91C1C",
+            },
+            neutral: {
+              50: "#fafafa",
+              100: "#f5f5f5",
+              200: "#e5e5e5",
+              300: "#d4d4d4",
+              400: "#a3a3a3",
+              500: "#737373",
+              600: "#525252",
+              700: "#404040",
+              800: "#262626",
+              900: "#171717",
+            },
+            background: {
+              page: "#f7f7f7",
+              card: "#ffffff",
+            },
+            border: {
+              DEFAULT: "#e5e7eb",
+              accent: "#e16b3b",
+            },
+            text: {
+              primary: "#1b3942",
+              secondary: "#4b5563",
+              muted: "#6b7280",
+              light: "#ffffff",
+            },
+          },
+          animation: {
+            fadeIn: "fadeIn 0.5s ease-out forwards",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(10px)",
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)",
+              },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    fetch("header.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        lucide.createIcons();
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      });
+    fetch("footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+        lucide.createIcons();
+        document.getElementById("current-year").textContent =
+          new Date().getFullYear();
+      });
+  </script>
+</head>
+<body class="min-h-screen flex flex-col text-secondary">
+  <div class="w-full">
+    <div class="h-12 md:block hidden"></div>
+    <div class="h-16"></div>
+  </div>
+  <div id="header-placeholder"></div>
+  <main>
+    <section class="bg-gradient-to-br from-brand to-brand-600 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-semibold mb-6">Privacy Policy</h2>
+        <p class="text-xl mb-4 max-w-3xl mx-auto opacity-90">
+          Privacy Policy
+          Last updated on Nov 12 2025
+          This privacy policy sets out how INSTRUCTOHUB PRIVATE LIMITED uses and protects any information that you give
+          INSTRUCTOHUB PRIVATE LIMITED when you visit their website and/or agree to purchase from them.
+          INSTRUCTOHUB PRIVATE LIMITED is committed to ensuring that your privacy is protected. Should we ask you to
+          provide certain information by which you can be identified when using this website, and then you can be
+          assured that it will only be used in accordance with this privacy statement.
+          INSTRUCTOHUB PRIVATE LIMITED may change this policy from time to time by updating this page. You should check
+          this page from time to time to ensure that you adhere to these changes.
+          We may collect the following information:
+          Name
+          Contact information including email address
+          Demographic information such as postcode, preferences and interests, if required
+          Other information relevant to customer surveys and/or offers
+          What we do with the information we gather
+          We require this information to understand your needs and provide you with a better service, and in particular
+          for the following reasons:
+          Internal record keeping.
+          We may use the information to improve our products and services.
+          We may periodically send promotional emails about new products, special offers or other information which we
+          think you may find interesting using the email address which you have provided.
+          From time to time, we may also use your information to contact you for market research purposes. We may
+          contact you by email, phone, fax or mail. We may use the information to customise the website according to
+          your interests.
+          We are committed to ensuring that your information is secure. In order to prevent unauthorised access or
+          disclosure we have put in suitable measures.
+          How we use cookies
+          A cookie is a small file which asks permission to be placed on your computer's hard drive. Once you agree, the
+          file is added and the cookie helps analyze web traffic or lets you know when you visit a particular site.
+          Cookies allow web applications to respond to you as an individual. The web application can tailor its
+          operations to your needs, likes and dislikes by gathering and remembering information about your preferences.
+          We use traffic log cookies to identify which pages are being used. This helps us analyze data about webpage
+          traffic and improve our website in order to tailor it to customer needs. We only use this information for
+          statistical analysis purposes and then the data is removed from the system.
+          Overall, cookies help us provide you with a better website, by enabling us to monitor which pages you find
+          useful and which you do not. A cookie in no way gives us access to your computer or any information about you,
+          other than the data you choose to share with us.
+          You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can
+          usually modify your browser setting to decline cookies if you prefer. This may prevent you from taking full
+          advantage of the website.
+          Controlling your personal information
+          You may choose to restrict the collection or use of your personal information in the following ways:
+          whenever you are asked to fill in a form on the website, look for the box that you can click to indicate that
+          you do not want the information to be used by anybody for direct marketing purposes
+          if you have previously agreed to us using your personal information for direct marketing purposes, you may
+          change your mind at any time by writing to or emailing us at info@instructohub.com
+          We will not sell, distribute or lease your personal information to third parties unless we have your
+          permission or are required by law to do so. We may use your personal information to send you promotional
+          information about third parties which we think you may find interesting if you tell us that you wish this to
+          happen.
+          If you believe that any information we are holding on you is incorrect or incomplete, please write to 54 THIRD
+          FLOOR, ANAND LOK Gautam Nagar South Delhi New Delhi Delhi India 110049 Sahpurjat BO DELHI 110049 . or contact
+          us at or info@instructohub.com as soon as possible. We will promptly correct any information found to be
+          incorrect.
+        </p>
+        <p class="mt-6 text-sm opacity-75">No credit card required • Set up in minutes • Cancel anytime</p>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const currencyToggle = document.getElementById('currency-toggle');
+      const billingToggle = document.getElementById('billing-toggle');
+      function updatePricingDisplay() {
+        const currency = currencyToggle.value;
+        const period = billingToggle.value;
+        const inrMonthly = document.querySelectorAll('.inrmonthly');
+        const inrAnnual = document.querySelectorAll('.inrannualy');
+        const usdMonthly = document.querySelectorAll('.usdmonthly');
+        const usdAnnual = document.querySelectorAll('.usdannualy');
+        const inrSimple = document.querySelectorAll('.inr:not(.inrmonthly):not(.inrannualy)');
+        const usdSimple = document.querySelectorAll('.usd:not(.usdmonthly):not(.usdannualy)');
+        [...inrMonthly, ...inrAnnual, ...usdMonthly, ...usdAnnual, ...inrSimple, ...usdSimple].forEach(el => {
+          el.classList.add('hidden');
+        });
+        if (currency === 'inr') {
+          inrSimple.forEach(el => el.classList.remove('hidden'));
+          if (period === 'monthly') {
+            inrMonthly.forEach(el => el.classList.remove('hidden'));
+          } else {
+            inrAnnual.forEach(el => el.classList.remove('hidden'));
+          }
+        } else {
+          usdSimple.forEach(el => el.classList.remove('hidden'));
+          if (period === 'monthly') {
+            usdMonthly.forEach(el => el.classList.remove('hidden'));
+          } else {
+            usdAnnual.forEach(el => el.classList.remove('hidden'));
+          }
+        }
+      }
+      currencyToggle.addEventListener('change', updatePricingDisplay);
+      billingToggle.addEventListener('change', updatePricingDisplay);
+      updatePricingDisplay();
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>

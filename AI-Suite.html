@@ -8,6 +8,7 @@
   <meta name="title" content="AI Suite | InstructoHub" />
   <meta name="description"
     content="Supercharge Canvas, Moodle, and more with the InstructoHub AI Suite. Automate content and assessments, enable AI tutoring, and gain analytics—no migration required." />
+  <meta name="keywords" content="end-to-end cloud LMS for education institutions, headless LMS platform">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
   <script>
@@ -105,7 +106,7 @@
     };
   </script>
   <script>
-    fetch("header.html")
+    fetch("/private/header.html")
       .then((response) => response.text())
       .then((data) => {
         document.getElementById("header-placeholder").innerHTML = data;
@@ -119,7 +120,7 @@
           }
         });
       });
-    fetch("footer.html")
+    fetch("/private/footer.html")
       .then((response) => response.text())
       .then((data) => {
         document.getElementById("footer-placeholder").innerHTML = data;

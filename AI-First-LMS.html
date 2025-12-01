@@ -8,6 +8,7 @@
   <meta name="title" content="AI-First LMS | InstructoHub" />
   <meta name="description"
     content="Launch a modern, AI-first Learning Management System in minutes. Automate course creation, enable adaptive learning, provide AI tutoring, and centralize governance—built for schools, universities, and enterprises." />
+  <meta name="keywords" content="AI-powered LMS, AI course generator, AI quiz generator, AI auto-grading system, AI-first LMS solution, seamless LMS integration for existing systems, online campus management system, White-label Learning Management System, Multi-tenant Learning Management System, AI-First Learning Management System">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
   <script>
@@ -105,7 +106,7 @@
     };
   </script>
   <script>
-    fetch("header.html")
+    fetch("/private/header.html")
       .then((response) => response.text())
       .then((data) => {
         document.getElementById("header-placeholder").innerHTML = data;
@@ -119,7 +120,7 @@
           }
         });
       });
-    fetch("footer.html")
+    fetch("/private/footer.html")
       .then((response) => response.text())
       .then((data) => {
         document.getElementById("footer-placeholder").innerHTML = data;

@@ -1,0 +1,29 @@
+# Robots.txt for InstructoHub
+# https://www.instructohub.com
+
+# Allow all search engines
+User-agent: *
+Disallow: /private/
+Allow: /
+
+# Crawl delay (seconds between requests) - prevents server overload
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://www.instructohub.com/sitemap.xml
+
+User-agent: GPTBot
+Disallow: /private/
+Allow: /
+
+User-agent: OAI-SearchBot
+Disallow: /private/
+Allow: /
+
+User-agent: ChatGPT-User
+Disallow: /private/
+Allow: /
+
+User-agent: Google-Extended
+Disallow: /private/
+Allow: /

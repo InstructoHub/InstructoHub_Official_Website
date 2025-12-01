@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Primary Meta Tags -->
-  <title>Pricing | InstructoHub</title>
-  <meta name="title" content="Pricing | InstructoHub" />
-  <meta name="description" content="Cancellation & Refunds" />
+  <title>Cancellation & Refunds | InstructoHub</title>
+  <meta name="title" content="Cancellation & Refunds | InstructoHub" />
+  <meta name="description" content="Learn about InstructoHub's cancellation and refund policies. Understand the terms and conditions for cancellations and how refunds are processed." />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
   <script>
@@ -103,7 +103,7 @@
     };
   </script>
   <script>
-    fetch("header.html")
+    fetch("/private/header.html")
       .then((response) => response.text())
       .then((data) => {
         document.getElementById("header-placeholder").innerHTML = data;
@@ -117,7 +117,7 @@
           }
         });
       });
-    fetch("footer.html")
+    fetch("/private/footer.html")
       .then((response) => response.text())
       .then((data) => {
         document.getElementById("footer-placeholder").innerHTML = data;

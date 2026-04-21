@@ -3,27 +3,27 @@
     <div class="py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div>
-          <img src="/assets/images/website/Instructo_hub_logo_white.png" alt="InstructoHub Logo"
-            class="mb-6 max-w-[180px]" />
+          <img src="/assets/images/website/Instructo_hub_logo_white.png"
+            alt="InstructoHub Learning Management System in India" class="mb-6 max-w-[180px]" />
           <p class="text-gray-300 mt-4">
             Empowering education through innovative learning solutions.
           </p>
           <div class="flex space-x-4 mt-6">
             <a href="https://x.com/InstructoH75197" target="_blank"
               class="bg-brand p-2 rounded-full text-white hover:bg-brand-600 transition-colors" aria-label="Twitter">
-              <i data-lucide="twitter" class="w-5 h-5"></i>
+              <i class="fa-brands fa-x-twitter"></i>
             </a>
             <a href="https://www.facebook.com/people/InstructoHub/61572722776722/" target="_blank"
               class="bg-brand p-2 rounded-full text-white hover:bg-brand-600 transition-colors" aria-label="Facebook">
-              <i data-lucide="facebook" class="w-5 h-5"></i>
+              <i class="fa-brands fa-facebook-f"></i>
             </a>
             <a href="https://www.linkedin.com/company/instructohub" target="_blank"
               class="bg-brand p-2 rounded-full text-white hover:bg-brand-600 transition-colors" aria-label="LinkedIn">
-              <i data-lucide="linkedin" class="w-5 h-5"></i>
+              <i class="fa-brands fa-linkedin-in"></i>
             </a>
-            <a href="https://www.youtube.com/@Instructo-Hub" target="_blank"
+            <a href="https://www.youtube.com/@InstructoHub-AI" target="_blank"
               class="bg-brand p-2 rounded-full text-white hover:bg-brand-600 transition-colors" aria-label="Youtube">
-              <i data-lucide="youtube" class="w-5 h-5"></i>
+              <i class="fa-brands fa-youtube"></i>
             </a>
           </div>
         </div>
@@ -39,9 +39,11 @@
               LMS</a>
             <a href="/Advanced-Features.html"
               class="block text-gray-300 hover:text-brand transition-colors pl-8">Advanced Features</a>
-            <a href="/AI-Suite.html" class="block text-gray-300 hover:text-brand transition-colors pl-4">AI Suite</a>
-            <a href="/Mission.html" class="block text-gray-300 hover:text-brand transition-colors">Mission & Vision</a>
-            <!-- <a href="/Pricing.html" class="block text-gray-300 hover:text-brand transition-colors">Pricing</a> -->
+            <a href="/AI-Suite.html" class="block text-gray-300 hover:text-brand transition-colors pl-4">AI
+              Suite</a>
+            <a href="/Mission.html" class="block text-gray-300 hover:text-brand transition-colors">Mission &
+              Vision</a>
+            <a href="/Pricing.html" class="block text-gray-300 hover:text-brand transition-colors">Pricing</a>
             <a href="/About.html" class="block text-gray-300 hover:text-brand transition-colors">About Us</a>
           </nav>
         </div>
@@ -90,3 +92,11 @@
     </div>
   </div>
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.getElementById("current-year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+</script>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Primary Meta Tags -->
+  <title>Pricing | InstructoHub</title>
+  <meta name="description"
+    content="Transparent pricing for InstructoHub's AI-First LMS and AI Suite. Choose flexible plans for individuals, teams, and institutions with clear benefits and no hidden fees." />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8GYGC3JQPD');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#fdf4f0",
+              100: "#fce8e0",
+              200: "#f9d1c1",
+              300: "#f5b9a2",
+              400: "#f09c7d",
+              500: "#e16b3b", // Primary brand color
+              600: "#d15a2b",
+              700: "#b44a22",
+              800: "#933c1d",
+              900: "#78301a",
+              DEFAULT: "#e16b3b",
+            },
+            secondary: {
+              50: "#e7eaeb",
+              100: "#cfd5d7",
+              200: "#a0acb0",
+              300: "#728389",
+              400: "#435a62",
+              500: "#1b3942", // Secondary brand color
+              600: "#18333b",
+              700: "#152b32",
+              800: "#122229",
+              900: "#0e1a20",
+              DEFAULT: "#1b3942",
+            },
+            success: {
+              DEFAULT: "#4CAF50",
+              dark: "#3a8c3f",
+            },
+            danger: {
+              DEFAULT: "#EF4444",
+              dark: "#B91C1C",
+            },
+            neutral: {
+              50: "#fafafa",
+              100: "#f5f5f5",
+              200: "#e5e5e5",
+              300: "#d4d4d4",
+              400: "#a3a3a3",
+              500: "#737373",
+              600: "#525252",
+              700: "#404040",
+              800: "#262626",
+              900: "#171717",
+            },
+            background: {
+              page: "#f7f7f7",
+              card: "#ffffff",
+            },
+            border: {
+              DEFAULT: "#e5e7eb",
+              accent: "#e16b3b",
+            },
+            text: {
+              primary: "#1b3942",
+              secondary: "#4b5563",
+              muted: "#6b7280",
+              light: "#ffffff",
+            },
+          },
+          animation: {
+            fadeIn: "fadeIn 0.5s ease-out forwards",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(10px)",
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)",
+              },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    fetch("/private/header.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        lucide.createIcons();
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      });
+    fetch("/private/footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+        lucide.createIcons();
+        document.getElementById("current-year").textContent =
+          new Date().getFullYear();
+      });
+  </script>
+</head>
+
+<body class="min-h-screen flex flex-col text-secondary">
+  <div class="w-full">
+    <div class="h-12 md:block hidden"></div>
+    <div class="h-16"></div>
+  </div>
+  <div id="header-placeholder"></div>
+  <main>
+    <section class="bg-gradient-to-b from-brand-50 via-white to-neutral-50 pt-32 pb-20">
+      <div class="container mx-auto px-4 text-center">
+        <span class="text-brand font-semibold uppercase tracking-wider text-sm">SaaS Pricing</span>
+        <h1 class="text-4xl md:text-6xl font-semibold text-secondary mt-4 mb-6">
+          Simple, Transparent Pricing for<br>Your <span class="text-brand">AI-Powered LMS</span>
+        </h1>
+        <p class="text-xl text-secondary-700 max-w-3xl mx-auto mb-4">
+          No hidden fees. No complex negotiations. Choose a plan that scales with your institution - from startups to
+          enterprises.
+        </p>
+        <div class="inline-flex items-center gap-6 bg-white shadow-lg rounded-full px-8 py-4 mt-8">
+          <div class="flex items-center gap-3">
+            <label class="font-semibold text-secondary">Billing:</label>
+            <select id="billing-toggle"
+              class="border border-neutral-300 rounded-lg px-4 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-brand">
+              <option value="monthly">Monthly</option>
+              <option value="annual">Annual</option>
+            </select>
+            <span class="px-3 py-1 bg-green-100 text-green-700 text-sm font-semibold rounded-full">Save 20%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-[1600px] mx-auto" id="pricing-grid">
+          <div
+            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
+            <div class="p-6 flex flex-col h-full">
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-secondary mb-1">Free</h3>
+                <p class="text-secondary-700 text-xs mb-2">Up to 25 users</p>
+                <div class="mb-4 mt-2">
+                  <span class="text-4xl font-semibold text-brand inr inrmonthly">₹0</span>
+                  <span class="text-4xl font-semibold text-brand inr inrannualy hidden">₹0</span>
+                  <span class="text-secondary-600 text-sm"> /user/month</span>
+                </div>
+                <ul class="space-y-2 mb-6 text-sm">
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Full LMS Platform</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>White-Label Options</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Mobile Apps</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-auto">
+                <a href="/register.html"
+                  class="bg-secondary hover:bg-secondary-700 text-white font-semibold py-2.5 px-4 rounded-lg text-center transition-transform hover:scale-105 block text-sm">
+                  Get Started Free
+                </a>
+                <p class="text-xs text-secondary-600 mt-2">As low as ₹0/month</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
+            <div class="p-6 flex flex-col h-full">
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-secondary mb-1">Starter</h3>
+                <p class="text-secondary-700 text-xs mb-2">Up to 100 users</p>
+                <div class="mb-4 mt-2">
+                  <span class="text-4xl font-semibold text-brand inr inrmonthly">₹100</span>
+                  <span class="text-4xl font-semibold text-brand inr inrannualy hidden">₹80</span>
+                  <span class="text-secondary-600 text-sm"> /user/month</span>
+                </div>
+                <ul class="space-y-2 mb-6 text-sm">
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Custom Sub Domain</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Basic Analytics</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Guided Onboarding</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-auto">
+                <a href="/register.html"
+                  class="bg-secondary hover:bg-secondary-700 text-white font-semibold py-2.5 px-4 rounded-lg text-center transition-transform hover:scale-105 block text-sm">
+                  Choose Starter
+                </a>
+                <p class="text-xs text-secondary-600 mt-2">As low as ₹2,500/month</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border-4 border-brand scale-105">
+            <div
+              class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand text-white text-sm font-semibold rounded-full whitespace-nowrap">
+              Most Popular
+            </div>
+            <div class="p-6 flex flex-col h-full">
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-secondary mb-1">Growth</h3>
+                <p class="text-secondary-700 text-xs mb-2">Up to 500 users</p>
+                <div class="mb-4 mt-2">
+                  <span class="text-4xl font-semibold text-brand inr inrmonthly">₹80</span>
+                  <span class="text-4xl font-semibold text-brand inr inrannualy hidden">₹64</span>
+                  <span class="text-secondary-600 text-sm"> /user/month</span>
+                </div>
+                <ul class="space-y-2 mb-6 text-sm">
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Everything in Starter</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Advanced Analytics</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>1-on-1 Training</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-auto">
+                <a href="/register.html"
+                  class="bg-brand hover:bg-brand-600 text-white font-semibold py-2.5 px-4 rounded-lg text-center transition-transform hover:scale-105 block text-sm">
+                  Choose Growth
+                </a>
+                <p class="text-xs text-secondary-600 mt-2">As low as ₹8,000/month</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
+            <div class="p-6 flex flex-col h-full">
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-secondary mb-1">Pro</h3>
+                <p class="text-secondary-700 text-xs mb-2">Up to 1,000 users</p>
+                <div class="mb-4 mt-2">
+                  <span class="text-4xl font-semibold text-brand inr inrmonthly">₹70</span>
+                  <span class="text-4xl font-semibold text-brand inr inrannualy hidden">₹56</span>
+                  <span class="text-secondary-600 text-sm"> /user/month</span>
+                </div>
+                <ul class="space-y-2 mb-6 text-sm">
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Everything in Growth</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Single Sign On</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Custom SLA (99.9%)</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>White-Glove Setup</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-auto">
+                <a href="/register.html"
+                  class="bg-secondary hover:bg-secondary-700 text-white font-semibold py-2.5 px-4 rounded-lg text-center transition-transform hover:scale-105 block text-sm">
+                  Choose Pro
+                </a>
+                <p class="text-xs text-secondary-600 mt-2">As low as ₹35,000/month</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
+            <div class="p-6 flex flex-col h-full">
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-secondary mb-1">Institution</h3>
+                <p class="text-secondary-700 text-xs mb-2">Up to 5,000 users</p>
+                <div class="mb-4 mt-2">
+                  <span class="text-4xl font-semibold text-brand inr inrmonthly">₹50</span>
+                  <span class="text-4xl font-semibold text-brand inr inrannualy hidden">₹40</span>
+                  <span class="text-secondary-600 text-sm"> /user/month</span>
+                </div>
+                <ul class="space-y-2 mb-6 text-sm">
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Everything in Pro</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Multi Tenancy</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Full API Access</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-auto">
+                <a href="/register.html"
+                  class="bg-secondary hover:bg-secondary-700 text-white font-semibold py-2.5 px-4 rounded-lg text-center transition-transform hover:scale-105 block text-sm">
+                  Choose Institution
+                </a>
+                <p class="text-xs text-secondary-600 mt-2">As low as ₹50,000/month</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
+            <div class="p-6 flex flex-col h-full">
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-secondary mb-1">Enterprise</h3>
+                <p class="text-secondary-700 text-xs mb-2">5,000+ users</p>
+                <div class="mb-4 mt-2">
+                  <span class="text-4xl font-semibold text-brand">Custom</span>
+                </div>
+                <ul class="space-y-2 mb-6 text-sm">
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Custom Deployment</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Dedicated Infrastructure</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>AI Strategy Consulting</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-auto">
+                <a href="/Contact.html"
+                  class="bg-secondary hover:bg-secondary-700 text-white font-semibold py-2.5 px-4 rounded-lg text-center transition-transform hover:scale-105 block text-sm">
+                  Contact Sales
+                </a>
+                <p class="text-xs text-secondary-600 mt-2">Volume discounts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-secondary text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-semibold mb-4">Every Plan Includes</h2>
+          <p class="text-xl text-neutral-300 max-w-3xl mx-auto">
+            Fully managed, secure, and scalable infrastructure - no technical expertise required.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div class="text-center">
+            <div class="bg-brand w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="cloud" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Cloud Hosting</h3>
+            <p class="text-neutral-300">Fully managed infrastructure with automatic scaling and 99.9% uptime</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-brand w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="shield-check" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Security & Compliance</h3>
+            <p class="text-neutral-300">Enterprise-grade security with regular updates and automated backups</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-brand w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="refresh-cw" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Regular Updates</h3>
+            <p class="text-neutral-300">Always access the latest features without downtime or manual upgrades</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-brand w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="life-buoy" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Expert Support</h3>
+            <p class="text-neutral-300">Dedicated support team ready to help you succeed at every step</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-neutral-50 py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-semibold text-secondary mb-4">Frequently Asked Questions</h2>
+          <p class="text-xl text-secondary-700">Everything you need to know about our SaaS pricing model.</p>
+        </div>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-2xl shadow-sm">
+            <div class="flex items-start gap-4">
+              <i data-lucide="help-circle" class="w-6 h-6 text-brand flex-shrink-0 mt-1"></i>
+              <div>
+                <h3 class="text-xl font-semibold text-secondary mb-2">Do I need my own server?</h3>
+                <p class="text-secondary-700">No. All SaaS plans are fully hosted on our secure cloud infrastructure. We
+                  handle servers, maintenance, backups, and scaling automatically.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-sm">
+            <div class="flex items-start gap-4">
+              <i data-lucide="help-circle" class="w-6 h-6 text-brand flex-shrink-0 mt-1"></i>
+              <div>
+                <h3 class="text-xl font-semibold text-secondary mb-2">Can I change plans later?</h3>
+                <p class="text-secondary-700">Yes! Upgrade or downgrade anytime based on your user count. Changes take
+                  effect in the next billing cycle with prorated adjustments.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-sm">
+            <div class="flex items-start gap-4">
+              <i data-lucide="help-circle" class="w-6 h-6 text-brand flex-shrink-0 mt-1"></i>
+              <div>
+                <h3 class="text-xl font-semibold text-secondary mb-2">What counts as an active user?</h3>
+                <p class="text-secondary-700">An active user is anyone who logs in during the billing period - students,
+                  instructors, and admins all count. Inactive accounts don't count toward your limit.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-sm">
+            <div class="flex items-start gap-4">
+              <i data-lucide="help-circle" class="w-6 h-6 text-brand flex-shrink-0 mt-1"></i>
+              <div>
+                <h3 class="text-xl font-semibold text-secondary mb-2">Is there a free trial?</h3>
+                <p class="text-secondary-700">Yes! Start with our Starter plan (free up to 25 users) for 14-day to
+                  experience the full platform.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-sm">
+            <div class="flex items-start gap-4">
+              <i data-lucide="help-circle" class="w-6 h-6 text-brand flex-shrink-0 mt-1"></i>
+              <div>
+                <h3 class="text-xl font-semibold text-secondary mb-2">What if we're between 5,000+ users?</h3>
+                <p class="text-secondary-700">We offer flexible Enterprise SaaS plans with volume discounts for
+                  institutions in the 5,000+ user range. Contact our sales team for custom pricing tailored to your
+                  specific needs - you'll benefit from economies of scale while getting dedicated support.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-sm border-2 border-brand">
+            <div class="flex items-start gap-4">
+              <i data-lucide="help-circle" class="w-6 h-6 text-brand flex-shrink-0 mt-1"></i>
+              <div>
+                <h3 class="text-xl font-semibold text-secondary mb-2">Is there a limit on AI usage?</h3>
+                <p class="text-secondary-700">With our BYOK model, you connect your own AI provider account (OpenAI,
+                  Anthropic, Google AI), giving you <strong class="text-brand">complete control and
+                    transparency</strong>.
+                  Our dashboard helps you track usage and optimize costs. Typical AI costs: <span
+                    class="inr">₹20-50</span> per user/month paid
+                  directly to your chosen provider.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-sm">
+            <div class="flex items-start gap-4">
+              <i data-lucide="help-circle" class="w-6 h-6 text-brand flex-shrink-0 mt-1"></i>
+              <div>
+                <h3 class="text-xl font-semibold text-secondary mb-2">Is setup and onboarding included?</h3>
+                <p class="text-secondary-700">Yes! All plans include guided onboarding. Pro and higher tiers get
+                  dedicated
+                  setup assistance and training sessions for your team.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-sm">
+            <div class="flex items-start gap-4">
+              <i data-lucide="help-circle" class="w-6 h-6 text-brand flex-shrink-0 mt-1"></i>
+              <div>
+                <h3 class="text-xl font-semibold text-secondary mb-2">What payment methods do you accept?</h3>
+                <p class="text-secondary-700">We accept all major credit cards, ACH transfers, and wire transfers.
+                  Enterprise clients can request custom payment terms and invoicing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-gradient-to-br from-brand to-brand-600 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-semibold mb-6">Ready to Transform Your Institution?</h2>
+        <p class="text-xl mb-4 max-w-3xl mx-auto opacity-90">
+          Join hundreds of forward-thinking institutions using InstructoHub to deliver exceptional learning experiences
+          powered by AI.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/register.html"
+            class="px-8 py-4 bg-white text-brand font-semibold rounded-lg hover:bg-neutral-100 transition-transform hover:scale-105 shadow-xl">
+            Start Free Trial
+          </a>
+          <a href="/Contact.html" class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white
+            hover:text-brand transition">
+            Schedule a Demo
+          </a>
+        </div>
+        <p class="mt-6 text-sm opacity-75">No credit card required • Set up in minutes • Cancel anytime</p>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const billingToggle = document.getElementById('billing-toggle');
+      function updatePricingDisplay() {
+        const period = billingToggle.value;
+        const inrMonthly = document.querySelectorAll('.inrmonthly');
+        const inrAnnual = document.querySelectorAll('.inrannualy');
+        const inrSimple = document.querySelectorAll('.inr:not(.inrmonthly):not(.inrannualy)');
+        [...inrMonthly, ...inrAnnual, ...inrSimple].forEach(el => {
+          el.classList.add('hidden');
+        });
+        inrSimple.forEach(el => el.classList.remove('hidden'));
+        if (period === 'monthly') {
+          inrMonthly.forEach(el => el.classList.remove('hidden'));
+        } else {
+          inrAnnual.forEach(el => el.classList.remove('hidden'));
+        }
+      }
+      billingToggle.addEventListener('change', updatePricingDisplay);
+      updatePricingDisplay();
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,6 +18,9 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="canonical" href="https://www.instructohub.com/register.html" />
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -130,6 +134,7 @@
       });
   </script>
 </head>
+
 <body class="min-h-screen flex flex-col text-secondary">
   <div class="w-full">
     <div class="h-12 md:block hidden"></div>
@@ -364,8 +369,8 @@
       const statusIcon = document.getElementById("status-icon");
       const statusText = document.getElementById("status-text");
       statusDiv.className = `p-4 mb-6 rounded-xl flex items-start shadow-lg border-l-4 animate-fadeIn ${type === "success"
-          ? "bg-gradient-to-r from-success/10 to-success/5 text-success-dark border-success"
-          : "bg-gradient-to-r from-danger/10 to-danger/5 text-danger-dark border-danger"
+        ? "bg-gradient-to-r from-success/10 to-success/5 text-success-dark border-success"
+        : "bg-gradient-to-r from-danger/10 to-danger/5 text-danger-dark border-danger"
         }`;
       statusIcon.className = `flex items-center justify-center w-6 h-6 rounded-full ${type === "success" ? "bg-success" : "bg-danger"
         }`;
@@ -565,4 +570,5 @@
     });
   </script>
 </body>
+
 </html>

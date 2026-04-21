@@ -7,6 +7,9 @@
   <title>InstructoHub Blog | AI-Powered LMS Insights & EdTech Resources</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="/favicon.ico">
   <meta name="description"
     content="Discover insights on AI-powered LMS platforms, headless learning systems, and the future of education. Expert articles from InstructoHub.">
@@ -20,6 +23,10 @@
     gtag('js', new Date());
     gtag('config', 'G-8GYGC3JQPD');
   </script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
       --brand-50: #fdf4f0;
@@ -145,9 +152,38 @@
       margin-bottom: 12px;
     }
   </style>
+  <script>
+    fetch("/private/header.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        lucide.createIcons();
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      });
+    fetch("/private/footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+        lucide.createIcons();
+        document.getElementById("current-year").textContent =
+          new Date().getFullYear();
+      });
+  </script>
 </head>
 
-<body class="bg-neutral-50 text-secondary">
+<body class="min-h-screen flex flex-col text-secondary">
+  <div class="w-full">
+    <div class="h-12 md:block hidden"></div>
+    <div class="h-16"></div>
+  </div>
+  <div id="header-placeholder"></div>
   <!-- Hero Section -->
   <section class="bg-gradient-to-b from-brand-50 via-white to-neutral-50 pt-32 pb-20">
     <div class="container mx-auto px-4 text-center">
@@ -166,7 +202,7 @@
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <!-- Blog #1: Active (Clickable) -->
-        <a href="/blog/ai-first-lms-winning-2025.html"
+        <a href="/private/ai-first-lms-winning-2025.html"
           class="blog-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl">
           <div class="relative h-48 bg-gradient-to-br from-brand-100 to-brand-200 overflow-hidden">
             <div class="absolute inset-0 flex items-center justify-center">
@@ -327,9 +363,44 @@
       <p class="mt-6 text-sm opacity-75">No credit card required • Set up in minutes • Cancel anytime</p>
     </div>
   </section>
+  <div id="footer-placeholder"></div>
   <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
+    }
     document.addEventListener('DOMContentLoaded', () => {
-      lucide.createIcons();
+      const billingToggle = document.getElementById('billing-toggle');
+      function updatePricingDisplay() {
+        const period = billingToggle.value;
+        const inrMonthly = document.querySelectorAll('.inrmonthly');
+        const inrAnnual = document.querySelectorAll('.inrannualy');
+        const inrSimple = document.querySelectorAll('.inr:not(.inrmonthly):not(.inrannualy)');
+        [...inrMonthly, ...inrAnnual, ...inrSimple].forEach(el => {
+          el.classList.add('hidden');
+        });
+        inrSimple.forEach(el => el.classList.remove('hidden'));
+        if (period === 'monthly') {
+          inrMonthly.forEach(el => el.classList.remove('hidden'));
+        } else {
+          inrAnnual.forEach(el => el.classList.remove('hidden'));
+        }
+      }
+      billingToggle.addEventListener('change', updatePricingDisplay);
+      updatePricingDisplay();
+      if (window.lucide) {
+        lucide.createIcons();
+      }
     });
   </script>
 </body>

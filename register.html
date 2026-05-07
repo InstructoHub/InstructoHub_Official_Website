@@ -22,8 +22,8 @@
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="canonical" href="https://www.instructohub.com/register.html" />
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -305,7 +305,7 @@
             </div>
           </div>
         </section>
-        <div class="g-recaptcha my-6" data-sitekey="6LcZpXkrAAAAAKFhLjBZR8x1-1YDqg23PArCezQb"></div>
+        <div class="g-recaptcha my-6" data-sitekey="6Lcpbs4sAAAAACtc-dUQ7IDqK_LjSXy25hW3gaMK"></div>
         <div class="pt-6 border-t border-brand-100 flex justify-center">
           <button type="submit" id="submit-btn"
             class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-xl text-text-light bg-gradient-to-r from-brand-500 via-brand-600 to-brand-500 hover:from-brand-600 hover:via-brand-700 hover:to-brand-600 focus:outline-none focus:ring-4 focus:ring-brand-300 transition-all duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
@@ -318,6 +318,8 @@
   </main>
   <div id="footer-placeholder"></div>
   <script>
+    let paid = false;
+    const serverType = ".dev";
     const steps = [
       {
         icon: "zap",
@@ -390,13 +392,13 @@
       const statusElement = document.getElementById("subdomain-status");
       if (!subdomain) {
         statusElement.innerHTML = "";
-        return;
+        return true;
       }
       statusElement.innerHTML =
         '<span class="text-yellow-600">Checking…</span>';
       try {
         const response = await fetch(
-          `https://admin.mdl.instructohub.com/local/multitenant/tenant_find_api.php?name=${encodeURIComponent(
+          `https://lms${serverType}.mdl.instructohub.com/local/multitenant/api/checkTenantExists.php?name=${encodeURIComponent(
             subdomain
           )}`,
           {
@@ -405,13 +407,14 @@
           }
         );
         const result = await response.json();
-        if (!result) {
+        if (result.success === false) {
           statusElement.innerHTML =
-            '<span class="text-danger">That subdomain is already taken.</span>';
-        } else {
-          statusElement.innerHTML =
-            '<span class="text-success">Good news! It\'s available.</span>';
+            `<span class="text-danger">${result.error}</span>`;
+          return true;
         }
+        statusElement.innerHTML =
+          '<span class="text-success">Good news! It\'s available.</span>';
+        return false;
       } catch (error) {
         console.error("Error checking tenant:", error);
         statusElement.innerHTML =
@@ -435,79 +438,114 @@
       });
     }
     function updateProgress() {
-      const progressBar = document.getElementById("progress-bar");
-      const progressFill = document.getElementById("progress-fill");
-      const progressPercent = document.getElementById("progress-percent");
-      const timeRemaining = document.getElementById("time-remaining");
-      progressBar.style.width = `${progress}%`;
-      progressFill.style.width = `${progress}%`;
-      progressPercent.textContent = `${Math.round(progress)}% Complete`;
-      timeRemaining.textContent = `~${Math.max(
-        0,
-        Math.round((100 - progress) * 0.7)
-      )}s remaining`;
+      document.getElementById("progress-bar").style.width = `${progress}%`;
+      document.getElementById("progress-fill").style.width = `${progress}%`;
+      document.getElementById("progress-percent").textContent = `${Math.round(progress)}% Complete`;
+      document.getElementById("time-remaining").textContent = `~${Math.max(0, Math.round((100 - progress) * 0.7))}s remaining`;
     }
     function updateStep(step) {
-      const stepIcon = document.getElementById("step-icon");
-      const stepMessage = document.getElementById("step-message");
-      const stepIndicators = document.getElementById("step-indicators");
-      stepIcon.innerHTML = `<i data-lucide="${step.icon}" class="w-4 h-4 text-white"></i>`;
-      stepMessage.textContent = step.text;
-      const indicators = stepIndicators.children;
+      document.getElementById("step-icon").innerHTML = `<i data-lucide="${step.icon}" class="w-4 h-4 text-white"></i>`;
+      document.getElementById("step-message").textContent = step.text;
+      const indicators = document.getElementById("step-indicators").children;
       for (let i = 0; i < indicators.length; i++) {
-        if (i <= currentStep) {
-          indicators[i].className =
-            "h-1 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 transition-all duration-500";
-        } else {
-          indicators[i].className = "h-1 rounded-full bg-neutral-200";
-        }
+        indicators[i].className = i <= currentStep ? "h-1 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 transition-all duration-500" : "h-1 rounded-full bg-neutral-200";
       }
       lucide.createIcons();
     }
     function stopCreationLoader() {
-      if (progressInterval) {
-        clearInterval(progressInterval);
-      }
+      if (progressInterval) clearInterval(progressInterval);
       document.getElementById("creation-loader").classList.add("hidden");
     }
     async function handleSubmit(event) {
       event.preventDefault();
-      const formData = new FormData();
+      if (await checkSubdomainAvailability()) {
+        showStatus("error", "Please choose a different subdomain.");
+        return;
+      }
+      const form = event.target;
+      const submitBtn = document.getElementById("submit-btn");
       const captchaToken = grecaptcha.getResponse();
       if (!captchaToken) {
         showStatus("error", "Please complete the CAPTCHA.");
         return;
       }
-      formData.append("g-recaptcha-response", captchaToken);
-      const form = event.target;
-      formData.append("subdomain", form.subdomain.value);
-      formData.append("institution_name", form.institution_name.value);
-      formData.append("admin_email", form.admin_email.value);
-      formData.append("admin_user", form.admin_user.value);
-      formData.append("admin_password", form.admin_password.value);
+      const formData = new FormData(form);
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<div class="animate-spin -ml-1 mr-3 h-5 w-5 border-2 border-text-light border-t-transparent rounded-full"></div> Processing...`;
+      if (paid) {
+        try {
+          const orderRes = await fetch(`https://lms${serverType}.mdl.instructohub.com/local/multitenant/api/create_order.php`, {
+            method: 'POST',
+            body: formData
+          });
+          const orderData = await orderRes.json();
+          if (orderData.error) {
+            showStatus("error", orderData.error);
+            resetButton(submitBtn);
+            return;
+          }
+          var options = {
+            "key": orderData.key,
+            "amount": orderData.amount,
+            "currency": "INR",
+            "order_id": orderData.order_id,
+            "handler": function (response) {
+              executeTenantCreation(form, response, null);
+            },
+            "modal": {
+              "ondismiss": function () {
+                resetButton(submitBtn);
+              }
+            }
+          };
+          var rzp = new Razorpay(options);
+          rzp.open();
+        } catch (error) {
+          showStatus("error", "Payment gateway connection failed.");
+          resetButton(submitBtn);
+        }
+      } else {
+        executeTenantCreation(form, null, formData);
+      }
+    }
+    function resetButton(btn) {
+      btn.disabled = false;
+      btn.innerHTML = `<i data-lucide="zap" class="w-5 h-5 mr-2"></i> Create InstructoHub LMS`;
+      lucide.createIcons();
+    }
+    async function executeTenantCreation(form, razorpayResponse = null, originalFormData = null) {
       const submitBtn = document.getElementById("submit-btn");
       submitBtn.disabled = true;
       submitBtn.innerHTML = `
                 <div class="animate-spin -ml-1 mr-3 h-5 w-5 border-2 border-text-light border-t-transparent rounded-full"></div>
                 Creating Your LMS...
             `;
+      let submitData;
+      if (paid && razorpayResponse) {
+        submitData = new FormData();
+        submitData.append("razorpay_order_id", razorpayResponse.razorpay_order_id);
+        submitData.append("razorpay_payment_id", razorpayResponse.razorpay_payment_id);
+        submitData.append("razorpay_signature", razorpayResponse.razorpay_signature);
+      } else {
+        submitData = originalFormData;
+      }
       startCreationLoader();
       try {
         const response = await fetch(
-          "https://admin.mdl.instructohub.com/local/multitenant/process_tenant.php",
+          `https://lms${serverType}.mdl.instructohub.com/local/multitenant/api/createTenant.php`,
           {
             method: "POST",
-            body: formData,
+            body: submitData,
             mode: "cors",
           }
         );
         if (response.ok) {
           showStatus(
             "success",
-            `🎉 Success! Your InstructoHub LMS "${form.institution_name.value}" is now live at ${form.subdomain.value}.instructohub.com`
+            `🎉 Success! Your InstructoHub LMS "${form.institution_name.value}" is now live at ${form.subdomain.value}${serverType}.instructohub.com`
           );
           setTimeout(() => {
-            window.location.href = `https://${form.subdomain.value}.instructohub.com`;
+            window.location.href = `https://${form.subdomain.value}${serverType}.instructohub.com`;
           }, 2000);
         } else {
           showStatus(
@@ -523,12 +561,7 @@
         );
       } finally {
         stopCreationLoader();
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = `
-                    <i data-lucide="zap" class="w-5 h-5 mr-2"></i>
-                    Create InstructoHub LMS
-                `;
-        lucide.createIcons();
+        resetButton(submitBtn);
       }
     }
     function handleInputChange(event) {

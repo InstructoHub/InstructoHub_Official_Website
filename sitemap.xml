@@ -13,21 +13,21 @@
 
   <!-- Main Product Pages - High Priority -->
   <url>
-    <loc>https://www.instructohub.com/AI-First-LMS.html</loc>
+    <loc>https://www.instructohub.com/AI-First-LMS</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.instructohub.com/AI-Suite.html</loc>
+    <loc>https://www.instructohub.com/AI-Suite</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.instructohub.com/Advanced-Features.html</loc>
+    <loc>https://www.instructohub.com/Advanced-Features</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -35,28 +35,28 @@
 
   <!-- Company Pages - Medium-High Priority -->
   <url>
-    <loc>https://www.instructohub.com/About.html</loc>
+    <loc>https://www.instructohub.com/About</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.instructohub.com/Pricing.html</loc>
+    <loc>https://www.instructohub.com/Pricing</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.instructohub.com/Mission.html</loc>
+    <loc>https://www.instructohub.com/Mission</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.instructohub.com/Contact.html</loc>
+    <loc>https://www.instructohub.com/Contact</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -64,7 +64,7 @@
 
   <!-- User Action Pages - Medium Priority -->
   <url>
-    <loc>https://www.instructohub.com/register.html</loc>
+    <loc>https://www.instructohub.com/register</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -72,14 +72,21 @@
 
   <!-- Policy Pages - Lower Priority -->
   <url>
-    <loc>https://www.instructohub.com/policy/privacy_policy.html</loc>
+    <loc>https://www.instructohub.com/policy/privacy</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://www.instructohub.com/policy/cancellation_and_refunds.html</loc>
+    <loc>https://www.instructohub.com/policy/terms</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.instructohub.com/policy/cancellation_and_refunds</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

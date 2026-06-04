@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="canonical" href="https://www.instructohub.com/Contact" />
   <script>
     tailwind.config = {
@@ -261,14 +261,14 @@
                 Fill out the form below and we'll get back to you as soon as
                 possible.
               </p>
-              <form class="contact-form space-y-6"
-                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd2kpsZBJffKGPmFajcFspQoxm3oJmm6M887OcW80fhWOm2mg/formResponse">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form class="contact-form space-y-6" method="POST" target="google-form-hidden-iframe"
+                action="https://docs.google.com/forms/d/e/1FAIpQLScGKYf0Oq5SPofZRAhekIABzo3ij8I-VvUYKarc2VXnegXqIg/formResponse">
+                <div class="grid grid-cols-1 gap-6">
                   <div>
                     <label for="name" class="block text-sm font-medium text-secondary mb-2">
                       Full Name <span class="text-danger">*</span>
                     </label>
-                    <input type="text" id="name" name="entry.542966788" required
+                    <input type="text" id="name" name="entry.434583038" required
                       class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary"
                       placeholder="John Doe" />
                   </div>
@@ -276,41 +276,25 @@
                     <label for="email" class="block text-sm font-medium text-secondary mb-2">
                       Email Address <span class="text-danger">*</span>
                     </label>
-                    <input type="email" id="email" name="entry.1416384174" required
+                    <input type="email" id="email" name="entry.832034059" required
                       class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary"
                       placeholder="john@example.com" />
                   </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label for="phone" class="block text-sm font-medium text-secondary mb-2">
                       Phone Number
                     </label>
-                    <input type="tel" id="phone" name="entry.1199654377"
+                    <input type="tel" id="phone" name="entry.887151190" inputmode="tel" pattern="^\+?[0-9\s\-]{7,20}$"
+                      title="Enter a valid phone number using digits, spaces, dashes, and an optional leading +"
                       class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary"
                       placeholder="+91 12345 67890" />
-                  </div>
-                  <div>
-                    <label for="subject" class="block text-sm font-medium text-secondary mb-2">
-                      Subject <span class="text-danger">*</span>
-                    </label>
-                    <select id="subject" name="entry.805272060" required
-                      class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary bg-white">
-                      <option value="">Select a subject</option>
-                      <option value="General Inquiry">General Inquiry</option>
-                      <option value="Request a Demo">Request a Demo</option>
-                      <option value="Pricing Information">Pricing Information</option>
-                      <option value="Technical Support">Technical Support</option>
-                      <option value="Partnership Opportunity">Partnership Opportunity</option>
-                      <option value="Other">Other</option>
-                    </select>
                   </div>
                 </div>
                 <div>
                   <label for="message" class="block text-sm font-medium text-secondary mb-2">
                     Message <span class="text-danger">*</span>
                   </label>
-                  <textarea id="message" name="entry.1146113982" rows="6" required
+                  <textarea id="message" name="entry.821941265" rows="6" required
                     class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary resize-none"
                     placeholder="Tell us how we can help you..."></textarea>
                 </div>
@@ -328,6 +312,8 @@
                   <i data-lucide="send" class="w-5 h-5"></i>
                 </button>
               </form>
+              <iframe id="google-form-hidden-iframe" name="google-form-hidden-iframe"
+                style="display:none; width:0; height:0; border:0;"></iframe>
               <div id="form-message" class="mt-6 hidden p-4 rounded-lg"></div>
             </div>
           </div>
@@ -373,6 +359,45 @@
     setTimeout(() => {
       lucide.createIcons();
     }, 500);
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const contactForm = document.querySelector(".contact-form");
+      const formMessage = document.getElementById("form-message");
+      const hiddenIframe = document.getElementById("google-form-hidden-iframe");
+      const submitButton = contactForm.querySelector("button[type='submit']");
+      let isSubmitting = false;
+
+      function showMessage(text, isSuccess) {
+        formMessage.innerHTML = `<p class="font-semibold mb-2">${isSuccess ? "Thank you!" : "Oops!"}</p><p>${text}</p>`;
+        formMessage.classList.remove("hidden", "bg-danger/10", "border-danger", "text-danger", "bg-success/10", "border-success", "text-success");
+        if (isSuccess) {
+          formMessage.classList.add("bg-success/10", "border", "border-success", "text-success");
+        } else {
+          formMessage.classList.add("bg-danger/10", "border", "border-danger", "text-danger");
+        }
+      }
+
+      contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (isSubmitting) return;
+        isSubmitting = true;
+        submitButton.disabled = true;
+        submitButton.classList.add("opacity-70", "cursor-not-allowed");
+        submitButton.querySelector("span").textContent = "Sending...";
+        formMessage.classList.add("hidden");
+        contactForm.submit();
+      });
+
+      hiddenIframe.addEventListener("load", function () {
+        if (!isSubmitting) return;
+        isSubmitting = false;
+        submitButton.disabled = false;
+        submitButton.classList.remove("opacity-70", "cursor-not-allowed");
+        submitButton.querySelector("span").textContent = "Send Message";
+        contactForm.reset();
+        showMessage("Your message has been received. We will contact you soon.", true);
+      });
+    });
   </script>
 </body>
 

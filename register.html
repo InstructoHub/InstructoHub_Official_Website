@@ -587,11 +587,11 @@
       }, false);
     });
     dropZone.addEventListener('drop', (e) => {
-      const files = e.dataTransfer.files;
+      const files = e.dataTransfer.files[0];
       if (files.length) handleImageConversion(files);
     });
     fileInput.addEventListener('change', (e) => {
-      if (e.target.files.length) handleImageConversion(e.target.files);
+      if (e.target.files[0].length) handleImageConversion(e.target.files[0]);
     });
 
     function handleImageConversion(file) {

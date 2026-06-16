@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benefits of Using an AI Quiz Generator in Modern Education</title>
+  <meta name="description" content="Explore how AI quiz generators simplify test creation, save teachers time, personalise assessments, and improve classroom outcomes." />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8GYGC3JQPD');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="canonical" href="https://www.instructohub.com/blogs/ai-quiz-generator-for-teachers" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#fdf4f0",
+              100: "#fce8e0",
+              200: "#f9d1c1",
+              300: "#f5b9a2",
+              400: "#f09c7d",
+              500: "#e16b3b",
+              600: "#d15a2b",
+              700: "#b44a22",
+              800: "#933c1d",
+              900: "#78301a",
+              DEFAULT: "#e16b3b",
+            },
+            secondary: {
+              50: "#e7eaeb",
+              100: "#cfd5d7",
+              200: "#a0acb0",
+              300: "#728389",
+              400: "#435a62",
+              500: "#1b3942",
+              600: "#18333b",
+              700: "#152b32",
+              800: "#122229",
+              900: "#0e1a20",
+              DEFAULT: "#1b3942",
+            },
+          },
+          animation: {
+            fadeIn: "fadeIn 0.5s ease-out forwards",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": { opacity: "0", transform: "translateY(10px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    fetch("/private/header.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        lucide.createIcons();
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      });
+    fetch("/private/footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+        lucide.createIcons();
+        const yearNode = document.getElementById("current-year");
+        if (yearNode) yearNode.textContent = new Date().getFullYear();
+      });
+  </script>
+</head>
+
+<body class="min-h-screen flex flex-col bg-[#f7f7f7] text-[#4b5563] font-sans antialiased">
+  <div class="w-full">
+    <div class="h-12 md:block hidden"></div>
+    <div class="h-16"></div>
+  </div>
+  <div id="header-placeholder"></div>
+  <main class="flex-grow animate-fadeIn">
+    <header class="w-full bg-[#1b3942] text-white py-20 md:py-24 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#142b32] to-[#1b3942] opacity-90"></div>
+      <div class="max-w-[1536px] mx-auto px-4 relative z-10">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-2 h-2 bg-[#e16b3b] rounded-full"></span>
+          <span class="text-xs font-semibold tracking-widest text-[#f5b9a2] uppercase">Teacher Tools</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-[48px] font-bold leading-tight text-white max-w-5xl tracking-tight mb-6">
+          How an AI Quiz Generator Helps Teachers Save Time and Improve Assessments
+        </h1>
+        <p class="text-lg md:text-xl text-[#cfd5d7] max-w-3xl leading-relaxed mb-8">
+          The field of education has also quickly adopted technology to improve learning processes. One of the most significant innovations in education that benefits educators is the use of the AI Quiz generator.
+        </p>
+        <div class="flex flex-wrap items-center gap-6 text-sm text-[#a0acb0] border-t border-[#435a62] pt-6 max-w-xl">
+          <div class="flex items-center gap-2">
+            <i data-lucide="calendar" class="w-4 h-4 text-[#e16b3b]"></i>
+            <span>Published: 2026</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="trending-up" class="w-4 h-4 text-[#e16b3b]"></i>
+            <span>AI Quiz Insights</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="user-pen" class="w-4 h-4 text-[#e16b3b]"></i>
+            <span>By: <a href="https://www.linkedin.com/in/ankitgarg3/" target="_blank" rel="noopener noreferrer" class="text-[#e16b3b] hover:underline">Ankit Garg</a></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="max-w-[1536px] mx-auto px-4 py-20">
+      <div class="w-full bg-white p-8 md:p-12 rounded-2xl shadow-lg border border-[#e5e7eb]">
+        <div class="space-y-10">
+          <div class="space-y-6">
+            <img src="/assets/images/blogs/AI Quiz Generator.png" alt="Teacher using AI Quiz Generator tool to save time and improve student assessments with automated question generation and quiz creation" class="w-full rounded-2xl shadow-lg mt-6 mb-4">
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              The field of education has also quickly adopted technology to improve learning processes. One of the most significant innovations in education that benefits educators is the use of the <a href="https://www.instructohub.com/Advanced-Features.html" target="_blank" rel="noopener noreferrer" class="text-[#e16b3b] hover:underline">AI Quiz generator</a>.
+            </p>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              Educators spend a good deal of time setting up quizzes and also judging how students are doing. The use of artificial intelligence has transformed quiz creation, making it faster and enabling teachers to manage the entire process more efficiently. This blog will focus on how AI-based quizzes have facilitated teaching.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight">What Is an AI Quiz Generator?</h2>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              AI-based quiz generators are highly effective tools for creating quizzes and tests. Rather than manually designing questions for a particular topic or lesson, teachers can quickly generate multiple-choice, true/false, and other question types by clicking a couple of buttons.
+            </p>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              Using AI allows users to generate quiz questions automatically using advanced algorithms. Therefore, this technology significantly simplifies teachers' work.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight">The Challenges Teachers Face in Assessment Creation</h2>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              Coming up with effective assessments takes quite a lot of time because a teacher must:
+            </p>
+            <ul class="list-disc list-inside text-[#4b5563] leading-relaxed space-y-3 pl-4 border-l-2 border-[#e16b3b]">
+              <li>Design appropriate questions aligned with the learning outcomes.</li>
+              <li>Make sure that quizzes are balanced and objective.</li>
+              <li>Create different versions of quizzes to avoid cheating.</li>
+              <li>Review the quiz and determine learning problems.</li>
+            </ul>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              Such duties are usually very difficult to fulfil, especially in a large classroom setting.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight">Rise in Demand for Advanced Assessment Software</h2>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              Manually created assessments take several hours to plan, frame questions, grade tests, and more. The burden increases for educators who teach different classes and different subjects.
+            </p>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              In this regard, using intelligent educational software that automatically generates quizzes makes it easier for teachers.
+            </p>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              Advanced systems produce consistent assessments without errors. Hence, such assessments save precious time which can be utilised elsewhere.
+            </p>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="rounded-3xl border border-[#e5e7eb] bg-[#f7fbff] p-8">
+              <div class="mb-6 rounded-3xl bg-[#dbeafe] p-5 shadow-inner">
+                <p class="text-xs uppercase tracking-[0.24em] font-semibold text-[#2563eb]">Time-saving assessment automation</p>
+                <h3 class="mt-3 text-2xl font-semibold text-[#1b3942]">AI-Powered Quiz Generator Saves Time</h3>
+              </div>
+              <p class="text-lg leading-relaxed text-[#4b5563] mb-4">
+                The most obvious benefit of using an AI-powered tool when creating assessments is that it does all the work really fast.
+              </p>
+              <ul class="list-disc list-inside text-[#4b5563] leading-relaxed space-y-3 pl-4">
+                <li>Multiple-choice questions</li>
+                <li>True or false questions</li>
+                <li>Fill-in-the-blanks assignments</li>
+                <li>Short answers questions</li>
+                <li>Scenario-based questions</li>
+              </ul>
+              <p class="text-lg leading-relaxed text-[#4b5563] mt-4">
+                All the work will be done in just a few minutes.
+              </p>
+            </div>
+            <div class="rounded-3xl border border-[#e5e7eb] bg-[#fdf4f0] p-8">
+              <div class="mb-6 rounded-3xl bg-[#fff1e0] p-5 shadow-inner">
+                <p class="text-xs uppercase tracking-[0.24em] font-semibold text-[#c2410c]">Personalised assessment experiences</p>
+                <h3 class="mt-3 text-2xl font-semibold text-[#1b3942]">Personalised Quizzes Based on Learning Needs</h3>
+              </div>
+              <p class="text-lg leading-relaxed text-[#4b5563] mb-4">
+                Each student learns differently. In traditional assessments, it is hard to account for each student's unique needs. But with AI course generator tools, quizzes are created with consideration.
+              </p>
+              <ul class="list-disc list-inside text-[#4b5563] leading-relaxed space-y-3 pl-4">
+                <li>Performance record of the students</li>
+                <li>Progress</li>
+                <li>Knowledge gaps</li>
+                <li>Difficulty levels</li>
+              </ul>
+              <p class="text-lg leading-relaxed text-[#4b5563] mt-4">
+                This ensures that all students receive personalised quizzes tailored to them.
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight">Assessment via Automation</h2>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              Timely feedback is critical to academic success. Traditional testing often delays insight, but AI-driven grading makes results available immediately, so teachers can respond faster to student needs.
+            </p>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              Automated assessment workflows also keep the process organised and help educators identify potential learning issues more quickly.
+            </p>
+            <div class="rounded-3xl border border-[#e5e7eb] bg-[#ffffff] p-8 shadow-sm">
+              <h3 class="text-xl font-semibold text-[#1b3942] mb-4">Why Automation Matters</h3>
+              <ul class="list-disc list-inside text-[#4b5563] leading-relaxed space-y-3 pl-4">
+                <li>Instant grading of student work.</li>
+                <li>Rapid identification of learning gaps.</li>
+                <li>Actionable feedback for students.</li>
+                <li>Efficiency for both teachers and learners.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight">Assessment Workflow Comparison</h2>
+            <div class="overflow-x-auto rounded-[32px] border border-[#e5e7eb] bg-white shadow-lg">
+              <table class="min-w-full text-base md:text-lg divide-y divide-[#e5e7eb] text-[#334155]">
+                <thead class="bg-[#f8fafc] text-[#1b3942]">
+                  <tr>
+                    <th class="px-6 py-5 text-left font-semibold uppercase tracking-wide text-sm md:text-base">Traditional Assessment Process</th>
+                    <th class="px-6 py-5 text-left font-semibold uppercase tracking-wide text-sm md:text-base">AI-Powered Assessment Process</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-white">
+                    <td class="px-6 py-5 align-top">Manual question creation</td>
+                    <td class="px-6 py-5 align-top">Automated quiz generation</td>
+                  </tr>
+                  <tr class="bg-[#f9fafb]">
+                    <td class="px-6 py-5 align-top">Hours spent formatting tests</td>
+                    <td class="px-6 py-5 align-top">Instant quiz formatting</td>
+                  </tr>
+                  <tr class="bg-white">
+                    <td class="px-6 py-5 align-top">Manual grading and evaluation</td>
+                    <td class="px-6 py-5 align-top">Automated grading and feedback</td>
+                  </tr>
+                  <tr class="bg-[#f9fafb]">
+                    <td class="px-6 py-5 align-top">Limited question variation</td>
+                    <td class="px-6 py-5 align-top">Multiple versions generated instantly</td>
+                  </tr>
+                  <tr class="bg-white">
+                    <td class="px-6 py-5 align-top">Time-consuming performance analysis</td>
+                    <td class="px-6 py-5 align-top">Real-time analytics and reports</td>
+                  </tr>
+                  <tr class="bg-[#f9fafb]">
+                    <td class="px-6 py-5 align-top">Higher administrative workload</td>
+                    <td class="px-6 py-5 align-top">Streamlined workflow and efficiency</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight">Helping Small and Large Schools</h2>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              Educational technology is not only used by larger educational institutions that can invest more money in the process. Nowadays, several systems offer <a href="https://www.instructohub.com/" target="_blank" rel="noopener noreferrer" class="text-[#e16b3b] hover:underline">affordable AI LMS for small schools</a>, providing access to the latest technological assessment methods.
+            </p>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              They allow small institutions to
+            </p>
+            <ul class="list-disc list-inside text-[#4b5563] leading-relaxed space-y-3 pl-4 border-l-2 border-[#e16b3b]">
+              <li>Save on costs.</li>
+              <li>Improve the effectiveness of teaching processes.</li>
+              <li>Offer quality modern learning experiences.</li>
+              <li>Implement the digitalisation process.</li>
+            </ul>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              Every educational institution can benefit from technological advancements by leveraging the latest innovations.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight">Improving K-12 Learning Through AI</h2>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              With the increasing need for personalised learning, particularly at the primary and secondary levels, there is a need for an updated LMS for K-12 education that includes all the components required to enable AI-based assessments, learning analytics, and progress tracking within a single system.
+            </p>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              With such a tool, educators will be able to
+            </p>
+            <ul class="list-disc list-inside text-[#4b5563] leading-relaxed space-y-3 pl-4 border-l-2 border-[#e16b3b]">
+              <li>Track each student’s progress.</li>
+              <li>Modify their instructional techniques based on data.</li>
+              <li>Develop age-specific tests.</li>
+              <li>Promote continuous improvements in learning.</li>
+            </ul>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight">The Future of AI-Driven Learning Management</h2>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              In light of advancements in educational technology, there has been an increasing use of an <a href="https://www.instructohub.com/AI-First-LMS.html" target="_blank" rel="noopener noreferrer" class="text-[#e16b3b] hover:underline">AI-first learning management system</a>, with AI at the heart of all teaching and learning activities.
+            </p>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              An AI-driven learning ecosystem can provide:
+            </p>
+            <ul class="list-disc list-inside text-[#4b5563] leading-relaxed space-y-3 pl-4 border-l-2 border-[#e16b3b]">
+              <li>Content suggestions using intelligent algorithms.</li>
+              <li>Generation of assessments automatically.</li>
+              <li>Predictive learning analytics.</li>
+              <li>Personalised student services.</li>
+              <li>Administrative efficiency.</li>
+            </ul>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight">InstructoHub: The AI Quiz Generator for Successful Learning</h2>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              An AI Quiz Generator will change the very way teachers develop quiz questions. By using this revolutionary tool, teachers will not only save their precious time but also ensure the accuracy and reliability of quizzes and at the same time offer students an exciting experience in studying and learning.
+            </p>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              AI-based assessment tools will contribute to consistency, efficiency, and offer deep insights about each student's performance.
+            </p>
+            <p class="text-lg leading-relaxed text-[#4b5563]">
+              If you seek an efficient way to streamline your assessment process and increase classroom productivity, there is a perfect solution. You can rely on InstructoHub for all the assistance you need. It offers a powerful tool such as an AI Quiz Generator and enables users to develop efficient evaluations. To learn more about our AI quiz generator, contact us now!
+            </p>
+          </div>
+
+          <div class="mt-12 pt-8 border-t border-[#e5e7eb]">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+              <div class="bg-[#fafafa] border border-[#e5e7eb] rounded-xl overflow-hidden transition-all duration-300">
+                <button onclick="toggleAccordion('faq-1')"
+                  class="w-full flex items-center justify-between p-5 text-left font-semibold text-[#1b3942] hover:text-[#e16b3b] transition-colors">
+                  <span>What is an Artificial Intelligence Quiz Maker?</span>
+                  <i data-lucide="chevron-down" id="faq-1-icon"
+                    class="w-5 h-5 text-[#6b7280] transform transition-transform duration-300"></i>
+                </button>
+                <div id="faq-1" class="hidden bg-white px-5 pb-5 pt-2 border-t border-[#e5e7eb]/50">
+                  <p class="text-base text-[#4b5563] leading-relaxed">
+                    An AI Quiz Generator is a clever technology that helps to construct quizzes and test questions from educational material. Teachers save loads of time and work by designing quizzes with an AI quiz generator.
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[#fafafa] border border-[#e5e7eb] rounded-xl overflow-hidden transition-all duration-300">
+                <button onclick="toggleAccordion('faq-2')"
+                  class="w-full flex items-center justify-between p-5 text-left font-semibold text-[#1b3942] hover:text-[#e16b3b] transition-colors">
+                  <span>How does an AI Quiz Generator save teachers time?</span>
+                  <i data-lucide="chevron-down" id="faq-2-icon"
+                    class="w-5 h-5 text-[#6b7280] transform transition-transform duration-300"></i>
+                </button>
+                <div id="faq-2" class="hidden bg-white px-5 pb-5 pt-2 border-t border-[#e5e7eb]/50">
+                  <p class="text-base text-[#4b5563] leading-relaxed">
+                    The AI Quiz Generator removes the time demanding work of writing test questions, grading responses and designing quizzes.
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[#fafafa] border border-[#e5e7eb] rounded-xl overflow-hidden transition-all duration-300">
+                <button onclick="toggleAccordion('faq-3')"
+                  class="w-full flex items-center justify-between p-5 text-left font-semibold text-[#1b3942] hover:text-[#e16b3b] transition-colors">
+                  <span>Can AI Quiz Generators be used to Enhance the Assessment Process?</span>
+                  <i data-lucide="chevron-down" id="faq-3-icon"
+                    class="w-5 h-5 text-[#6b7280] transform transition-transform duration-300"></i>
+                </button>
+                <div id="faq-3" class="hidden bg-white px-5 pb-5 pt-2 border-t border-[#e5e7eb]/50">
+                  <p class="text-base text-[#4b5563] leading-relaxed">
+                    Yes. AI systems can develop a range of test questions that are consistent and connected with learning objectives by making the assessment process more efficient and meaningful.
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[#fafafa] border border-[#e5e7eb] rounded-xl overflow-hidden transition-all duration-300">
+                <button onclick="toggleAccordion('faq-4')"
+                  class="w-full flex items-center justify-between p-5 text-left font-semibold text-[#1b3942] hover:text-[#e16b3b] transition-colors">
+                  <span>Are AI Quiz Generators good for all the topic areas?</span>
+                  <i data-lucide="chevron-down" id="faq-4-icon"
+                    class="w-5 h-5 text-[#6b7280] transform transition-transform duration-300"></i>
+                </button>
+                <div id="faq-4" class="hidden bg-white px-5 pb-5 pt-2 border-t border-[#e5e7eb]/50">
+                  <p class="text-base text-[#4b5563] leading-relaxed">
+                    The vast majority of AI Quiz Generators will allow you to create quizzes not just on fundamental subjects like Science, Math, Social Studies but also on professional development programmes.
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[#fafafa] border border-[#e5e7eb] rounded-xl overflow-hidden transition-all duration-300">
+                <button onclick="toggleAccordion('faq-5')"
+                  class="w-full flex items-center justify-between p-5 text-left font-semibold text-[#1b3942] hover:text-[#e16b3b] transition-colors">
+                  <span>Can I edit AI-generated quizzes?</span>
+                  <i data-lucide="chevron-down" id="faq-5-icon"
+                    class="w-5 h-5 text-[#6b7280] transform transition-transform duration-300"></i>
+                </button>
+                <div id="faq-5" class="hidden bg-white px-5 pb-5 pt-2 border-t border-[#e5e7eb]/50">
+                  <p class="text-base text-[#4b5563] leading-relaxed">
+                    Yes, teachers can always update questions, change them in terms of difficulty level and multimedia content.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/private/header.html").then(r=>r.text()).then(t=>{document.getElementById('header-placeholder').innerHTML=t; lucide.createIcons();});
+    fetch("/private/footer.html").then(r=>r.text()).then(t=>{document.getElementById('footer-placeholder').innerHTML=t; lucide.createIcons();});
+    lucide.createIcons();
+
+    function toggleAccordion(id) {
+      var panel = document.getElementById(id);
+      var icon = document.getElementById(id + '-icon');
+      if (!panel) return;
+      var isOpen = !panel.classList.contains('hidden');
+      document.querySelectorAll('div[id^="faq-"]').forEach(function(el) {
+        if (el.id !== id) {
+          el.classList.add('hidden');
+          var otherIcon = document.getElementById(el.id + '-icon');
+          if (otherIcon) otherIcon.classList.remove('rotate-180');
+        }
+      });
+      if (isOpen) {
+        panel.classList.add('hidden');
+        if (icon) icon.classList.remove('rotate-180');
+      } else {
+        panel.classList.remove('hidden');
+        if (icon) icon.classList.add('rotate-180');
+      }
+    }
+  </script>
+</body>
+
+</html>

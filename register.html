@@ -587,11 +587,10 @@
       }, false);
     });
     dropZone.addEventListener('drop', (e) => {
-      const files = e.dataTransfer.files[0];
-      if (files.length) handleImageConversion(files);
+      if (e.dataTransfer.files.length) handleImageConversion(e.dataTransfer.files[0]);
     });
     fileInput.addEventListener('change', (e) => {
-      if (e.target.files[0].length) handleImageConversion(e.target.files[0]);
+      if (e.target.files.length) handleImageConversion(e.target.files[0]);
     });
 
     function handleImageConversion(file) {

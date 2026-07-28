@@ -458,7 +458,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div class="mt-field-wrap w-full min-w-0">
                     <label for="admin_user" class="block text-xs font-semibold text-[#1b3942] mb-1.5">Admin Username
                       <span class="text-[#EF4444]">*</span></label>
@@ -472,7 +472,9 @@
                       <i class="fas fa-exclamation-circle mr-1"></i> This username is restricted and cannot be chosen.
                     </div>
                   </div>
-                  <div class="mt-field-wrap w-full min-w-0">
+                  <div class="mt-field-wrap w-full min-w-0 sm:col-span-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div class="mt-field-wrap w-full min-w-0">
                     <label for="admin_password" class="block text-xs font-semibold text-[#1b3942] mb-1.5">Admin Password
                       <span class="text-[#EF4444]">*</span></label>
                     <div class="relative w-full min-w-0">
@@ -486,11 +488,37 @@
                         <i id="passwordIcon" class="fas fa-eye text-xs"></i>
                       </button>
                     </div>
-                    <div class="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-[#4b5563]">
-                      <span id="req-length" class="flex items-center"><i
+                    <div class="mt-1.5 flex flex-col gap-y-1 items-start text-[11px] text-[#4b5563]">
+                      <span id="req-length" class="flex items-center whitespace-nowrap"><i
                           class="fas fa-times-circle text-[#EF4444] mr-1"></i>8+ Characters</span>
-                      <span id="req-alpha" class="flex items-center"><i
-                          class="fas fa-times-circle text-[#EF4444] mr-1"></i>Letters & Numbers</span>
+                      <span id="req-digit" class="flex items-center whitespace-nowrap"><i
+                          class="fas fa-times-circle text-[#EF4444] mr-1"></i>1 Digit</span>
+                      <span id="req-lowercase" class="flex items-center whitespace-nowrap"><i
+                          class="fas fa-times-circle text-[#EF4444] mr-1"></i>1 Lowercase</span>
+                      <span id="req-uppercase" class="flex items-center whitespace-nowrap"><i
+                          class="fas fa-times-circle text-[#EF4444] mr-1"></i>1 Uppercase</span>
+                      <span id="req-special" class="flex items-center whitespace-nowrap"><i
+                          class="fas fa-times-circle text-[#EF4444] mr-1"></i>1 Special Character</span>
+                    </div>
+                  </div>
+                  <div class="mt-field-wrap w-full min-w-0">
+                    <label for="confirm_password" class="block text-xs font-semibold text-[#1b3942] mb-1.5">Confirm Password
+                      <span class="text-[#EF4444]">*</span></label>
+                    <div class="relative w-full min-w-0">
+                      <i
+                        class="fas fa-lock mt-field-icon absolute left-3 top-1/2 -translate-y-1/2 text-[#a0acb0] text-xs"></i>
+                      <input type="password" id="confirm_password" name="confirm_password" required
+                        placeholder="Confirm password"
+                        class="mt-input w-full min-w-0 pl-9 pr-9 py-2 border border-[#e5e7eb] rounded-xl text-xs text-[#1b3942] focus:border-[#e16b3b]" />
+                      <button type="button" id="toggle-confirm-pwd-btn"
+                        class="absolute right-3 top-1/2 -translate-y-1/2 text-[#6b7280] hover:text-[#e16b3b]">
+                        <i id="confirmPasswordIcon" class="fas fa-eye text-xs"></i>
+                      </button>
+                    </div>
+                    <div id="confirm-password-status" class="mt-1.5 text-[11px] text-[#4b5563] flex items-center">
+                      <i class="fas fa-times-circle text-[#EF4444] mr-1"></i>Passwords must match
+                    </div>
+                  </div>
                     </div>
                   </div>
                 </div>
@@ -536,7 +564,9 @@
 
     // Password Visibility Toggle Logic mapped directly from multi-tenant register page layout
     const pwdInput = document.getElementById('admin_password');
+    const confirmPwdInput = document.getElementById('confirm_password');
     const pwdIcon = document.getElementById('passwordIcon');
+    const confirmPwdIcon = document.getElementById('confirmPasswordIcon');
     document.getElementById('toggle-pwd-btn').addEventListener('click', () => {
       if (pwdInput.type === 'password') {
         pwdInput.type = 'text';
@@ -546,19 +576,55 @@
         pwdIcon.className = 'fas fa-eye text-xs';
       }
     });
+    document.getElementById('toggle-confirm-pwd-btn').addEventListener('click', () => {
+      if (confirmPwdInput.type === 'password') {
+        confirmPwdInput.type = 'text';
+        confirmPwdIcon.className = 'fas fa-eye-slash text-xs';
+      } else {
+        confirmPwdInput.type = 'password';
+        confirmPwdIcon.className = 'fas fa-eye text-xs';
+      }
+    });
+
+    function updateRequirementState(elementId, isValid, validText) {
+      document.getElementById(elementId).innerHTML = isValid
+        ? `<i class="fas fa-check-circle text-[#4CAF50] mr-1"></i>${validText}`
+        : `<i class="fas fa-times-circle text-[#EF4444] mr-1"></i>${validText}`;
+    }
+
+    function isStrongPassword(password) {
+      return password.length >= 8
+        && /\d/.test(password)
+        && /[a-z]/.test(password)
+        && /[A-Z]/.test(password)
+        && /[^A-Za-z0-9]/.test(password);
+    }
+
+    function validatePasswordMatch() {
+      const confirmPasswordStatus = document.getElementById('confirm-password-status');
+      const passwordsMatch = pwdInput.value.length > 0 && pwdInput.value === confirmPwdInput.value;
+      confirmPasswordStatus.innerHTML = passwordsMatch
+        ? '<i class="fas fa-check-circle text-[#4CAF50] mr-1"></i>Passwords match'
+        : '<i class="fas fa-times-circle text-[#EF4444] mr-1"></i>Passwords must match';
+      if (confirmPwdInput.value && !passwordsMatch) {
+        confirmPwdInput.classList.add('border-[#EF4444]', 'focus:border-[#EF4444]');
+      } else {
+        confirmPwdInput.classList.remove('border-[#EF4444]', 'focus:border-[#EF4444]');
+      }
+      return passwordsMatch;
+    }
 
     // Real-time password requirement checkers injection
     pwdInput.addEventListener('input', function () {
       const password = this.value;
-      const reqLength = document.getElementById('req-length');
-      const reqAlpha = document.getElementById('req-alpha');
-      reqLength.innerHTML = password.length >= 8
-        ? '<i class="fas fa-check-circle text-[#4CAF50] mr-1"></i>8+ Characters'
-        : '<i class="fas fa-times-circle text-[#EF4444] mr-1"></i>8+ Characters';
-      reqAlpha.innerHTML = /(?=.*[a-zA-Z])(?=.*[0-9])/.test(password)
-        ? '<i class="fas fa-check-circle text-[#4CAF50] mr-1"></i>Letters & Numbers'
-        : '<i class="fas fa-times-circle text-[#EF4444] mr-1"></i>Letters & Numbers';
+      updateRequirementState('req-length', password.length >= 8, '8+ Characters');
+      updateRequirementState('req-digit', /\d/.test(password), '1 Digit');
+      updateRequirementState('req-lowercase', /[a-z]/.test(password), '1 Lowercase');
+      updateRequirementState('req-uppercase', /[A-Z]/.test(password), '1 Uppercase');
+      updateRequirementState('req-special', /[^A-Za-z0-9]/.test(password), '1 Special Character');
+      validatePasswordMatch();
     });
+    confirmPwdInput.addEventListener('input', validatePasswordMatch);
 
     // Drag & Drop Base64 Logo Parsing Core
     const dropZone = document.getElementById('drop-zone');
@@ -793,6 +859,18 @@
 
       if (!checkUsernameRestriction()) {
         document.getElementById('admin_user').focus();
+        return;
+      }
+
+      if (!isStrongPassword(pwdInput.value)) {
+        showStatus("error", "Password must be 8+ characters and include uppercase, lowercase, digit, and special character.");
+        pwdInput.focus();
+        return;
+      }
+
+      if (!validatePasswordMatch()) {
+        showStatus("error", "Confirm password does not match.");
+        confirmPwdInput.focus();
         return;
       }
 

@@ -389,7 +389,7 @@
         formData.append("phone", document.getElementById("phone").value);
         formData.append("message", document.getElementById("message").value);
         formData.append("g-recaptcha-response", captchaToken);
-        fetch("https://lms.instructohub.com/local/multitenant/api/contactus.php", {
+        fetch("https://lms.mdl.instructohub.com/local/multitenant/api/contactus.php", {
             method: "POST",
             headers: {
               "Content-Type": "application/x-www-form-urlencoded"

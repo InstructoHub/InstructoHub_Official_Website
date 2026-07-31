@@ -488,17 +488,8 @@
                         <i id="passwordIcon" class="fas fa-eye text-xs"></i>
                       </button>
                     </div>
-                    <div class="mt-1.5 flex flex-col gap-y-1 items-start text-[11px] text-[#4b5563]">
-                      <span id="req-length" class="flex items-center whitespace-nowrap"><i
-                          class="fas fa-times-circle text-[#EF4444] mr-1"></i>8+ Characters</span>
-                      <span id="req-digit" class="flex items-center whitespace-nowrap"><i
-                          class="fas fa-times-circle text-[#EF4444] mr-1"></i>1 Digit</span>
-                      <span id="req-lowercase" class="flex items-center whitespace-nowrap"><i
-                          class="fas fa-times-circle text-[#EF4444] mr-1"></i>1 Lowercase</span>
-                      <span id="req-uppercase" class="flex items-center whitespace-nowrap"><i
-                          class="fas fa-times-circle text-[#EF4444] mr-1"></i>1 Uppercase</span>
-                      <span id="req-special" class="flex items-center whitespace-nowrap"><i
-                          class="fas fa-times-circle text-[#EF4444] mr-1"></i>1 Special Character</span>
+                    <div class="mt-1.5 flex items-center text-[11px] text-[#4b5563]">
+                      <i id="password-rule-icon" class="fas fa-times-circle text-[#EF4444] mr-1"></i>At least 8 characters with 1 uppercase, 1 lowercase, 1 digit, and 1 special character.
                     </div>
                   </div>
                   <div class="mt-field-wrap w-full min-w-0">
@@ -617,11 +608,11 @@
     // Real-time password requirement checkers injection
     pwdInput.addEventListener('input', function () {
       const password = this.value;
-      updateRequirementState('req-length', password.length >= 8, '8+ Characters');
-      updateRequirementState('req-digit', /\d/.test(password), '1 Digit');
-      updateRequirementState('req-lowercase', /[a-z]/.test(password), '1 Lowercase');
-      updateRequirementState('req-uppercase', /[A-Z]/.test(password), '1 Uppercase');
-      updateRequirementState('req-special', /[^A-Za-z0-9]/.test(password), '1 Special Character');
+      const ruleIcon = document.getElementById('password-rule-icon');
+      const isValid = isStrongPassword(password);
+      ruleIcon.className = isValid
+        ? 'fas fa-check-circle text-[#4CAF50] mr-1'
+        : 'fas fa-times-circle text-[#EF4444] mr-1';
       validatePasswordMatch();
     });
     confirmPwdInput.addEventListener('input', validatePasswordMatch);
@@ -863,7 +854,7 @@
       }
 
       if (!isStrongPassword(pwdInput.value)) {
-        showStatus("error", "Password must be 8+ characters and include uppercase, lowercase, digit, and special character.");
+        showStatus("error", "At least 8 characters with 1 uppercase, 1 lowercase, 1 digit, and 1 special character.");
         pwdInput.focus();
         return;
       }

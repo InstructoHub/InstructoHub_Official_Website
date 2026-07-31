@@ -6,21 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Primary Meta Tags -->
   <title>Contact Us | InstructoHub</title>
-  <meta name="description"
-    content="Get in touch with InstructoHub. Reach out to us for inquiries about our AI-First LMS, AI Suite, pricing, or partnerships. We're here to help transform your learning platform." />
+  <meta name="description" content="Get in touch with InstructoHub. Reach out to us for inquiries about our AI-First LMS, AI Suite, pricing, or partnerships. We're here to help transform your learning platform." />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
     gtag('config', 'G-8GYGC3JQPD');
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="canonical" href="https://www.instructohub.com/Contact" />
   <script>
@@ -54,8 +55,14 @@
               900: "#0e1a20",
               DEFAULT: "#1b3942",
             },
-            success: { DEFAULT: "#4CAF50", dark: "#3a8c3f" },
-            danger: { DEFAULT: "#EF4444", dark: "#B91C1C" },
+            success: {
+              DEFAULT: "#4CAF50",
+              dark: "#3a8c3f"
+            },
+            danger: {
+              DEFAULT: "#EF4444",
+              dark: "#B91C1C"
+            },
             neutral: {
               50: "#fafafa",
               100: "#f5f5f5",
@@ -68,8 +75,14 @@
               800: "#262626",
               900: "#171717",
             },
-            background: { page: "#f7f7f7", card: "#ffffff" },
-            border: { DEFAULT: "#e5e7eb", accent: "#e16b3b" },
+            background: {
+              page: "#f7f7f7",
+              card: "#ffffff"
+            },
+            border: {
+              DEFAULT: "#e5e7eb",
+              accent: "#e16b3b"
+            },
             text: {
               primary: "#1b3942",
               secondary: "#4b5563",
@@ -77,11 +90,19 @@
               light: "#ffffff",
             },
           },
-          animation: { fadeIn: "fadeIn 0.5s ease-out forwards" },
+          animation: {
+            fadeIn: "fadeIn 0.5s ease-out forwards"
+          },
           keyframes: {
             fadeIn: {
-              "0%": { opacity: "0", transform: "translateY(10px)" },
-              "100%": { opacity: "1", transform: "translateY(0)" },
+              "0%": {
+                opacity: "0",
+                transform: "translateY(10px)"
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)"
+              },
             },
           },
         },
@@ -103,7 +124,7 @@
           }
         });
         // Mobile menu toggle
-        window.toggleMobileMenu = function () {
+        window.toggleMobileMenu = function() {
           const menu = document.getElementById("mobile-menu");
           const menuIcon = document.getElementById("menu-icon");
           const closeIcon = document.getElementById("close-icon");
@@ -183,8 +204,7 @@
                   <p class="text-secondary-600 mb-3">
                     Send us an email anytime!
                   </p>
-                  <a href="mailto:info@instructohub.com"
-                    class="text-brand hover:text-brand-600 transition-colors font-medium">
+                  <a href="mailto:info@instructohub.com" class="text-brand hover:text-brand-600 transition-colors font-medium">
                     info@instructohub.com
                   </a>
                 </div>
@@ -228,24 +248,16 @@
             <div class="bg-white rounded-lg p-6 shadow-md border border-neutral-200">
               <h3 class="font-semibold text-secondary mb-4">Follow Us</h3>
               <div class="flex gap-4">
-                <a href="https://x.com/InstructoH75197" target="_blank"
-                  class="bg-neutral-100 p-3 rounded-lg text-secondary-700 hover:bg-brand hover:text-white transition-colors"
-                  aria-label="Twitter">
+                <a href="https://x.com/InstructoH75197" target="_blank" class="bg-neutral-100 p-3 rounded-lg text-secondary-700 hover:bg-brand hover:text-white transition-colors" aria-label="Twitter">
                   <i class="fa-brands fa-x-twitter"></i>
                 </a>
-                <a href="https://www.facebook.com/people/InstructoHub/61572722776722/" target="_blank"
-                  class="bg-neutral-100 p-3 rounded-lg text-secondary-700 hover:bg-brand hover:text-white transition-colors"
-                  aria-label="Facebook">
+                <a href="https://www.facebook.com/people/InstructoHub/61572722776722/" target="_blank" class="bg-neutral-100 p-3 rounded-lg text-secondary-700 hover:bg-brand hover:text-white transition-colors" aria-label="Facebook">
                   <i class="fa-brands fa-facebook-f"></i>
                 </a>
-                <a href="https://www.linkedin.com/company/instructohub" target="_blank"
-                  class="bg-neutral-100 p-3 rounded-lg text-secondary-700 hover:bg-brand hover:text-white transition-colors"
-                  aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/instructohub" target="_blank" class="bg-neutral-100 p-3 rounded-lg text-secondary-700 hover:bg-brand hover:text-white transition-colors" aria-label="LinkedIn">
                   <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                <a href="https://www.youtube.com/@InstructoHub-AI" target="_blank"
-                  class="bg-neutral-100 p-3 rounded-lg text-secondary-700 hover:bg-brand hover:text-white transition-colors"
-                  aria-label="Youtube">
+                <a href="https://www.youtube.com/@InstructoHub-AI" target="_blank" class="bg-neutral-100 p-3 rounded-lg text-secondary-700 hover:bg-brand hover:text-white transition-colors" aria-label="Youtube">
                   <i class="fa-brands fa-youtube"></i>
                 </a>
               </div>
@@ -258,62 +270,49 @@
                 Send us a Message
               </h2>
               <p class="text-secondary-600 mb-8">
-                Fill out the form below and we'll get back to you as soon as
-                possible.
+                Fill out the form below and we'll get back to you as soon as possible.
               </p>
-              <form class="contact-form space-y-6" method="POST" target="google-form-hidden-iframe"
-                action="https://docs.google.com/forms/d/e/1FAIpQLScGKYf0Oq5SPofZRAhekIABzo3ij8I-VvUYKarc2VXnegXqIg/formResponse">
+              <form class="contact-form space-y-6" id="contactForm">
                 <div class="grid grid-cols-1 gap-6">
                   <div>
                     <label for="name" class="block text-sm font-medium text-secondary mb-2">
                       Full Name <span class="text-danger">*</span>
                     </label>
-                    <input type="text" id="name" name="entry.434583038" required
-                      class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary"
-                      placeholder="John Doe" />
+                    <input type="text" id="name" name="fullname" required class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary" placeholder="John Doe" />
                   </div>
                   <div>
                     <label for="email" class="block text-sm font-medium text-secondary mb-2">
                       Email Address <span class="text-danger">*</span>
                     </label>
-                    <input type="email" id="email" name="entry.832034059" required
-                      class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary"
-                      placeholder="john@example.com" />
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary" placeholder="john@example.com" />
                   </div>
                   <div>
                     <label for="phone" class="block text-sm font-medium text-secondary mb-2">
                       Phone Number
                     </label>
-                    <input type="tel" id="phone" name="entry.887151190" inputmode="tel" pattern="^\+?[0-9\s\-]{7,20}$"
-                      title="Enter a valid phone number using digits, spaces, dashes, and an optional leading +"
-                      class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary"
-                      placeholder="+91 12345 67890" />
+                    <input type="tel" id="phone" name="phone" inputmode="tel" pattern="^\+?[0-9\s\-]{7,20}$" title="Enter a valid phone number using digits, spaces, dashes, and an optional leading +" class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary" placeholder="+91 12345 67890" />
                   </div>
                 </div>
                 <div>
                   <label for="message" class="block text-sm font-medium text-secondary mb-2">
                     Message <span class="text-danger">*</span>
                   </label>
-                  <textarea id="message" name="entry.821941265" rows="6" required
-                    class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary resize-none"
-                    placeholder="Tell us how we can help you..."></textarea>
+                  <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-brand transition-colors text-secondary resize-none" placeholder="Tell us how we can help you..."></textarea>
                 </div>
                 <div class="flex items-start gap-3">
-                  <input type="checkbox" id="consent" name="entry.276990144" value="Agree" required
-                    class="mt-1 w-4 h-4 text-brand border-neutral-300 rounded focus:ring-brand" />
+                  <input type="checkbox" id="consent" name="consent" value="Agree" required class="mt-1 w-4 h-4 text-brand border-neutral-300 rounded focus:ring-brand" />
                   <label for="consent" class="text-sm text-secondary-600">
-                    I agree to be contacted by InstructoHub regarding my
-                    inquiry. <span class="text-danger">*</span>
+                    I agree to be contacted by InstructoHub regarding my inquiry. <span class="text-danger">*</span>
                   </label>
                 </div>
-                <button type="submit"
-                  class="w-full md:w-auto px-8 py-3 bg-brand text-white font-semibold rounded-lg hover:bg-brand-600 transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                <div class="flex justify-center pt-2">
+                  <div class="g-recaptcha" data-sitekey="6Lcpbs4sAAAAACtc-dUQ7IDqK_LjSXy25hW3gaMK"></div>
+                </div>
+                <button type="submit" class="w-full md:w-auto px-8 py-3 bg-brand text-white font-semibold rounded-lg hover:bg-brand-600 transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2">
                   <span>Send Message</span>
                   <i data-lucide="send" class="w-5 h-5"></i>
                 </button>
               </form>
-              <iframe id="google-form-hidden-iframe" name="google-form-hidden-iframe"
-                style="display:none; width:0; height:0; border:0;"></iframe>
               <div id="form-message" class="mt-6 hidden p-4 rounded-lg"></div>
             </div>
           </div>
@@ -359,16 +358,13 @@
     setTimeout(() => {
       lucide.createIcons();
     }, 500);
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const contactForm = document.querySelector(".contact-form");
+    document.addEventListener("DOMContentLoaded", function() {
+      const contactForm = document.getElementById("contactForm");
       const formMessage = document.getElementById("form-message");
-      const hiddenIframe = document.getElementById("google-form-hidden-iframe");
       const submitButton = contactForm.querySelector("button[type='submit']");
-      let isSubmitting = false;
 
       function showMessage(text, isSuccess) {
-        formMessage.innerHTML = `<p class="font-semibold mb-2">${isSuccess ? "Thank you!" : "Oops!"}</p><p>${text}</p>`;
+        formMessage.innerHTML = `<p class="font-semibold mb-1">${isSuccess ? "Thank you!" : "Oops!"}</p><p>${text}</p>`;
         formMessage.classList.remove("hidden", "bg-danger/10", "border-danger", "text-danger", "bg-success/10", "border-success", "text-success");
         if (isSuccess) {
           formMessage.classList.add("bg-success/10", "border", "border-success", "text-success");
@@ -376,26 +372,52 @@
           formMessage.classList.add("bg-danger/10", "border", "border-danger", "text-danger");
         }
       }
-
-      contactForm.addEventListener("submit", function (event) {
+      contactForm.addEventListener("submit", function(event) {
         event.preventDefault();
-        if (isSubmitting) return;
-        isSubmitting = true;
+        const captchaToken = grecaptcha.getResponse();
+        if (!captchaToken) {
+          showMessage("Please complete the reCAPTCHA.", false);
+          return;
+        }
         submitButton.disabled = true;
         submitButton.classList.add("opacity-70", "cursor-not-allowed");
         submitButton.querySelector("span").textContent = "Sending...";
         formMessage.classList.add("hidden");
-        contactForm.submit();
-      });
-
-      hiddenIframe.addEventListener("load", function () {
-        if (!isSubmitting) return;
-        isSubmitting = false;
-        submitButton.disabled = false;
-        submitButton.classList.remove("opacity-70", "cursor-not-allowed");
-        submitButton.querySelector("span").textContent = "Send Message";
-        contactForm.reset();
-        showMessage("Your message has been received. We will contact you soon.", true);
+        const formData = new URLSearchParams();
+        formData.append("fullname", document.getElementById("name").value);
+        formData.append("email", document.getElementById("email").value);
+        formData.append("phone", document.getElementById("phone").value);
+        formData.append("message", document.getElementById("message").value);
+        formData.append("g-recaptcha-response", captchaToken);
+        fetch("https://lms.instructohub.com/local/multitenant/api/contactus.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: formData.toString()
+          })
+          .then(async (response) => {
+            const data = await response.json().catch(() => null);
+            if (response.ok) {
+              contactForm.reset();
+              grecaptcha.reset();
+              showMessage("Your message has been received. We will contact you soon.", true);
+            } else {
+              const errorMsg = (data && data.message) ? data.message : "Something went wrong. Please try again.";
+              showMessage(errorMsg, false);
+              grecaptcha.reset();
+            }
+          })
+          .catch((error) => {
+            console.error("Submission error:", error);
+            showMessage("Network error occurred. Please try again later.", false);
+            grecaptcha.reset();
+          })
+          .finally(() => {
+            submitButton.disabled = false;
+            submitButton.classList.remove("opacity-70", "cursor-not-allowed");
+            submitButton.querySelector("span").textContent = "Send Message";
+          });
       });
     });
   </script>

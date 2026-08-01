@@ -772,7 +772,8 @@
 
     // Subdomain Verification Engine
     async function checkSubdomainAvailability() {
-      const subdomain = document.getElementById("subdomain").value.trim();
+      const subdomain = document.getElementById("subdomain").value.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+      document.getElementById("subdomain").value = subdomain;
       const statusElement = document.getElementById("subdomain-status");
       const subInput = document.getElementById("subdomain");
       if (!subdomain) {

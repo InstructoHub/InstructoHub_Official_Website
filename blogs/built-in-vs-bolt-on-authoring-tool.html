@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Built-In vs Bolt-On Authoring Tool</title>
+  <meta name="description"
+    content="Discover why integrating your authoring tool directly into your LMS can simplify content creation, improve workflows, and enhance the learning experience." />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GYGC3JQPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-8GYGC3JQPD");
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="canonical" href="https://www.instructohub.com/blogs/built-in-vs-bolt-on-authoring-tool" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#fdf4f0",
+              100: "#fce8e0",
+              200: "#f9d1c1",
+              300: "#f5b9a2",
+              400: "#f09c7d",
+              500: "#e16b3b",
+              600: "#d15a2b",
+              700: "#b44a22",
+              800: "#933c1d",
+              900: "#78301a",
+              DEFAULT: "#e16b3b",
+            },
+            secondary: {
+              50: "#e7eaeb",
+              100: "#cfd5d7",
+              200: "#a0acb0",
+              300: "#728389",
+              400: "#435a62",
+              500: "#1b3942",
+              600: "#18333b",
+              700: "#152b32",
+              800: "#122229",
+              900: "#0e1a20",
+              DEFAULT: "#1b3942",
+            },
+            success: {
+              DEFAULT: "#4CAF50",
+              dark: "#3a8c3f",
+            },
+            danger: {
+              DEFAULT: "#EF4444",
+              dark: "#B91C1C",
+            },
+            neutral: {
+              50: "#fafafa",
+              100: "#f5f5f5",
+              200: "#e5e5e5",
+              300: "#d4d4d4",
+              400: "#a3a3a3",
+              500: "#737373",
+              600: "#525252",
+              700: "#404040",
+              800: "#262626",
+              900: "#171717",
+            },
+            background: {
+              page: "#f7f7f7",
+              card: "#ffffff",
+            },
+            border: {
+              DEFAULT: "#e5e7eb",
+              accent: "#e16b3b",
+            },
+            text: {
+              primary: "#1b3942",
+              secondary: "#4b5563",
+              muted: "#6b7280",
+              light: "#ffffff",
+            },
+          },
+          animation: {
+            fadeIn: "fadeIn 0.5s ease-out forwards",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(10px)",
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)",
+              },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    fetch("/private/header.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        lucide.createIcons();
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      });
+    fetch("/private/footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+        lucide.createIcons();
+        const currentYear = document.getElementById("current-year");
+        if (currentYear) {
+          currentYear.textContent = new Date().getFullYear();
+        }
+      });
+  </script>
+</head>
+
+<body class="min-h-screen flex flex-col bg-[#f7f7f7] text-[#4b5563] font-sans antialiased">
+  <div class="w-full">
+    <div class="h-12 md:block hidden"></div>
+    <div class="h-16"></div>
+  </div>
+  <div id="header-placeholder"></div>
+  <main class="flex-grow animate-fadeIn">
+    <header class="w-full bg-[#1b3942] text-white py-20 md:py-24 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#142b32] to-[#1b3942] opacity-90"></div>
+      <div class="max-w-[1536px] mx-auto px-4 relative z-10">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-2 h-2 bg-[#e16b3b] rounded-full"></span>
+          <span class="text-xs font-semibold tracking-widest text-[#f5b9a2] uppercase">Authoring Tools</span>
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-[48px] font-bold leading-tight text-white max-w-5xl tracking-tight mb-6">
+          Built-In vs Bolt-On: Why Your Authoring Tool Should Live Inside Your
+          LMS
+        </h1>
+        <p class="text-lg md:text-xl text-[#cfd5d7] max-w-3xl leading-relaxed mb-8">
+          The learning process has shifted from uploading static PDFs and
+          presentations to a web portal. Today, schools and organizations must
+          design attractive courses, update learning materials quickly, and
+          assess learner’s performance from a single integrated environment.
+        </p>
+        <div class="flex flex-wrap items-center gap-6 text-sm text-[#a0acb0] border-t border-[#435a62] pt-6 max-w-xl">
+          <div class="flex items-center gap-2">
+            <i data-lucide="calendar" class="w-4 h-4 text-[#e16b3b]"></i>
+            <span>Published: 2026</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="trending-up" class="w-4 h-4 text-[#e16b3b]"></i>
+            <span>Course Authoring</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="user-pen" class="w-4 h-4 text-[#e16b3b]"></i>
+            <a href="https://www.linkedin.com/in/ankitgarg3/" target="_blank" rel="noopener noreferrer"
+              class="hover:underline hover:text-[#e16b3b] transition-colors">
+              By: Ankit Garg
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="max-w-[1536px] mx-auto px-4 py-20">
+      <div class="w-full bg-white p-8 md:p-12 rounded-2xl shadow-lg border border-[#e5e7eb]">
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-6">
+          The learning process has shifted from uploading static PDFs and
+          presentations to a web portal. Today, schools and organizations must
+          design attractive courses, update learning materials quickly, and
+          assess learner’s performance from a single integrated environment.
+        </p>
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-6">
+          This makes the choice of a built-in authoring tool vs. a standalone
+          one important. Standalone authoring tools may offer helpful services
+          but integration with a learning management system adds layers of
+          complexity.
+        </p>
+        <div class="border-l-4 border-solid border-[#e16b3b] bg-[#fdf4f0] p-6 rounded-r-xl mb-8">
+          <p class="text-base text-[#4b5563] leading-relaxed">
+            Integrated writing technology ensures that instructors and
+            administrators can coordinate course material within the same
+            learning management system. AI-powered LMS takes integration a
+            step further. This blog explores the differences between built-in
+            and bolt-on authoring tools and why your authoring tool should
+            live inside your LMS.
+          </p>
+        </div>
+
+        <div class="w-full overflow-hidden rounded-xl border border-[#a3a3a3] bg-[#fafafa] mb-12">
+          <img src="/assets/images/blogs/built-in-vs-bolt-on-authoring-tool.jpg"
+            alt="Built-In vs Bolt-On Authoring Tool" class="w-full object-cover" />
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight mb-6">
+          What is a Built-in Authoring Tool?
+        </h2>
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-6">
+          A built-in authoring tool means it is embedded in the LMS platform.
+          Users, including instructors, other educators, and administrators,
+          can use it to create and edit course content without leaving the LMS
+          platform.
+        </p>
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-6">
+          Depending on the specific system, it is possible to create:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+          <div
+            class="flex items-center gap-2 text-sm text-[#1b3942] font-medium bg-[#fafafa] p-3 rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+            Interactive courses
+          </div>
+          <div
+            class="flex items-center gap-2 text-sm text-[#1b3942] font-medium bg-[#fafafa] p-3 rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+            Learning modules
+          </div>
+          <div
+            class="flex items-center gap-2 text-sm text-[#1b3942] font-medium bg-[#fafafa] p-3 rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+            Assessment tools, quizzes
+          </div>
+          <div
+            class="flex items-center gap-2 text-sm text-[#1b3942] font-medium bg-[#fafafa] p-3 rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+            Multimedia content such as video-based lessons
+          </div>
+          <div
+            class="flex items-center gap-2 text-sm text-[#1b3942] font-medium bg-[#fafafa] p-3 rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+            Knowledge assessments
+          </div>
+          <div
+            class="flex items-center gap-2 text-sm text-[#1b3942] font-medium bg-[#fafafa] p-3 rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+            Learning paths
+          </div>
+          <div
+            class="flex items-center gap-2 text-sm text-[#1b3942] font-medium bg-[#fafafa] p-3 rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+            Certificates
+          </div>
+        </div>
+
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-12">
+          It all works in one platform. Instructors will not have to create
+          course content in one software and then export it somewhere else.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight mb-6">
+          What is a Bolt-On Authoring Tool?
+        </h2>
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-6">
+          A bolt-on authoring tool is a stand-alone program that works with an
+          LMS. Content developers create their material using the stand-alone
+          software, and then upload or publish it on the LMS.
+        </p>
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-6">
+          This system is appropriate when an organization has unique
+          content-creation needs. The only problem that can arise with this
+          method is that it can make the process a bit difficult.
+        </p>
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-6">
+          For instance, a course developer may be required to,
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+          <div class="flex items-center gap-3 p-4 bg-[#fafafa] rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="arrow-right" class="w-4 h-4 text-[#e16b3b] flex-shrink-0"></i>
+            <span class="text-sm font-medium text-[#4b5563]">Open up the authoring tool.</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-[#fafafa] rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="arrow-right" class="w-4 h-4 text-[#e16b3b] flex-shrink-0"></i>
+            <span class="text-sm font-medium text-[#4b5563]">Create the course content.</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-[#fafafa] rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="arrow-right" class="w-4 h-4 text-[#e16b3b] flex-shrink-0"></i>
+            <span class="text-sm font-medium text-[#4b5563]">Save it in a compatible format.</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-[#fafafa] rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="arrow-right" class="w-4 h-4 text-[#e16b3b] flex-shrink-0"></i>
+            <span class="text-sm font-medium text-[#4b5563]">Upload it to the LMS.</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-[#fafafa] rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="arrow-right" class="w-4 h-4 text-[#e16b3b] flex-shrink-0"></i>
+            <span class="text-sm font-medium text-[#4b5563]">See if everything is working correctly.</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-[#fafafa] rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="arrow-right" class="w-4 h-4 text-[#e16b3b] flex-shrink-0"></i>
+            <span class="text-sm font-medium text-[#4b5563]">Make changes to the file where necessary.</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-[#fafafa] rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="arrow-right" class="w-4 h-4 text-[#e16b3b] flex-shrink-0"></i>
+            <span class="text-sm font-medium text-[#4b5563]">Upload the changes.</span>
+          </div>
+        </div>
+
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-12">
+          When you repeat this process for many courses, it becomes very
+          time-consuming.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight mb-6">
+          Built-In vs Bolt-On: The Key Difference
+        </h2>
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-6">
+          The biggest difference is where the work happens. Under the bolt-on
+          approach, course development and learning delivery happen in two
+          separate environments. Under the native approach, they happen in the
+          same environment.
+        </p>
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-6">
+          This difference affects the content across all aspects, ranging from
+          updates to collaboration.
+        </p>
+
+        <div class="overflow-x-auto rounded-[32px] border border-[#e5e7eb] bg-white shadow-lg mb-8">
+          <table class="min-w-full text-base md:text-lg divide-y divide-[#e5e7eb] text-[#334155]">
+            <thead class="bg-[#f8fafc] text-[#1b3942]">
+              <tr>
+                <th class="px-6 py-5 text-left font-semibold uppercase tracking-wide text-sm md:text-base">
+                  Feature
+                </th>
+                <th class="px-6 py-5 text-left font-semibold uppercase tracking-wide text-sm md:text-base">
+                  Built-In Authoring Tool
+                </th>
+                <th class="px-6 py-5 text-left font-semibold uppercase tracking-wide text-sm md:text-base">
+                  Bolt-On Authoring Tool
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white">
+                <td class="px-6 py-5 align-top font-semibold text-[#1b3942]">
+                  Course creation
+                </td>
+                <td class="px-6 py-5 align-top">Happens inside the LMS</td>
+                <td class="px-6 py-5 align-top">
+                  Happens in a separate platform
+                </td>
+              </tr>
+              <tr class="bg-[#f9fafb]">
+                <td class="px-6 py-5 align-top font-semibold text-[#1b3942]">
+                  Content transfer
+                </td>
+                <td class="px-6 py-5 align-top">Usually unnecessary</td>
+                <td class="px-6 py-5 align-top">
+                  Often requires exporting and uploading
+                </td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-5 align-top font-semibold text-[#1b3942]">
+                  Updates
+                </td>
+                <td class="px-6 py-5 align-top">Can be made directly</td>
+                <td class="px-6 py-5 align-top">
+                  May require re-exporting content
+                </td>
+              </tr>
+              <tr class="bg-[#f9fafb]">
+                <td class="px-6 py-5 align-top font-semibold text-[#1b3942]">
+                  User experience
+                </td>
+                <td class="px-6 py-5 align-top">More connected</td>
+                <td class="px-6 py-5 align-top">
+                  Can involve switching platforms
+                </td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-5 align-top font-semibold text-[#1b3942]">
+                  Data flow
+                </td>
+                <td class="px-6 py-5 align-top">Centralised</td>
+                <td class="px-6 py-5 align-top">
+                  May depend on integrations
+                </td>
+              </tr>
+              <tr class="bg-[#f9fafb]">
+                <td class="px-6 py-5 align-top font-semibold text-[#1b3942]">
+                  Administration
+                </td>
+                <td class="px-6 py-5 align-top">Simpler workflow</td>
+                <td class="px-6 py-5 align-top">
+                  Multiple systems to manage
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-12">
+          A connected strategy will help reduce unnecessary complexities that
+          may arise and allow learning teams to concentrate on content
+          quality.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight mb-8">
+          Why Your Authoring Tool Should Be Part of Your LMS
+        </h2>
+
+        <div class="space-y-6 mb-12">
+          <div class="p-6 bg-[#fafafa] border border-[#e5e7eb] rounded-xl">
+            <h3 class="text-xl font-bold text-[#1b3942] mb-3">
+              1. Rapid Course Development
+            </h3>
+            <p class="text-base text-[#4b5563] leading-relaxed mb-4">
+              An embedded authoring tool focuses on efficiency. Course
+              developers can move from idea to published course without
+              constantly switching between multiple programs. The course
+              developer can construct lessons, insert material, design
+              evaluations and structure learning modules all within the same
+              interface.
+            </p>
+            <p class="text-base text-[#4b5563] leading-relaxed mb-4 font-semibold text-[#1b3942]">
+              This becomes highly useful when organizations need to react
+              quickly to:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+              <div class="flex items-center gap-2 text-sm text-[#1b3942] font-medium">
+                <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i> New
+                compliance regulations
+              </div>
+              <div class="flex items-center gap-2 text-sm text-[#1b3942] font-medium">
+                <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+                Product updates
+              </div>
+              <div class="flex items-center gap-2 text-sm text-[#1b3942] font-medium">
+                <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+                Onboarding needs
+              </div>
+              <div class="flex items-center gap-2 text-sm text-[#1b3942] font-medium">
+                <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+                Changes in policies
+              </div>
+              <div class="flex items-center gap-2 text-sm text-[#1b3942] font-medium">
+                <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+                Skill development programs
+              </div>
+            </div>
+            <p class="text-base text-[#4b5563] leading-relaxed">
+              An AI first LMS solution can further improve efficiency by
+              helping create courses, learning materials, summaries, and
+              assessments.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[#fafafa] border border-[#e5e7eb] rounded-xl">
+            <h3 class="text-xl font-bold text-[#1b3942] mb-3">
+              2. Fewer Integration Challenges
+            </h3>
+            <p class="text-base text-[#4b5563] leading-relaxed mb-4">
+              Every new software solution adds another technological element.
+              Outside the LMS, authoring systems may have integrations,
+              compatibility testing, user rights, and regular upgrades. An
+              integrated authoring system will reduce the number of pieces.
+            </p>
+            <p class="text-base text-[#4b5563] leading-relaxed mb-4">
+              It does not mean companies must avoid external software
+              solutions. It implies that they should assess the need for such
+              solutions in the first place.
+            </p>
+            <p class="text-base text-[#4b5563] leading-relaxed">
+              For businesses that use various learning technologies, seamless
+              LMS integration for existing systems still matters. It can also
+              help avoid overly complicated processes for routine content
+              creation.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[#fafafa] border border-[#e5e7eb] rounded-xl">
+            <h3 class="text-xl font-bold text-[#1b3942] mb-3">
+              3. Stronger Connection Between Content and Data
+            </h3>
+            <p class="text-base text-[#4b5563] leading-relaxed mb-4">
+              An LMS platform can gather useful data on learner activity. An
+              organization may need to know:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+              <div class="flex items-center gap-2 text-sm text-[#1b3942] font-medium">
+                <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i> The
+                most effective courses
+              </div>
+              <div class="flex items-center gap-2 text-sm text-[#1b3942] font-medium">
+                <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+                Where learners have difficulties
+              </div>
+              <div class="flex items-center gap-2 text-sm text-[#1b3942] font-medium">
+                <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i>
+                What assessment questions they answer wrongly
+              </div>
+              <div class="flex items-center gap-2 text-sm text-[#1b3942] font-medium">
+                <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i> How
+                much time learners spend in modules
+              </div>
+              <div class="flex items-center gap-2 text-sm text-[#1b3942] font-medium">
+                <i data-lucide="check" class="w-4 h-4 text-[#e16b3b]"></i> The
+                most successful training programs
+              </div>
+            </div>
+            <p class="text-base text-[#4b5563] leading-relaxed mb-4">
+              If there is no connection between an authoring tool and an LMS,
+              it is difficult to link content updates to learner performance.
+              This solution makes this relationship closer. The author of
+              courses can utilize the information about learner behavior to
+              develop further versions of his content.
+            </p>
+            <p class="text-base text-[#4b5563] leading-relaxed">
+              For instance, if learners consistently struggle with a specific
+              assessment question, the author can improve the explanation in
+              the relevant lesson.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[#fafafa] border border-[#e5e7eb] rounded-xl">
+            <h3 class="text-xl font-bold text-[#1b3942] mb-3">
+              4. Reduced Administrative Work
+            </h3>
+            <p class="text-base text-[#4b5563] leading-relaxed mb-4">
+              Learning administrators are already responsible for many
+              functions. Multiple platforms can add complexity around user
+              access and maintenance.
+            </p>
+            <p class="text-base text-[#4b5563] leading-relaxed mb-4">
+              The built-in writing capacity might help ease this strain by
+              keeping all vital operations in one place. Administrators can
+              focus only on learners and learning programs.
+            </p>
+            <p class="text-base text-[#4b5563] leading-relaxed">
+              It can prove useful for those educational institutions that
+              require easy LMS integration for institutions while ensuring
+              smooth content creation.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[#fafafa] border border-[#e5e7eb] rounded-xl">
+            <h3 class="text-xl font-bold text-[#1b3942] mb-3">
+              5. More Consistent User Experience
+            </h3>
+            <p class="text-base text-[#4b5563] leading-relaxed mb-4">
+              Having course development and reporting in one environment
+              ensures a more consistent user experience for everyone.
+              Administrators can work in the tools they know.
+            </p>
+            <p class="text-base text-[#4b5563] leading-relaxed mb-4">
+              Instructors do not have to master multiple user interfaces to
+              perform standard functions. Learners get to access course
+              material from one location.
+            </p>
+            <p class="text-base text-[#4b5563] leading-relaxed">
+              A consistent LMS also enables consistent branding and course
+              structure across different learning programs. This matter
+              because complex programs can hinder the development and
+              management of learning materials.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="text-xl md:text-2xl font-bold text-[#1b3942] mb-4">
+          Which One to Choose?
+        </h3>
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-6">
+          Prior to picking your authoring solution, think about the following
+          questions,
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <div class="flex items-center gap-3 p-4 bg-[#fafafa] rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="help-circle" class="w-5 h-5 text-[#e16b3b] flex-shrink-0"></i>
+            <span class="text-sm font-medium text-[#4b5563]">How often do we develop and modify the courses?</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-[#fafafa] rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="help-circle" class="w-5 h-5 text-[#e16b3b] flex-shrink-0"></i>
+            <span class="text-sm font-medium text-[#4b5563]">How big is our team of developers?</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-[#fafafa] rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="help-circle" class="w-5 h-5 text-[#e16b3b] flex-shrink-0"></i>
+            <span class="text-sm font-medium text-[#4b5563]">Are there too many transitions between systems?</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-[#fafafa] rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="help-circle" class="w-5 h-5 text-[#e16b3b] flex-shrink-0"></i>
+            <span class="text-sm font-medium text-[#4b5563]">Is there a problem with file compatibility?</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 bg-[#fafafa] rounded-xl border border-[#e5e7eb]">
+            <i data-lucide="help-circle" class="w-5 h-5 text-[#e16b3b] flex-shrink-0"></i>
+            <span class="text-sm font-medium text-[#4b5563]">Does publishing speed matter?</span>
+          </div>
+        </div>
+
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-12">
+          These questions might help you decide whether an embedded solution
+          will streamline your learning process.
+        </p>
+
+        <h3 class="text-xl md:text-2xl font-bold text-[#1b3942] mb-4">
+          Conclusion
+        </h3>
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-6">
+          Opting for an integrated authoring tool makes course creation
+          easier, reduces paperwork, and ensures a seamless learning process.
+          Instead of using different systems, you can develop, deliver, and
+          enhance your training from one centralized system.
+        </p>
+        <p class="text-lg leading-relaxed text-[#4b5563] mb-12">
+          Ready to change the way you learn and manage your learning content?
+          Get started with InstructoHub and enjoy modern learning. With its
+          AI-powered LMS features, InstructoHub lets you create engaging
+          courses and manage learner performance effortlessly.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-[#e5e7eb]">
+          <h3 class="text-2xl md:text-3xl font-bold text-[#1b3942] mb-8">
+            FAQs
+          </h3>
+          <div class="space-y-4">
+            <div class="bg-[#fafafa] border border-[#e5e7eb] rounded-xl overflow-hidden transition-all duration-300">
+              <button onclick="toggleAccordion('faq-auth-1')"
+                class="w-full text-left p-5 font-semibold text-[#1b3942] flex justify-between items-center hover:text-[#e16b3b]">
+                <span>1. What is the distinction between a built-in authoring
+                  tool and a bolt-on authoring tool?</span>
+                <i data-lucide="chevron-down" id="faq-auth-1-icon"
+                  class="w-5 h-5 transition-transform duration-300"></i>
+              </button>
+              <div id="faq-auth-1"
+                class="hidden p-5 pt-0 border-t border-[#e5e7eb]/50 text-base text-[#4b5563] bg-white">
+                A built-in authoring tool is included in the LMS, while a
+                bolt-on authoring tool is not and requires additional
+                integration.
+              </div>
+            </div>
+
+            <div class="bg-[#fafafa] border border-[#e5e7eb] rounded-xl overflow-hidden transition-all duration-300">
+              <button onclick="toggleAccordion('faq-auth-2')"
+                class="w-full text-left p-5 font-semibold text-[#1b3942] flex justify-between items-center hover:text-[#e16b3b]">
+                <span>2. Why is it good to integrate an authoring tool into the
+                  LMS?</span>
+                <i data-lucide="chevron-down" id="faq-auth-2-icon"
+                  class="w-5 h-5 transition-transform duration-300"></i>
+              </button>
+              <div id="faq-auth-2"
+                class="hidden p-5 pt-0 border-t border-[#e5e7eb]/50 text-base text-[#4b5563] bg-white">
+                This makes building courses easier and simplifies data
+                exchange.
+              </div>
+            </div>
+
+            <div class="bg-[#fafafa] border border-[#e5e7eb] rounded-xl overflow-hidden transition-all duration-300">
+              <button onclick="toggleAccordion('faq-auth-3')"
+                class="w-full text-left p-5 font-semibold text-[#1b3942] flex justify-between items-center hover:text-[#e16b3b]">
+                <span>3. Is there any advantage that can be gained from a
+                  built-in authoring tool?</span>
+                <i data-lucide="chevron-down" id="faq-auth-3-icon"
+                  class="w-5 h-5 transition-transform duration-300"></i>
+              </button>
+              <div id="faq-auth-3"
+                class="hidden p-5 pt-0 border-t border-[#e5e7eb]/50 text-base text-[#4b5563] bg-white">
+                Yes, it will allow the teams to collaborate on course material
+                in one LMS.
+              </div>
+            </div>
+
+            <div class="bg-[#fafafa] border border-[#e5e7eb] rounded-xl overflow-hidden transition-all duration-300">
+              <button onclick="toggleAccordion('faq-auth-4')"
+                class="w-full text-left p-5 font-semibold text-[#1b3942] flex justify-between items-center hover:text-[#e16b3b]">
+                <span>4. Is There An Authoring Tool That Helps You Save
+                  Time?</span>
+                <i data-lucide="chevron-down" id="faq-auth-4-icon"
+                  class="w-5 h-5 transition-transform duration-300"></i>
+              </button>
+              <div id="faq-auth-4"
+                class="hidden p-5 pt-0 border-t border-[#e5e7eb]/50 text-base text-[#4b5563] bg-white">
+                Yes. This method or tool will help you avoid switching
+                platforms.
+              </div>
+            </div>
+
+            <div class="bg-[#fafafa] border border-[#e5e7eb] rounded-xl overflow-hidden transition-all duration-300">
+              <button onclick="toggleAccordion('faq-auth-5')"
+                class="w-full text-left p-5 font-semibold text-[#1b3942] flex justify-between items-center hover:text-[#e16b3b]">
+                <span>5. Are built-in authoring tools appropriate for growing
+                  companies?</span>
+                <i data-lucide="chevron-down" id="faq-auth-5-icon"
+                  class="w-5 h-5 transition-transform duration-300"></i>
+              </button>
+              <div id="faq-auth-5"
+                class="hidden p-5 pt-0 border-t border-[#e5e7eb]/50 text-base text-[#4b5563] bg-white">
+                Yes, because integrated systems make it easier to manage
+                learning across the organization.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-[#e5e7eb]">
+          <div class="bg-[#fafafa] border border-[#e5e7eb] rounded-2xl p-6 md:p-8">
+            <h4 class="text-xl font-bold text-[#1b3942] mb-3">
+              About the Author:
+            </h4>
+            <p class="text-base text-[#4b5563] leading-relaxed">
+              Ankit Garg is an EdTech and eLearning professional with nearly
+              20 years of experience in learning technology, LMS solutions,
+              and corporate learning. At InstructoHub, he focuses on
+              AI-powered LMS solutions, integrated course creation, and
+              learning automation. His expertise in LMS integrations and
+              AI-driven authoring helps educators and organisations simplify
+              content creation by bringing authoring tools directly into the
+              learning platform, reducing manual work and creating a more
+              connected, efficient learning experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
+    }
+
+    function toggleAccordion(id) {
+      const panel = document.getElementById(id);
+      const icon = document.getElementById(`${id}-icon`);
+      if (!panel) return;
+      const isOpen = !panel.classList.contains("hidden");
+
+      document.querySelectorAll('div[id^="faq-auth-"]').forEach((el) => {
+        if (el.id !== id) {
+          el.classList.add("hidden");
+          const otherIcon = document.getElementById(`${el.id}-icon`);
+          if (otherIcon) otherIcon.classList.remove("rotate-180");
+          if (el.parentElement) el.parentElement.classList.remove("bg-white");
+        }
+      });
+
+      if (isOpen) {
+        panel.classList.add("hidden");
+        if (icon) icon.classList.remove("rotate-180");
+        if (panel.parentElement)
+          panel.parentElement.classList.remove("bg-white");
+      } else {
+        panel.classList.remove("hidden");
+        if (icon) icon.classList.add("rotate-180");
+        if (panel.parentElement)
+          panel.parentElement.classList.add("bg-white");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,95 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- Homepage - Highest Priority -->
-  <url>
-    <loc>https://www.instructohub.com/</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Main Product Pages - High Priority -->
-  <url>
-    <loc>https://www.instructohub.com/AI-First-LMS</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://www.instructohub.com/AI-Suite</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+       <loc>https://www.instructohub.com/</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>1.0000</priority>
   </url>
-
   <url>
-    <loc>https://www.instructohub.com/Advanced-Features</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+       <loc>https://www.instructohub.com/AI-First-LMS</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
-
-  <!-- Company Pages - Medium-High Priority -->
   <url>
-    <loc>https://www.instructohub.com/About</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.instructohub.com/Advanced-Features</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
-
   <url>
-    <loc>https://www.instructohub.com/Pricing</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.instructohub.com/AI-Suite</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
-
   <url>
-    <loc>https://www.instructohub.com/Mission</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.instructohub.com/Mission</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
-
   <url>
-    <loc>https://www.instructohub.com/Contact</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.instructohub.com/Pricing</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
-
-  <!-- User Action Pages - Medium Priority -->
   <url>
-    <loc>https://www.instructohub.com/register</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
+       <loc>https://www.instructohub.com/About</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
-
-  <!-- Policy Pages - Lower Priority -->
   <url>
-    <loc>https://www.instructohub.com/policy/privacy</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
+       <loc>https://www.instructohub.com/Contact</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
-
   <url>
-    <loc>https://www.instructohub.com/policy/terms</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
+       <loc>https://www.instructohub.com/policy/privacy</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
-
   <url>
-    <loc>https://www.instructohub.com/policy/cancellation_and_refunds</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
+       <loc>https://www.instructohub.com/policy/cancellation_and_refunds</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
-
+  <url>
+       <loc>https://www.instructohub.com/register</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.instructohub.com/blogs/why-universities-need-advanced-learning-management-systems</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.5120</priority>
+  </url>
+  <url>
+       <loc>https://www.instructohub.com/blogs/built-in-vs-bolt-on-authoring-tool</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.5120</priority>
+  </url>
+  <url>
+       <loc>https://www.instructohub.com/blogs/lms-adoption-trends-india-global-2026</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.5120</priority>
+  </url>
+  <url>
+       <loc>https://www.instructohub.com/blogs/ai-first-lms-replacing-legacy-systems</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.5120</priority>
+  </url>
+  <url>
+       <loc>https://www.instructohub.com/blogs/ai-lms-learning-gap</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.5120</priority>
+  </url>
+  <url>
+       <loc>https://www.instructohub.com/blogs/ai-quiz-generator-for-teachers</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.5120</priority>
+  </url>
+  <url>
+       <loc>https://www.instructohub.com/blogs/ai-lms-features-organisations</loc>
+       <lastmod>2026-09-09T09:20:48+00:00</lastmod>
+       <priority>0.5120</priority>
+  </url>
 </urlset>

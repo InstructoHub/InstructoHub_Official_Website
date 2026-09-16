@@ -133,7 +133,7 @@
           <div class="space-y-6">
             <img src="/assets/images/blogs/AI Quiz Generator.png" alt="Teacher using AI Quiz Generator tool to save time and improve student assessments with automated question generation and quiz creation" class="w-full rounded-2xl shadow-lg mt-6 mb-4">
             <p class="text-lg leading-relaxed text-[#4b5563]">
-              The field of education has also quickly adopted technology to improve learning processes. One of the most significant innovations in education that benefits educators is the use of the <a href="https://www.instructohub.com/Advanced-Features.html" target="_blank" rel="noopener noreferrer" class="text-[#e16b3b] hover:underline">AI Quiz generator</a>.
+              The field of education has also quickly adopted technology to improve learning processes. One of the most significant innovations in education that benefits educators is the use of the <a href="https://www.instructohub.com/Advanced-Features" target="_blank" rel="noopener noreferrer" class="text-[#e16b3b] hover:underline">AI Quiz generator</a>.
             </p>
             <p class="text-lg leading-relaxed text-[#4b5563]">
               Educators spend a good deal of time setting up quizzes and also judging how students are doing. The use of artificial intelligence has transformed quiz creation, making it faster and enabling teachers to manage the entire process more efficiently. This blog will focus on how AI-based quizzes have facilitated teaching.
@@ -316,7 +316,7 @@
           <div class="space-y-6">
             <h2 class="text-2xl md:text-3xl font-bold text-[#1b3942] tracking-tight">The Future of AI-Driven Learning Management</h2>
             <p class="text-lg leading-relaxed text-[#4b5563]">
-              In light of advancements in educational technology, there has been an increasing use of an <a href="https://www.instructohub.com/AI-First-LMS.html" target="_blank" rel="noopener noreferrer" class="text-[#e16b3b] hover:underline">AI-first learning management system</a>, with AI at the heart of all teaching and learning activities.
+              In light of advancements in educational technology, there has been an increasing use of an <a href="https://www.instructohub.com/AI-First-LMS" target="_blank" rel="noopener noreferrer" class="text-[#e16b3b] hover:underline">AI-first learning management system</a>, with AI at the heart of all teaching and learning activities.
             </p>
             <p class="text-lg leading-relaxed text-[#4b5563]">
               An AI-driven learning ecosystem can provide:
@@ -419,10 +419,39 @@
   </main>
   <div id="footer-placeholder"></div>
   <script>
-    fetch("/private/header.html").then(r=>r.text()).then(t=>{document.getElementById('header-placeholder').innerHTML=t; lucide.createIcons();});
-    fetch("/private/footer.html").then(r=>r.text()).then(t=>{document.getElementById('footer-placeholder').innerHTML=t; lucide.createIcons();});
-    lucide.createIcons();
-
+      function toggleMobileMenu() {
+          const mobileMenu = document.getElementById("mobile-menu");
+          const menuIcon = document.getElementById("menu-icon");
+          const closeIcon = document.getElementById("close-icon");
+          if (mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.remove("hidden");
+              menuIcon.classList.add("hidden");
+              closeIcon.classList.remove("hidden");
+          } else {
+              mobileMenu.classList.add("hidden");
+              menuIcon.classList.remove("hidden");
+              closeIcon.classList.add("hidden");
+          }
+      }
+      function toggleAccordion(id) {
+          const targetPanel = document.getElementById(id);
+          const targetIcon = document.getElementById(`${id}-icon`);
+          const parentBlock = targetPanel.parentElement;
+          if (targetPanel.classList.contains("hidden")) {
+              targetPanel.classList.remove("hidden");
+              targetIcon.classList.add("rotate-180");
+              parentBlock.classList.add("bg-white");
+          } else {
+              targetPanel.classList.add("hidden");
+              targetIcon.classList.remove("rotate-180");
+              parentBlock.classList.remove("bg-white");
+          }
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+          lucide.createIcons();
+      });
+  </script>
+  <script>
     function toggleAccordion(id) {
       var panel = document.getElementById(id);
       var icon = document.getElementById(id + '-icon');

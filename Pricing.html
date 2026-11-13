@@ -165,13 +165,12 @@
     </section>
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-[1600px] mx-auto" id="pricing-grid">
-          <div
-            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
+        <div class="flex flex-wrap justify-center gap-6 max-w-[1600px] mx-auto" id="pricing-grid">
+          <div class="w-full sm:w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
             <div class="p-6 flex flex-col h-full">
               <div class="flex-grow">
                 <h3 class="text-xl font-semibold text-secondary mb-1">Free</h3>
-                <p class="text-secondary-700 text-xs mb-2">Up to 25 users</p>
+                <p class="text-secondary-700 text-xs mb-2">Up to 5 users</p>
                 <div class="mb-4 mt-2">
                   <span class="text-4xl font-semibold text-brand inr inrmonthly">₹0</span>
                   <span class="text-4xl font-semibold text-brand inr inrannualy hidden">₹0</span>
@@ -184,11 +183,11 @@
                   </li>
                   <li class="flex items-start gap-2 text-secondary-700">
                     <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
-                    <span>White-Label Options</span>
+                    <span>Mobile Apps</span>
                   </li>
                   <li class="flex items-start gap-2 text-secondary-700">
                     <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
-                    <span>Mobile Apps</span>
+                    <span>Community Support</span>
                   </li>
                 </ul>
               </div>
@@ -201,8 +200,41 @@
               </div>
             </div>
           </div>
-          <div
-            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
+          <div class="w-full sm:w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
+            <div class="p-6 flex flex-col h-full">
+              <div class="flex-grow">
+                <h3 class="text-xl font-semibold text-secondary mb-1">Lite</h3>
+                <p class="text-secondary-700 text-xs mb-2">Up to 50 users</p>
+                <div class="mb-4 mt-2">
+                  <span class="text-4xl font-semibold text-brand inr inrmonthly">₹120</span>
+                  <span class="text-4xl font-semibold text-brand inr inrannualy hidden">₹100</span>
+                  <span class="text-secondary-600 text-sm"> /user/month</span>
+                </div>
+                <ul class="space-y-2 mb-6 text-sm">
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Custom Sub Domain</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Basic Attendance & Quiz Reports</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-secondary-700">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span>Email Support</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-auto">
+                <a href="/register"
+                  class="bg-secondary hover:bg-secondary-700 text-white font-semibold py-2.5 px-4 rounded-lg text-center transition-transform hover:scale-105 block text-sm">
+                  Choose Lite
+                </a>
+                <p class="text-xs text-secondary-600 mt-2">As low as ₹600/month</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full sm:w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
             <div class="p-6 flex flex-col h-full">
               <div class="flex-grow">
                 <h3 class="text-xl font-semibold text-secondary mb-1">Starter</h3>
@@ -215,7 +247,7 @@
                 <ul class="space-y-2 mb-6 text-sm">
                   <li class="flex items-start gap-2 text-secondary-700">
                     <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
-                    <span>Custom Sub Domain</span>
+                    <span>White-Label Options</span>
                   </li>
                   <li class="flex items-start gap-2 text-secondary-700">
                     <i data-lucide="check-circle-2" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
@@ -232,12 +264,11 @@
                   class="bg-secondary hover:bg-secondary-700 text-white font-semibold py-2.5 px-4 rounded-lg text-center transition-transform hover:scale-105 block text-sm">
                   Choose Starter
                 </a>
-                <p class="text-xs text-secondary-600 mt-2">As low as ₹2,500/month</p>
+                <p class="text-xs text-secondary-600 mt-2">As low as ₹5,000/month</p>
               </div>
             </div>
           </div>
-          <div
-            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border-4 border-brand scale-105">
+          <div class="w-full sm:w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border-brand border-4">
             <div
               class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand text-white text-sm font-semibold rounded-full whitespace-nowrap">
               Most Popular
@@ -275,8 +306,7 @@
               </div>
             </div>
           </div>
-          <div
-            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
+          <div class="w-full sm:w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
             <div class="p-6 flex flex-col h-full">
               <div class="flex-grow">
                 <h3 class="text-xl font-semibold text-secondary mb-1">Pro</h3>
@@ -314,8 +344,7 @@
               </div>
             </div>
           </div>
-          <div
-            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
+          <div class="w-full sm:w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
             <div class="p-6 flex flex-col h-full">
               <div class="flex-grow">
                 <h3 class="text-xl font-semibold text-secondary mb-1">Institution</h3>
@@ -349,8 +378,7 @@
               </div>
             </div>
           </div>
-          <div
-            class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
+          <div class="w-full sm:w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-neutral-200">
             <div class="p-6 flex flex-col h-full">
               <div class="flex-grow">
                 <h3 class="text-xl font-semibold text-secondary mb-1">Enterprise</h3>
